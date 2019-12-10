@@ -5,7 +5,7 @@ dev="../wstud-thesis-dittmar/data/targer/targer_dev.txt"
 test="../wstud-thesis-dittmar/data/targer/targer_test.txt"
 targetdir="../wstud-thesis-dittmar/targer-results"
 
-e=1
+e=1000
 
 # First run: Test for evaluator f1-connl,f1-alpha-match-10,f1-alpha-match-05,f1-macro,token-acc
 
