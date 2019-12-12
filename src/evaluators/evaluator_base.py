@@ -1,5 +1,5 @@
 """abstract base class for all evaluators"""
-
+from sklearn.metrics import confusion_matrix, classification_report
 
 class EvaluatorBase():
     """EvaluatorBase is abstract base class for all evaluators"""
@@ -22,4 +22,23 @@ class EvaluatorBase():
 
     def predict_evaluation_score(self, tagger, word_sequences, targets_tag_sequences, batch_size):
         outputs_tag_sequences = tagger.predict_tags_from_words(word_sequences, batch_size)
-        return self.get_evaluation_score(targets_tag_sequences, outputs_tag_sequences, word_sequences)
+        acc, msg = self.get_evaluation_score(targets_tag_sequences, outputs_tag_sequences, word_sequences)
+        msg += self.generate_classification_report(targets_tag_sequences, outputs_tag_sequences)
+        #msg += self.generate_confusion_matrix(targets_tag_sequences, outputs_tag_sequences)
+        return acc, msg
+
+    def generate_confusion_matrix(self, truth, predicted, labels=None):
+        ppredicted = sum(predicted, [])
+        ttruth = sum(truth, [])
+        if labels is None:
+            labels = list(set(ttruth + ppredicted))
+            return "\n" + confusion_matrix(ttruth, ppredicted, labels) + "\n"
+        return "\n" + confusion_matrix(ttruth, ppredicted, labels) + "\n"
+
+    def generate_classification_report(self, truth, predicted, labels=None):
+        ppredicted = sum(predicted, [])
+        ttruth = sum(truth, [])
+        if labels is None:
+            labels = list(set(ttruth + ppredicted))
+            return "\n" + classification_report(ttruth, ppredicted, labels) + "\n"
+        return "\n" + classification_report(ttruth, ppredicted, labels) + "\n"
