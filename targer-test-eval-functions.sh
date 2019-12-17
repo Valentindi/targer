@@ -7,53 +7,69 @@ targetdir="../wstud-thesis-dittmar/targer-results"
 
 e=1000
 
-rm embeddings/glove.6B.100d.*
-$(cd embeddings/ && sh get_glove_embeddings.sh)
-# First run: Test for evaluator f1-connl,f1-alpha-match-10,f1-alpha-match-05,f1-macro,token-acc
 
-#python3 main.py --train $train --dev $dev --test $test --save f1-alpha-match-10 --gpu -1 --save-best yes --cross-folds-num 5 -v f1-alpha-match-10 -p 25 -e $e
 
-#mv 2019* $targetdir
-#$(cd $targetdir && git add .)
-#$(cd $targetdir && git commit -m "new updates from targer (f1-alpha-match-10)")
-#$(cd $targetdir && git push)
-rm embeddings/glove.6B.100d.*
-$(cd embeddings/ && sh get_glove_embeddings.sh)
 
-python3 main.py --train $train --dev $dev --test $test --save f1-alpha-match-05.hdf5 --gpu -1 --save-best yes --cross-folds-num 5 -v f1-alpha-match-05 -p 25 -e $e
+cp -f ../glove.6B.100d.txt embeddings/glove.6B.100d.txt
 
-mv 2019* $targetdir
+name="run-f1-alpha-match-10"
+eval="f1-alpha-match-10"
+python3 main.py --train $train --dev $dev --test $test --report-fn $name.txt --save $name.hdf5 --gpu -1 --save-best yes --cross-folds-num 5 -v $eval -p 25 -e $e
+python3 run_tagger.py $name.hdf5 $test -g -1 -o $name.json
+python3 eval.py $test $name.json $name.eval.txt
+python3 generate_detailed_report.py $test $name.json $name.report.html
+
+mv $name* targetdir
 $(cd $targetdir && git add .)
-$(cd $targetdir && git commit -m "new updates from targer (f1-alpha-match-05)")
+$(cd $targetdir && git commit -m "new updates from targer ($name)")
 $(cd $targetdir && git push)
 
-rm embeddings/glove.6B.100d.*
-$(cd embeddings/ && sh get_glove_embeddings.sh)
 
-python3 main.py --train $train --dev $dev --test $test --save f1-alpha-match-10.hdf5 --gpu -1 --save-best yes --cross-folds-num 5 -v f1-macro -p 25 -e $e
 
-mv 2019* $targetdir
+cp -f ../glove.6B.100d.txt embeddings/glove.6B.100d.txt
+
+name="run-f1-alpha-match-05"
+eval="f1-alpha-match-95"
+python3 main.py --train $train --dev $dev --test $test --report-fn $name.txt --save $name.hdf5 --gpu -1 --save-best yes --cross-folds-num 5 -v $eval -p 25 -e $e
+python3 run_tagger.py $name.hdf5 $test -g -1 -o $name.json
+python3 eval.py $test $name.json $name.eval.txt
+python3 generate_detailed_report.py $test $name.json $name.report.html
+
+mv $name* targetdir
+
 $(cd $targetdir && git add .)
-$(cd $targetdir && git commit -m "new updates from targer (f1-macro)")
+$(cd $targetdir && git commit -m "new updates from targer ($name)")
 $(cd $targetdir && git push)
 
-rm embeddings/glove.6B.100d.*
-$(cd embeddings/ && sh get_glove_embeddings.sh)
 
 
-python3 main.py --train $train --dev $dev --test $test --save token-acc.hdf5 --gpu -1 --save-best yes --cross-folds-num 5 -v token-acc -p 25 -e $e
+cp -f ../glove.6B.100d.txt embeddings/glove.6B.100d.txt
 
-mv 2019* $targetdir
+name="run-f1-macro"
+eval="f1-macro"
+python3 main.py --train $train --dev $dev --test $test --report-fn $name.txt --save $name.hdf5 --gpu -1 --save-best yes --cross-folds-num 5 -v $eval -p 25 -e $e
+python3 run_tagger.py $name.hdf5 $test -g -1 -o $name.json
+python3 eval.py $test $name.json $name.eval.txt
+python3 generate_detailed_report.py $test $name.json $name.report.html
+
+mv $name* targetdir
 $(cd $targetdir && git add .)
-$(cd $targetdir && git commit -m "new updates from targer (token-acc)")
+$(cd $targetdir && git commit -m "new updates from targer ($name)")
 $(cd $targetdir && git push)
 
-rm embeddings/glove.6B.100d.*
-$(cd embeddings/ && sh get_glove_embeddings.sh)
 
-python3 main.py --train $train --dev $dev --test $test --save --save f1-conn.hdf5 --gpu -1 --save-best yes --cross-folds-num 5 -v f1-connl -p 25 -e $e
 
-mv 2019* $targetdir
+cp -f ../glove.6B.100d.txt embeddings/glove.6B.100d.txt
+
+name="run-token-acc"
+eval="token-acc"
+python3 main.py --train $train --dev $dev --test $test --report-fn $name.txt --save $name.hdf5 --gpu -1 --save-best yes --cross-folds-num 5 -v $eval -p 25 -e $e
+python3 run_tagger.py $name.hdf5 $test -g -1 -o $name.json
+python3 eval.py $test $name.json $name.eval.txt
+python3 generate_detailed_report.py $test $name.json $name.report.html
+
+mv $name* targetdir
 $(cd $targetdir && git add .)
-$(cd $targetdir && git commit -m "new updates from targer (f1-conn)")
+$(cd $targetdir && git commit -m "new updates from targer ($name)")
 $(cd $targetdir && git push)
+
