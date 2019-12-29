@@ -11,9 +11,9 @@ def main(truth_fn, predicted):
 	json_pred = json.load(f)
 	json_pred = [[float("NaN")] + doc for doc in json_pred]
 	df["pred"] = sum(json_pred, [])
-	labels = list(set(df.truth.to_list()))
-	print(classification_report(df.truth.to_list(), df.pred.to_list()))
-	print(confusion_matrix(df.truth.to_list(), df.pred.to_list()))
+	labels = list(set([x for x in df.truth]))
+	print(classification_report([x for x in df.truth], [x for x in df.pred]))
+	print(confusion_matrix([x for x in df.truth], [x for x in df.pred]))
 
 
 

@@ -27,9 +27,9 @@ def main(truth_fn, predicted_fn, output_fn):
 	truth_question = []
 	pred_question = []
 	token_question = []
-	tokens = df.tokens.to_list()
-	predicted = df["pred"].to_list()
-	for it, token in enumerate(df.truth.to_list()):
+	tokens = [x for x in df.tokens]
+	predicted = [x for x in df["pred"]]
+	for it, token in enumerate(df.truth):
 		if str(token) == "nan":
 			if len(truth_question) < 1:
 				continue
