@@ -5,7 +5,7 @@ dev="../wstud-thesis-dittmar/data/targer/targer_dev.txt"
 test="../wstud-thesis-dittmar/data/targer/targer_test.txt"
 targetdir="../wstud-thesis-dittmar/targer-results"
 
-e=1000
+e=250
 
 
 
