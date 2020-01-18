@@ -6,3 +6,8 @@ embeddings/*.txt
 
 *.txt
 *.hdf5
+
+.venv/*
+.venv/
+.venv
+
