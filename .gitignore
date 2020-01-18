@@ -4,5 +4,11 @@ embeddings/*.txt
 
 .idea
 
-*.txt
+#*.txt
 *.hdf5
+embeddings/
+
+.venv/*
+.venv/
+.venv
+
