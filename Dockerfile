@@ -7,6 +7,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 RUN apt-get install zsh -y
 RUN apt-get install nano -y
 RUN apt-get install tree -y
+RUN apt-get install wget -y
+RUN apt-get install unzip -y
 # Python package management and basic dependencies
 RUN apt-get install -y curl python3.7 python3.7-dev python3.7-distutils -y
 

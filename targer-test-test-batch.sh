@@ -1,9 +1,9 @@
 export PYTHONIOENCODING=utf8
 
-train="../wstud-thesis-dittmar/data/targer/targer_train.txt"
-dev="../wstud-thesis-dittmar/data/targer/targer_dev.txt"
-test="../wstud-thesis-dittmar/data/targer/targer_test.txt"
-targetdir="../wstud-thesis-dittmar/targer-results"
+train="data/targer/targer_train.txt"
+dev="data/targer/targer_dev.txt"
+test="data/targer/targer_test.txt"
+targetdir="targer-results"
 
 e=250
 
