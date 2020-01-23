@@ -5,7 +5,7 @@ COPY . /targer
 
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils zsh make g++ wget nano tree curl python3.6 python3.6-dev python3.6-distutils -y
 
-RUN https://bootstrap.pypa.io/get-pip.py
+RUN wget https://bootstrap.pypa.io/get-pip.py --no-check-certificate
 RUN python3 get-pip.py
 
 RUN python3 -V
