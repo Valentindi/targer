@@ -11,7 +11,6 @@ from src.layers.layer_char_embeddings import LayerCharEmbeddings
 from src.layers.layer_char_cnn import LayerCharCNN
 from src.layers.layer_crf import LayerCRF
 
-
 class TaggerBiRNNCNNCRF(TaggerBase):
     """TaggerBiRNNCNNCRF is a model for sequences tagging that includes recurrent network + conv layer + CRF."""
     def __init__(self, word_seq_indexer, tag_seq_indexer, class_num, batch_size=1, rnn_hidden_dim=100,

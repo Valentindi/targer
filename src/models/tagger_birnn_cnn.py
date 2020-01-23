@@ -29,6 +29,7 @@ class TaggerBiRNNCNN(TaggerBase):
         self.word_len = word_len
         self.char_cnn_filter_num = char_cnn_filter_num
         self.char_window_size = char_window_size
+        
         self.word_embeddings_layer = LayerWordEmbeddings(word_seq_indexer, gpu, freeze_word_embeddings)
         self.char_embeddings_layer = LayerCharEmbeddings(gpu, char_embeddings_dim, freeze_char_embeddings,
                                                          word_len, word_seq_indexer.get_unique_characters_list())
