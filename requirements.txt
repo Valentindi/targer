@@ -4,3 +4,4 @@ scipy
 allennlp
 pytorch-pretrained-bert
 tensorflow
+spacy==2.1
