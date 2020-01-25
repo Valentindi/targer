@@ -1,9 +1,10 @@
+#FROM nvidia/driver:418.40.04-ubuntu18.04
 FROM ubuntu
 MAINTAINER Valentin Dittmar mail@valentindittmar.eu
 
 COPY . /targer
 
-RUN apt-get update && apt-get install -y --no-install-recommends apt-utils zsh make g++ wget nano tree curl python3.6 python3.6-dev python3.6-distutils -y
+RUN apt-get update && apt-get install -y --no-install-recommends apt-utils zsh make g++ wget nano curl python3.6 python3.6-dev python3.6-distutils unzip -y
 
 RUN wget https://bootstrap.pypa.io/get-pip.py --no-check-certificate
 RUN python3 get-pip.py
