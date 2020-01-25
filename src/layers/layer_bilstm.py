@@ -1,10 +1,13 @@
 """class implements standard bidirectional LSTM recurrent layer"""
 import torch
 import torch.nn as nn
+
 from src.layers.layer_birnn_base import LayerBiRNNBase
+
 
 class LayerBiLSTM(LayerBiRNNBase):
     """BiLSTM layer implements standard bidirectional LSTM recurrent layer"""
+
     def __init__(self, input_dim, hidden_dim, gpu):
         super(LayerBiLSTM, self).__init__(input_dim, hidden_dim, gpu)
         self.num_layers = 1
@@ -33,7 +36,7 @@ class LayerBiLSTM(LayerBiRNNBase):
                 start, end = n // 4, n // 2
                 bias.data[start:end].fill_(1.)
 
-    def forward(self, input_tensor, mask_tensor): #input_tensor shape: batch_size x max_seq_len x dim
+    def forward(self, input_tensor, mask_tensor):  # input_tensor shape: batch_size x max_seq_len x dim
         batch_size, max_seq_len, _ = input_tensor.shape
         input_packed, reverse_sort_index = self.pack(input_tensor, mask_tensor)
         h0 = self.tensor_ensure_gpu(torch.zeros(self.num_layers * self.num_directions, batch_size, self.hidden_dim))

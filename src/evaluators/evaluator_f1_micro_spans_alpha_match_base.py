@@ -8,6 +8,7 @@ class EvaluatorF1MicroSpansAlphaMatchBase(EvaluatorBase):
     Isaac Persing and Vincent Ng. End-to-end argumentation mining in student essays. NAACL 2016.
     http://www.aclweb.org/anthology/N16-1164.
     """
+
     def __init__(self, match_alpha_ratio):
         self.match_alpha_ratio = match_alpha_ratio
 
@@ -43,9 +44,9 @@ class EvaluatorF1MicroSpansAlphaMatchBase(EvaluatorBase):
                         break
                 if not found:
                     FP += 1
-        precision = (TP / max(TP + FP, 1))*100
-        recall = (TP / max(TP + FN, 1))*100
-        f1 = (2 * TP / max(2 * TP + FP + FN, 1))*100
+        precision = (TP / max(TP + FP, 1)) * 100
+        recall = (TP / max(TP + FN, 1)) * 100
+        f1 = (2 * TP / max(2 * TP + FP + FN, 1)) * 100
         return f1, precision, recall, (TP, FP, FN)
 
 
@@ -76,9 +77,9 @@ class TagComponent():
     @staticmethod
     def get_tag_class_name(tag):
         if '-' in tag:
-            tag_class_name = tag.split('-')[1] # i.e. 'Claim', 'Premise', etc.
+            tag_class_name = tag.split('-')[1]  # i.e. 'Claim', 'Premise', etc.
         else:
-            tag_class_name = tag # i.e. 'O'
+            tag_class_name = tag  # i.e. 'O'
         return tag_class_name
 
     @staticmethod
@@ -101,21 +102,21 @@ class TagComponent():
         for words, tags in zip(word_sequences, tag_sequences):
             tag_components = list()
             # First tag component definitely contains the first word and it's tag class name
-            #print(0, words[0], tags[0])
+            # print(0, words[0], tags[0])
             tc = TagComponent(pos_begin=0, tag=tags[0])
             tc.add_word(words[0])
             # Iterating over all the rest words/tags, starting from the second pair
             for k in range(1, len(tags)):
-                #print(k, words[k], tags[k])
-                if not tc.has_same_tag_class(tags[k]): # previous tag component has the end
+                # print(k, words[k], tags[k])
+                if not tc.has_same_tag_class(tags[k]):  # previous tag component has the end
                     if tc.tag_class_name != 'O':
                         tag_components.append(tc)
-                    tc = TagComponent(pos_begin=tc.pos_end+1, tag=tags[k])
+                    tc = TagComponent(pos_begin=tc.pos_end + 1, tag=tags[k])
                 tc.add_word(words[k])
             # Adding the last word
             if tc.tag_class_name != 'O':
                 tag_components.append(tc)
-            #for t in tag_components: t.print()
+            # for t in tag_components: t.print()
             tag_components_sequences.append(tag_components)
         return tag_components_sequences
 
@@ -127,10 +128,10 @@ class TagComponent():
             tc = TagComponent(pos_begin=0, tag=tags[0])
             tc.add_word('not-debug-mode')
             for k in range(1, len(tags)):
-                if not tc.has_same_tag_class(tags[k]): # previous tag component has the end
+                if not tc.has_same_tag_class(tags[k]):  # previous tag component has the end
                     if tc.tag_class_name != 'O':
                         tag_components.append(tc)
-                    tc = TagComponent(pos_begin=tc.pos_end+1, tag=tags[k])
+                    tc = TagComponent(pos_begin=tc.pos_end + 1, tag=tags[k])
                 tc.add_word('not-debug-mode')
             # Adding the last word
             if tc.tag_class_name != 'O':

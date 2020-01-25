@@ -3,8 +3,10 @@ from src.data_io.data_io_connl_ner_2003 import DataIOConnlNer2003
 from src.data_io.data_io_connl_pe import DataIOConnlPe
 from src.data_io.data_io_connl_wd import DataIOConnlWd
 
+
 class DataIOFactory():
     """DataIOFactory contains wrappers to create various data readers/writers."""
+
     @staticmethod
     def create(args):
         if args.data_io == 'connl-ner-2003':

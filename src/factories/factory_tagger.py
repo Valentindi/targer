@@ -1,14 +1,17 @@
 """creates various tagger models"""
 import os.path
+
 import torch
+
 from src.models.tagger_birnn import TaggerBiRNN
 from src.models.tagger_birnn_cnn import TaggerBiRNNCNN
-from src.models.tagger_birnn_crf import TaggerBiRNNCRF
 from src.models.tagger_birnn_cnn_crf import TaggerBiRNNCNNCRF
+from src.models.tagger_birnn_crf import TaggerBiRNNCRF
 
 
 class TaggerFactory():
     """TaggerFactory contains wrappers to create various tagger models."""
+
     @staticmethod
     def load(checkpoint_fn, gpu=-1):
         if not os.path.isfile(checkpoint_fn):
@@ -18,16 +21,15 @@ class TaggerFactory():
         if (gpu > -1):
             tagger.gpu = gpu
 
-            tagger.word_seq_indexer.gpu = gpu # hotfix
-            tagger.tag_seq_indexer.gpu = gpu # hotfix
-        if hasattr(tagger, 'char_embeddings_layer'):# very hot hotfix
-            tagger.char_embeddings_layer.char_seq_indexer.gpu = gpu # hotfix
+            tagger.word_seq_indexer.gpu = gpu  # hotfix
+            tagger.tag_seq_indexer.gpu = gpu  # hotfix
+        if hasattr(tagger, 'char_embeddings_layer'):  # very hot hotfix
+            tagger.char_embeddings_layer.char_seq_indexer.gpu = gpu  # hotfix
         tagger.self_ensure_gpu()
         return tagger
 
-
     @staticmethod
-    def create(args, word_seq_indexer, tag_seq_indexer, tag_sequences_train, isElmo = False):
+    def create(args, word_seq_indexer, tag_seq_indexer, tag_sequences_train, isElmo=False):
         if args.model == 'BiRNN':
             tagger = TaggerBiRNN(word_seq_indexer=word_seq_indexer,
                                  tag_seq_indexer=tag_seq_indexer,

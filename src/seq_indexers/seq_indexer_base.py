@@ -8,8 +8,10 @@ class SeqIndexerBase():
     SeqIndexerBase is a base abstract class for sequence indexers. It converts list of lists of string items
     to the list of lists of integer indices and back. Items could be either words, tags or characters.
     """
+
     def __init__(self, gpu=-1, check_for_lowercase=True, zero_digits=False, pad='<pad>', unk='<unk>',
-                 load_embeddings=False, embeddings_dim=0, verbose=False, isElmo = False, isBert = False, elmo_options_file = '', elmo_weights_file = ''):
+                 load_embeddings=False, embeddings_dim=0, verbose=False, isElmo=False, isBert=False,
+                 elmo_options_file='', elmo_weights_file=''):
         self.gpu = gpu
         self.elmo = False
         self.bert = False
@@ -89,9 +91,9 @@ class SeqIndexerBase():
         if word_len == -1:
             word_len = max([len(idx_seq) for idx_seq in idx_sequences])
         tensor = torch.zeros(batch_size, word_len, dtype=torch.long)
-        #if self.gpu >= 0:
+        # if self.gpu >= 0:
         #    tensor = torch.cuda.LongTensor(batch_size, word_len).fill_(0)
-        #else:
+        # else:
         #    tensor = torch.LongTensor(batch_size, word_len).fill_(0)
         for k, idx_seq in enumerate(idx_sequences):
             curr_seq_len = len(idx_seq)
@@ -102,7 +104,7 @@ class SeqIndexerBase():
                 tensor[k, :curr_seq_len] = torch.LongTensor(np.asarray(idx_seq))
             elif align == 'center':
                 start_idx = (word_len - curr_seq_len) // 2
-                tensor[k, start_idx:start_idx+curr_seq_len] = torch.LongTensor(np.asarray(idx_seq))
+                tensor[k, start_idx:start_idx + curr_seq_len] = torch.LongTensor(np.asarray(idx_seq))
             else:
                 raise ValueError('Unknown align string.')
         if self.gpu >= 0:

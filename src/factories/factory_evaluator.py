@@ -1,14 +1,15 @@
 """creates various evaluators"""
-from src.evaluators.evaluator_f1_micro_spans_connl import EvaluatorF1MicroSpansConnl
-from src.evaluators.evaluator_f1_micro_spans_alpha_match_10 import EvaluatorF1MicroSpansAlphaMatch10
-from src.evaluators.evaluator_f1_micro_spans_alpha_match_05 import EvaluatorF1MicroSpansAlphaMatch05
-from src.evaluators.evaluator_f1_macro_token_level import EvaluatorF1MacroTokenLevel
-from src.evaluators.evaluator_f05_macro_token_level import EvaluatorF05MacroTokenLevel
 from src.evaluators.evaluator_acc_token_level import EvaluatorAccuracyTokenLevel
+from src.evaluators.evaluator_f05_macro_token_level import EvaluatorF05MacroTokenLevel
+from src.evaluators.evaluator_f1_macro_token_level import EvaluatorF1MacroTokenLevel
+from src.evaluators.evaluator_f1_micro_spans_alpha_match_05 import EvaluatorF1MicroSpansAlphaMatch05
+from src.evaluators.evaluator_f1_micro_spans_alpha_match_10 import EvaluatorF1MicroSpansAlphaMatch10
+from src.evaluators.evaluator_f1_micro_spans_connl import EvaluatorF1MicroSpansConnl
 
 
 class EvaluatorFactory():
     """EvaluatorFactory contains wrappers to create various evaluators."""
+
     @staticmethod
     def create(args):
         if args.evaluator == 'f1-connl':

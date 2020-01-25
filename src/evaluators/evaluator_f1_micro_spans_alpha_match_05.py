@@ -8,5 +8,6 @@ class EvaluatorF1MicroSpansAlphaMatch05(EvaluatorF1MicroSpansAlphaMatchBase):
     Isaac Persing and Vincent Ng. End-to-end argumentation mining in student essays. NAACL 2016.
     http://www.aclweb.org/anthology/N16-1164.
     """
+
     def __init__(self):
         super(EvaluatorF1MicroSpansAlphaMatch05, self).__init__(match_alpha_ratio=0.5)

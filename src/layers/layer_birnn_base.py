@@ -1,11 +1,13 @@
 """abstract base class for all bidirectional recurrent layers"""
 import torch
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
+
 from src.layers.layer_base import LayerBase
 
 
 class LayerBiRNNBase(LayerBase):
     """LayerBiRNNBase is abstract base class for all bidirectional recurrent layers."""
+
     def __init__(self, input_dim, hidden_dim, gpu):
         super(LayerBiRNNBase, self).__init__(gpu)
         self.input_dim = input_dim
@@ -33,6 +35,3 @@ class LayerBiRNNBase(LayerBase):
         output_tensor_sorted, _ = pad_packed_sequence(output_packed, batch_first=True, total_length=max_seq_len)
         output_tensor = torch.index_select(output_tensor_sorted, dim=0, index=reverse_sort_index)
         return output_tensor
-
-
-

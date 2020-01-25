@@ -2,6 +2,7 @@
 
 from src.classes.utils import get_input_arguments
 
+
 class Report():
     def __init__(self, fn, args, score_names):
         """Report stores evaluation results during the training process as text files."""
@@ -19,7 +20,7 @@ class Report():
         self.text += self.blank_line
 
     def write_epoch_scores(self, epoch, scores):
-        self.text += '\n %14s |' % ('%d'% epoch)
+        self.text += '\n %14s |' % ('%d' % epoch)
         for n, score in enumerate(scores):
             self.text += ' %14s ' % ('%1.2f' % score)
             if n < len(scores) - 1: self.text += '|'

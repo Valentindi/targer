@@ -1,6 +1,5 @@
 """input/output data wrapper for CoNNL file format used in Web Discourse dataset"""
 import codecs
-import json
 from glob import glob
 from os.path import join
 
@@ -10,16 +9,17 @@ class DataIOConnlWd():
     Habernal, Ivan, and Iryna Gurevych. "Argumentation Mining In User-generated Web Discourse."
     Computational Linguistics 43.1 (2017): 125-179.
     """
+
     def read_train_dev_test(self, args):
         word_sequences, tag_sequences = self.read_data(dir=args.train, verbose=args.verbose)
         cross_folds = self.get_cross_folds(word_sequences, tag_sequences, args.cross_folds_num)
         sequences = self.split_cross_folds(cross_folds, args.cross_folds_num, args.cross_fold_id)
-        #with open('wd_test_cv_%d.txt' % args.cross_fold_id, 'w') as f:
+        # with open('wd_test_cv_%d.txt' % args.cross_fold_id, 'w') as f:
         #    json.dump([sequences[4], sequences[5]], f)
         if args.verbose:
             print('*** Loading WD data from dir = %s' % args.train)
             print('*** train : dev : test = %d : %d : %d, cross-fold-id = %d' % (len(sequences[0]), len(sequences[2]),
-                                                                             len(sequences[4]), args.cross_fold_id))
+                                                                                 len(sequences[4]), args.cross_fold_id))
         return sequences[0], sequences[1], sequences[2], sequences[3], sequences[4], sequences[5]
 
     def get_cross_folds(self, word_sequences, tag_sequences, cross_folds_num):
@@ -27,8 +27,8 @@ class DataIOConnlWd():
         fold_len = len(word_sequences) // cross_folds_num
         folds = list()
         for k in range(cross_folds_num):
-            i = k*fold_len
-            j = (k + 1)*fold_len
+            i = k * fold_len
+            j = (k + 1) * fold_len
             if k == cross_folds_num - 1:
                 j = len(word_sequences)
             folds.append((word_sequences[i:j], tag_sequences[i:j]))

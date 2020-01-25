@@ -1,21 +1,25 @@
 """BiLSTM/BiGRU + char-level CNN  + CRF tagger model"""
 import math
+
 import torch
 import torch.nn as nn
-from src.models.tagger_base import TaggerBase
-from src.layers.layer_word_embeddings import LayerWordEmbeddings
-from src.layers.layer_bivanilla import LayerBiVanilla
-from src.layers.layer_bilstm import LayerBiLSTM
+
 from src.layers.layer_bigru import LayerBiGRU
-from src.layers.layer_char_embeddings import LayerCharEmbeddings
+from src.layers.layer_bilstm import LayerBiLSTM
+from src.layers.layer_bivanilla import LayerBiVanilla
 from src.layers.layer_char_cnn import LayerCharCNN
+from src.layers.layer_char_embeddings import LayerCharEmbeddings
 from src.layers.layer_crf import LayerCRF
+from src.layers.layer_word_embeddings import LayerWordEmbeddings
+from src.models.tagger_base import TaggerBase
+
 
 class TaggerBiRNNCNNCRF(TaggerBase):
     """TaggerBiRNNCNNCRF is a model for sequences tagging that includes recurrent network + conv layer + CRF."""
+
     def __init__(self, word_seq_indexer, tag_seq_indexer, class_num, batch_size=1, rnn_hidden_dim=100,
                  freeze_word_embeddings=False, dropout_ratio=0.5, rnn_type='GRU', gpu=-1,
-                 freeze_char_embeddings = False, char_embeddings_dim=25, word_len=20, char_cnn_filter_num=30,
+                 freeze_char_embeddings=False, char_embeddings_dim=25, word_len=20, char_cnn_filter_num=30,
                  char_window_size=3):
         super(TaggerBiRNNCNNCRF, self).__init__(word_seq_indexer, tag_seq_indexer, gpu, batch_size)
         self.tag_seq_indexer = tag_seq_indexer
@@ -39,17 +43,20 @@ class TaggerBiRNNCNNCRF(TaggerBase):
         self.dropout = torch.nn.Dropout(p=dropout_ratio)
 
         if rnn_type == 'GRU':
-            self.birnn_layer = LayerBiGRU(input_dim=self.word_embeddings_layer.output_dim+self.char_cnn_layer.output_dim,
-                                          hidden_dim=rnn_hidden_dim,
-                                          gpu=gpu)
+            self.birnn_layer = LayerBiGRU(
+                input_dim=self.word_embeddings_layer.output_dim + self.char_cnn_layer.output_dim,
+                hidden_dim=rnn_hidden_dim,
+                gpu=gpu)
         elif rnn_type == 'LSTM':
-            self.birnn_layer = LayerBiLSTM(input_dim=self.word_embeddings_layer.output_dim+self.char_cnn_layer.output_dim,
-                                           hidden_dim=rnn_hidden_dim,
-                                           gpu=gpu)
+            self.birnn_layer = LayerBiLSTM(
+                input_dim=self.word_embeddings_layer.output_dim + self.char_cnn_layer.output_dim,
+                hidden_dim=rnn_hidden_dim,
+                gpu=gpu)
         elif rnn_type == 'Vanilla':
-            self.birnn_layer = LayerBiVanilla(input_dim=self.word_embeddings_layer.output_dim+self.char_cnn_layer.output_dim,
-                                           hidden_dim=rnn_hidden_dim,
-                                           gpu=gpu)
+            self.birnn_layer = LayerBiVanilla(
+                input_dim=self.word_embeddings_layer.output_dim + self.char_cnn_layer.output_dim,
+                hidden_dim=rnn_hidden_dim,
+                gpu=gpu)
         else:
             raise ValueError('Unknown rnn_type = %s, must be either "LSTM" or "GRU"')
         self.lin_layer = nn.Linear(in_features=self.birnn_layer.output_dim, out_features=class_num + 2)
@@ -73,7 +80,7 @@ class TaggerBiRNNCNNCRF(TaggerBase):
 
     def get_loss(self, word_sequences_train_batch, tag_sequences_train_batch):
         targets_tensor_train_batch = self.tag_seq_indexer.items2tensor(tag_sequences_train_batch)
-        features_rnn = self._forward_birnn(word_sequences_train_batch) # batch_num x max_seq_len x class_num
+        features_rnn = self._forward_birnn(word_sequences_train_batch)  # batch_num x max_seq_len x class_num
         mask = self.get_mask_from_word_sequences(word_sequences_train_batch)  # batch_num x max_seq_len
         numerator = self.crf_layer.numerator(features_rnn, targets_tensor_train_batch, mask)
         denominator = self.crf_layer.denominator(features_rnn, mask)
@@ -82,7 +89,7 @@ class TaggerBiRNNCNNCRF(TaggerBase):
 
     def predict_idx_from_words(self, word_sequences, no=-1):
         self.eval()
-        features_rnn_compressed_masked  = self._forward_birnn(word_sequences)
+        features_rnn_compressed_masked = self._forward_birnn(word_sequences)
         mask = self.get_mask_from_word_sequences(word_sequences)
         idx_sequences = self.crf_layer.decode_viterbi(features_rnn_compressed_masked, mask)
         return idx_sequences
@@ -96,9 +103,9 @@ class TaggerBiRNNCNNCRF(TaggerBase):
             batch_num = 1
         output_tag_sequences = list()
         for n in range(batch_num):
-            i = n*batch_size
+            i = n * batch_size
             if n < batch_num - 1:
-                j = (n + 1)*batch_size
+                j = (n + 1) * batch_size
             else:
                 j = len(word_sequences)
             if batch_size == 1:

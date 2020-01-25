@@ -1,12 +1,14 @@
 """class implements Conditional Random Fields (CRF)"""
 import torch
 import torch.nn as nn
-from src.layers.layer_base import LayerBase
+
 from src.classes.utils import log_sum_exp
+from src.layers.layer_base import LayerBase
 
 
 class LayerCRF(LayerBase):
     """LayerCRF implements Conditional Random Fields (Ma.et.al., 2016 style)"""
+
     def __init__(self, gpu, states_num, pad_idx, sos_idx, tag_seq_indexer, verbose=True):
         super(LayerCRF, self).__init__(gpu)
         self.states_num = states_num
@@ -48,7 +50,7 @@ class LayerCRF(LayerBase):
             for j in range(self.tag_seq_indexer.get_items_count()):
                 if empirical_transition_matrix[i, j] == 0:
                     self.transition_matrix.data[i, j] = -9999.0
-                #self.transition_matrix.data[i, j] = torch.log(empirical_transition_matrix[i, j].float() + 10**-32)
+                # self.transition_matrix.data[i, j] = torch.log(empirical_transition_matrix[i, j].float() + 10**-32)
         if self.verbose:
             print('Empirical transition matrix from the train dataset:')
             self.pretty_print_transition_matrix(empirical_transition_matrix)
@@ -87,7 +89,7 @@ class LayerCRF(LayerBase):
                 curr_emission[k] = features_rnn_compressed[k, n, states_tensor[k, n + 1]].unsqueeze(0)
                 curr_states_seq = states_tensor[k]
                 curr_transition[k] = self.transition_matrix[curr_states_seq[n + 1], curr_states_seq[n]].unsqueeze(0)
-            score = score + curr_emission*curr_mask + curr_transition*curr_mask
+            score = score + curr_emission * curr_mask + curr_transition * curr_mask
         return score
 
     def denominator(self, features_rnn_compressed, mask_tensor):
@@ -101,10 +103,10 @@ class LayerCRF(LayerBase):
             curr_score = score.unsqueeze(1).expand(-1, *self.transition_matrix.size())
             curr_emission = features_rnn_compressed[:, n].unsqueeze(-1).expand_as(curr_score)
             curr_transition = self.transition_matrix.unsqueeze(0).expand_as(curr_score)
-            #curr_score = torch.logsumexp(curr_score + curr_emission + curr_transition, dim=2)
+            # curr_score = torch.logsumexp(curr_score + curr_emission + curr_transition, dim=2)
             curr_score = log_sum_exp(curr_score + curr_emission + curr_transition)
             score = curr_score * curr_mask + score * (1 - curr_mask)
-        #score = torch.logsumexp(score, dim=1)
+        # score = torch.logsumexp(score, dim=1)
         score = log_sum_exp(score)
         return score
 
@@ -128,7 +130,7 @@ class LayerCRF(LayerBase):
                 curr_backpointers[:, curr_state] = max_indices
             curr_mask = mask_tensor[:, n].unsqueeze(1).expand(batch_size, self.states_num)
             score = score * (1 - curr_mask) + (curr_score + curr_emissions) * curr_mask
-            backpointers[:, n, :] = curr_backpointers # shape: batch_size x max_seq_len x state_num
+            backpointers[:, n, :] = curr_backpointers  # shape: batch_size x max_seq_len x state_num
         best_score_batch, last_best_state_batch = torch.max(score, 1)
         # Step 2. Find the best path
         best_path_batch = [[state] for state in last_best_state_batch.tolist()]

@@ -1,9 +1,12 @@
 """generate predefined FastText embeddings for dataset"""
 from __future__ import print_function
+
 import argparse
+
 import fastText as ft
-from src.data_io.data_io_connl_ner_2003 import DataIOConnlNer2003
+
 from src.classes.datasets_bank import DatasetsBank
+from src.data_io.data_io_connl_ner_2003 import DataIOConnlNer2003
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Learning tagging problem using neural networks')

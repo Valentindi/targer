@@ -1,10 +1,12 @@
 """generate predefined FastText embeddings for dataset"""
 from __future__ import print_function
+
 import argparse
 import codecs
-from numpy import mean, std
 from os import listdir
 from os.path import dirname, join, realpath
+
+from numpy import mean, std
 
 
 def get_score_from_report(fn):

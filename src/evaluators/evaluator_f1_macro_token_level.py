@@ -44,11 +44,12 @@ class EvaluatorF1MacroTokenLevel(EvaluatorBase):
             sum_M_F1 += F1[tag]
             sum_precision += precision[tag]
             sum_recall += recall[tag]
-            msg += '%15s = f1 = %1.2f, precision = %1.2f, recall = %1.2f\n' % (tag, F1[tag], precision[tag], recall[tag])
+            msg += '%15s = f1 = %1.2f, precision = %1.2f, recall = %1.2f\n' % (
+            tag, F1[tag], precision[tag], recall[tag])
         M_F1 = sum_M_F1 / len(F1)
         M_PR = sum_precision / len(F1)
         M_RE = sum_recall / len(F1)
-        msg += '-'*24 + '\n'
+        msg += '-' * 24 + '\n'
         msg += 'Macro-F1 = %1.3f' % M_F1
         msg += 'Macro-Prescion = %1.3f' % M_PR
         msg += 'Macro-Recall = %1.3f' % M_RE
@@ -62,15 +63,16 @@ class EvaluatorF1MacroTokenLevel(EvaluatorBase):
         return dict_in
 
     """EvaluatorF1MacroTagComponents is macro-F1 scores evaluator for each class of BOI-like tags."""
+
     def get_evaluation_score(self, targets_tag_sequences, outputs_tag_sequences, word_sequences=None):
         # Create list of tags
         self.__init_tag_list(targets_tag_sequences)
         i = 0
         for elem in zip(targets_tag_sequences, outputs_tag_sequences):
             if (i < 4):
-                i = i +1
-                print (elem[0])
-                print (elem[1])
+                i = i + 1
+                print(elem[0])
+                print(elem[1])
         # Init values
         TP = self.__get_zeros_tag_dict()
         FP = self.__get_zeros_tag_dict()
@@ -88,12 +90,12 @@ class EvaluatorF1MacroTokenLevel(EvaluatorBase):
         # Calculate F1 for each tag
         for tag in self.tag_list:
             F1[tag] = (2 * TP[tag] / max(2 * TP[tag] + FP[tag] + FN[tag], 1)) * 100
-            precision[tag] = (TP[tag] / max(TP[tag] + FP[tag], 1))*100
-            recall[tag] = (TP[tag] / max(TP[tag] + FN[tag], 1))*100
+            precision[tag] = (TP[tag] / max(TP[tag] + FP[tag], 1)) * 100
+            recall[tag] = (TP[tag] / max(TP[tag] + FN[tag], 1)) * 100
         # Calculate Macro-F1 score and prepare the message
-        M_F1, msg = self.__get_M_F1_msg(F1,precision, recall)
+        M_F1, msg = self.__get_M_F1_msg(F1, precision, recall)
         print(msg)
-        #self.validate_M_F1_scikitlearn( targets_tag_sequences, outputs_tag_sequences)
+        # self.validate_M_F1_scikitlearn( targets_tag_sequences, outputs_tag_sequences)
         return M_F1, msg
 
     '''# for valid ation
@@ -105,4 +107,3 @@ class EvaluatorF1MacroTokenLevel(EvaluatorBase):
         y_pred = self.tag_seq_2_idx_list(outputs_tag_sequences_flat)
         M_F1_scikitlearn = f1_score(y_true=y_true, y_pred=y_pred, average='macro', sample_weight=None)*100
         print('Macro-F1_scikitlearn = %1.3f, for validation' % M_F1_scikitlearn)'''
-

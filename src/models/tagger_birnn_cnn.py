@@ -1,20 +1,22 @@
 """BiLSTM/BiGRU + char-level CNN tagger model"""
 import torch
 import torch.nn as nn
-from src.models.tagger_base import TaggerBase
-from src.layers.layer_word_embeddings import LayerWordEmbeddings
-from src.layers.layer_bivanilla import LayerBiVanilla
-from src.layers.layer_bilstm import LayerBiLSTM
+
 from src.layers.layer_bigru import LayerBiGRU
-from src.layers.layer_char_embeddings import LayerCharEmbeddings
+from src.layers.layer_bilstm import LayerBiLSTM
+from src.layers.layer_bivanilla import LayerBiVanilla
 from src.layers.layer_char_cnn import LayerCharCNN
+from src.layers.layer_char_embeddings import LayerCharEmbeddings
+from src.layers.layer_word_embeddings import LayerWordEmbeddings
+from src.models.tagger_base import TaggerBase
 
 
 class TaggerBiRNNCNN(TaggerBase):
     """TaggerBiRNNCNN is a model for sequences tagging that includes RNN and character-level conv-1D layer."""
+
     def __init__(self, word_seq_indexer, tag_seq_indexer, class_num, batch_size=1, rnn_hidden_dim=100,
                  freeze_word_embeddings=False, dropout_ratio=0.5, rnn_type='GRU', gpu=-1,
-                 freeze_char_embeddings = False, char_embeddings_dim=25, word_len=20, char_cnn_filter_num=30,
+                 freeze_char_embeddings=False, char_embeddings_dim=25, word_len=20, char_cnn_filter_num=30,
                  char_window_size=3):
         super(TaggerBiRNNCNN, self).__init__(word_seq_indexer, tag_seq_indexer, gpu, batch_size)
         self.tag_seq_indexer = tag_seq_indexer
@@ -29,7 +31,7 @@ class TaggerBiRNNCNN(TaggerBase):
         self.word_len = word_len
         self.char_cnn_filter_num = char_cnn_filter_num
         self.char_window_size = char_window_size
-        
+
         self.word_embeddings_layer = LayerWordEmbeddings(word_seq_indexer, gpu, freeze_word_embeddings)
         self.char_embeddings_layer = LayerCharEmbeddings(gpu, char_embeddings_dim, freeze_char_embeddings,
                                                          word_len, word_seq_indexer.get_unique_characters_list())
@@ -37,17 +39,20 @@ class TaggerBiRNNCNN(TaggerBase):
                                            word_len)
         self.dropout = torch.nn.Dropout(p=dropout_ratio)
         if rnn_type == 'GRU':
-            self.birnn_layer = LayerBiGRU(input_dim=self.word_embeddings_layer.output_dim+self.char_cnn_layer.output_dim,
-                                          hidden_dim=rnn_hidden_dim,
-                                          gpu=gpu)
+            self.birnn_layer = LayerBiGRU(
+                input_dim=self.word_embeddings_layer.output_dim + self.char_cnn_layer.output_dim,
+                hidden_dim=rnn_hidden_dim,
+                gpu=gpu)
         elif rnn_type == 'LSTM':
-            self.birnn_layer = LayerBiLSTM(input_dim=self.word_embeddings_layer.output_dim+self.char_cnn_layer.output_dim,
-                                           hidden_dim=rnn_hidden_dim,
-                                           gpu=gpu)
+            self.birnn_layer = LayerBiLSTM(
+                input_dim=self.word_embeddings_layer.output_dim + self.char_cnn_layer.output_dim,
+                hidden_dim=rnn_hidden_dim,
+                gpu=gpu)
         elif rnn_type == 'Vanilla':
-            self.birnn_layer = LayerBiVanilla(input_dim=self.word_embeddings_layer.output_dim+self.char_cnn_layer.output_dim,
-                                           hidden_dim=rnn_hidden_dim,
-                                           gpu=gpu)
+            self.birnn_layer = LayerBiVanilla(
+                input_dim=self.word_embeddings_layer.output_dim + self.char_cnn_layer.output_dim,
+                hidden_dim=rnn_hidden_dim,
+                gpu=gpu)
         else:
             raise ValueError('Unknown rnn_type = %s, must be either "LSTM" or "GRU"')
         # We add an additional class that corresponds to the zero-padded values not to be included to the loss function
@@ -65,7 +70,7 @@ class TaggerBiRNNCNN(TaggerBase):
         z_char_cnn_d = self.dropout(self.char_cnn_layer(z_char_embed_d))
         z = torch.cat((z_word_embed, z_char_cnn_d), dim=2)
         rnn_output_h = self.birnn_layer(z, mask)
-        rnn_output_h_d = self.dropout(rnn_output_h) # shape: batch_size x max_seq_len x rnn_hidden_dim*2
+        rnn_output_h_d = self.dropout(rnn_output_h)  # shape: batch_size x max_seq_len x rnn_hidden_dim*2
         z_rnn_out = self.apply_mask(self.lin_layer(rnn_output_h_d), mask)
         y = self.log_softmax_layer(z_rnn_out.permute(0, 2, 1))
         return y

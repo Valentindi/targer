@@ -1,19 +1,22 @@
 """BiLSTM/BiGRU + CRF tagger model"""
 import math
+
 import torch
 import torch.nn as nn
-from src.models.tagger_base import TaggerBase
-from src.layers.layer_word_embeddings import LayerWordEmbeddings
-from src.layers.layer_bivanilla import LayerBiVanilla
-from src.layers.layer_bilstm import LayerBiLSTM
+
 from src.layers.layer_bigru import LayerBiGRU
-from src.layers.layer_crf import LayerCRF
+from src.layers.layer_bilstm import LayerBiLSTM
+from src.layers.layer_bivanilla import LayerBiVanilla
 from src.layers.layer_context_word_embeddings import LayerContextWordEmbeddings
 from src.layers.layer_context_word_embeddings_bert import LayerContextWordEmbeddingsBert
+from src.layers.layer_crf import LayerCRF
+from src.layers.layer_word_embeddings import LayerWordEmbeddings
+from src.models.tagger_base import TaggerBase
 
 
 class TaggerBiRNNCRF(TaggerBase):
     """TaggerBiRNNCRF is a model for sequences tagging that includes recurrent network + CRF."""
+
     def __init__(self, word_seq_indexer, tag_seq_indexer, class_num, batch_size=1, rnn_hidden_dim=100,
                  freeze_word_embeddings=False, dropout_ratio=0.5, rnn_type='GRU', gpu=-1):
         super(TaggerBiRNNCRF, self).__init__(word_seq_indexer, tag_seq_indexer, gpu, batch_size)
@@ -40,9 +43,10 @@ class TaggerBiRNNCRF(TaggerBase):
                                            hidden_dim=rnn_hidden_dim,
                                            gpu=gpu)
         elif rnn_type == 'Vanilla':
-            self.birnn_layer = LayerBiVanilla(input_dim=self.word_embeddings_layer.output_dim+self.char_cnn_layer.output_dim,
-                                           hidden_dim=rnn_hidden_dim,
-                                           gpu=gpu)
+            self.birnn_layer = LayerBiVanilla(
+                input_dim=self.word_embeddings_layer.output_dim + self.char_cnn_layer.output_dim,
+                hidden_dim=rnn_hidden_dim,
+                gpu=gpu)
         else:
             raise ValueError('Unknown rnn_type = %s, must be either "LSTM" or "GRU"')
         self.lin_layer = nn.Linear(in_features=self.birnn_layer.output_dim, out_features=class_num + 2)
@@ -56,13 +60,13 @@ class TaggerBiRNNCRF(TaggerBase):
         z_word_embed = self.word_embeddings_layer(word_sequences)
         z_word_embed_d = self.dropout(z_word_embed)
         rnn_output_h = self.birnn_layer(z_word_embed_d, mask)
-        rnn_output_h_d = self.dropout(rnn_output_h) # shape: batch_size x max_seq_len x rnn_hidden_dim*2
-        features_rnn_compressed = self.lin_layer(rnn_output_h_d) # shape: batch_size x max_seq_len x class_num
+        rnn_output_h_d = self.dropout(rnn_output_h)  # shape: batch_size x max_seq_len x rnn_hidden_dim*2
+        features_rnn_compressed = self.lin_layer(rnn_output_h_d)  # shape: batch_size x max_seq_len x class_num
         return self.apply_mask(features_rnn_compressed, mask)
 
     def get_loss(self, word_sequences_train_batch, tag_sequences_train_batch):
         targets_tensor_train_batch = self.tag_seq_indexer.items2tensor(tag_sequences_train_batch)
-        features_rnn = self._forward_birnn(word_sequences_train_batch) # batch_num x max_seq_len x class_num
+        features_rnn = self._forward_birnn(word_sequences_train_batch)  # batch_num x max_seq_len x class_num
         mask = self.get_mask_from_word_sequences(word_sequences_train_batch)  # batch_num x max_seq_len
         numerator = self.crf_layer.numerator(features_rnn, targets_tensor_train_batch, mask)
         denominator = self.crf_layer.denominator(features_rnn, mask)
@@ -71,7 +75,7 @@ class TaggerBiRNNCRF(TaggerBase):
 
     def predict_idx_from_words(self, word_sequences):
         self.eval()
-        features_rnn_compressed  = self._forward_birnn(word_sequences)
+        features_rnn_compressed = self._forward_birnn(word_sequences)
         mask = self.get_mask_from_word_sequences(word_sequences)
         idx_sequences = self.crf_layer.decode_viterbi(features_rnn_compressed, mask)
         return idx_sequences
@@ -85,16 +89,16 @@ class TaggerBiRNNCRF(TaggerBase):
             batch_num = 1
         output_tag_sequences = list()
         for n in range(batch_num):
-            i = n*batch_size
+            i = n * batch_size
             if n < batch_num - 1:
-                j = (n + 1)*batch_size
+                j = (n + 1) * batch_size
             else:
                 j = len(word_sequences)
             curr_output_idx = self.predict_idx_from_words(word_sequences[i:j])
             curr_output_tag_sequences = self.tag_seq_indexer.idx2items(curr_output_idx)
             output_tag_sequences.extend(curr_output_tag_sequences)
-            #print('\r++ predicting, batch %d/%d (%1.2f%%).' % (n + 1, batch_num, math.ceil(n * 100.0 / batch_num)),
-                  #end='', flush=True)
+            # print('\r++ predicting, batch %d/%d (%1.2f%%).' % (n + 1, batch_num, math.ceil(n * 100.0 / batch_num)),
+            # end='', flush=True)
         return output_tag_sequences
 
     '''

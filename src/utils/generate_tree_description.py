@@ -1,5 +1,6 @@
 import os
 
+
 def list_files(startpath):
     for root, dirs, files in os.walk(startpath):
         level = root.replace(startpath, '').count(os.sep)
@@ -25,6 +26,7 @@ def read_description(fn):
         first_line = f.readline()
     return first_line.replace('"""', '').replace('\n', '')
 
+
 if __name__ == "__main__":
     main_path = os.path.join(os.path.dirname(__file__), '../')
     os.chdir(main_path)
@@ -49,5 +51,5 @@ if __name__ == "__main__":
     print('|__ main.py --> main script for training/evaluation/saving tagger models')
     print('|__ run_tagger.py --> run the trained tagger model from the checkpoint file')
     print('|__ conlleval --> "official" Perl script from NER 2003 shared task for evaluating the f1 scores,'
-        '\n                   author: Erik Tjong Kim Sang, version: 2004-01-26')
+          '\n                   author: Erik Tjong Kim Sang, version: 2004-01-26')
     print('|__ requirements.txt --> file for managing packages requirements')

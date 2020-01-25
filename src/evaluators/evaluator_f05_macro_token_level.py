@@ -48,7 +48,7 @@ class EvaluatorF05MacroTokenLevel(EvaluatorBase):
         M_P = sum_M_P / len(P)
         M_R = sum_M_R / len(R)
         M_F05 = sum_M_F05 / len(F05)
-        msg += '-'*24 + '\n'
+        msg += '-' * 24 + '\n'
         msg += 'P=%1.2f, R=%1.2f, Macro-F05=%1.2f' % (M_P, M_R, M_F05)
         return M_F05, msg
 
@@ -60,14 +60,15 @@ class EvaluatorF05MacroTokenLevel(EvaluatorBase):
         return dict_in
 
     def __get_f_beta(self, tp, fn, fp, beta=0.5):
-        return (1 + beta*beta)*tp*100.0 / max((1 + beta*beta)*tp + (beta*beta)*fn + fp, 1)
+        return (1 + beta * beta) * tp * 100.0 / max((1 + beta * beta) * tp + (beta * beta) * fn + fp, 1)
 
     def __get_p_r(self, tp, fn, fp):
-        p = tp*100.0 / max(tp + fp, 1)
-        r = tp*100.0 / max(tp + fn, 1)
+        p = tp * 100.0 / max(tp + fp, 1)
+        r = tp * 100.0 / max(tp + fn, 1)
         return p, r
 
     """EvaluatorF05MacroTagComponents is macro-F05 scores evaluator for each class of BOI-like tags."""
+
     def get_evaluation_score(self, targets_tag_sequences, outputs_tag_sequences, word_sequences=None):
         # Create list of tags
         self.__init_tag_list(targets_tag_sequences)
@@ -87,11 +88,11 @@ class EvaluatorF05MacroTokenLevel(EvaluatorBase):
                     FP = self.__add_to_dict(FP, o, 1)
         # Calculate F05 for each tag
         for tag in self.tag_list:
-            #F05[tag] = (2 * TP[tag] / max(2 * TP[tag] + FP[tag] + FN[tag], 1)) * 100
+            # F05[tag] = (2 * TP[tag] / max(2 * TP[tag] + FP[tag] + FN[tag], 1)) * 100
             F05[tag] = self.__get_f_beta(TP[tag], FN[tag], FP[tag], beta=0.5)
             P[tag], R[tag] = self.__get_p_r(TP[tag], FN[tag], FP[tag])
         # Calculate Macro-F05 score and prepare the message
         M_F05, msg = self.__get_M_F05_P_R_msg(F05, P, R)
         print(msg)
-        #self.validate_M_F05_scikitlearn( targets_tag_sequences, outputs_tag_sequences)
+        # self.validate_M_F05_scikitlearn( targets_tag_sequences, outputs_tag_sequences)
         return M_F05, msg

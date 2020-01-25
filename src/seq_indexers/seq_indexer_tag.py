@@ -1,13 +1,15 @@
 """converts list of lists of string tags to list of lists of integer indices and back"""
 from src.seq_indexers.seq_indexer_base import SeqIndexerBase
+
 utf8stdout = open(1, 'w', encoding='utf-8', closefd=False)
 
 
 class SeqIndexerTag(SeqIndexerBase):
     """SeqIndexerTag converts list of lists of string tags to list of lists of integer indices and back."""
+
     def __init__(self, gpu):
         SeqIndexerBase.__init__(self, gpu=gpu, check_for_lowercase=False, zero_digits=False,
-                                      pad='<pad>', unk=None, load_embeddings=False, verbose=True)
+                                pad='<pad>', unk=None, load_embeddings=False, verbose=True)
 
     def add_tag(self, tag):
         if not self.item_exists(tag):
@@ -21,4 +23,4 @@ class SeqIndexerTag(SeqIndexerBase):
         if self.verbose:
             print('\nload_vocabulary_from_tag_sequences:')
             print(' -- class_num = %d' % self.get_class_num())
-            print(' --', self.item2idx_dict, file = utf8stdout)
+            print(' --', self.item2idx_dict, file=utf8stdout)

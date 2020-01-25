@@ -1,10 +1,11 @@
 from __future__ import print_function
+
 import argparse
 import json
-from src.factories.factory_evaluator import EvaluatorFactory
-from src.factories.factory_data_io import DataIOFactory
-from src.factories.factory_tagger import TaggerFactory
 
+from src.factories.factory_data_io import DataIOFactory
+from src.factories.factory_evaluator import EvaluatorFactory
+from src.factories.factory_tagger import TaggerFactory
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Run trained model')

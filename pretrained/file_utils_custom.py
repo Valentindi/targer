@@ -1,21 +1,20 @@
-from urllib.parse import urlparse
-from pathlib import Path
-from typing import Optional, Tuple, Union, IO, Callable, Set
-from hashlib import sha256
-from functools import wraps
+import json
 import os
-import logging
 import shutil
 import tempfile
-import json
-
-from tqdm import tqdm
+from functools import wraps
+from hashlib import sha256
+from pathlib import Path
+from typing import Optional, Tuple, Union, IO, Callable, Set
+from urllib.parse import urlparse
 
 import boto3
-from botocore.exceptions import ClientError
 import requests
+from botocore.exceptions import ClientError
+from tqdm import tqdm
 
 PYTORCH_PRETRAINED_BERT_CACHE = '/home/vika/targer/pretrained/uncased_L-12_H-768_A-12/'
+
 
 def url_to_filename(url: str, etag: str = None) -> str:
     """
@@ -85,8 +84,8 @@ def cached_path(url_or_filename: Union[str, Path], cache_dir: str = None) -> str
     else:
         # Something unknown
         raise ValueError("unable to parse {} as a URL or as a local path".format(url_or_filename))
-        
-        
+
+
 def split_s3_path(url: str) -> Tuple[str, str]:
     """Split a full s3 path into the bucket name and path."""
     parsed = urlparse(url)
@@ -142,7 +141,7 @@ def http_get(url: str, temp_file: IO) -> None:
     total = int(content_length) if content_length is not None else None
     progress = tqdm(unit="B", total=total)
     for chunk in req.iter_content(chunk_size=1024):
-        if chunk: # filter out keep-alive new chunks
+        if chunk:  # filter out keep-alive new chunks
             progress.update(len(chunk))
             temp_file.write(chunk)
     progress.close()

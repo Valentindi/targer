@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.2-runtime
+FROM nvidia/cuda:9.0-base
 
 MAINTAINER Valentin Dittmar mail@valentindittmar.eu
 
