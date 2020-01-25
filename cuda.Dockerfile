@@ -9,7 +9,8 @@ RUN apt update
 #RUN add-apt-repository ppa:deadsnakes/ppa -y
 RUN apt-get update -y
 RUN apt-get install -y --no-install-recommends apt-utils zsh make wget nano curl unzip  g++ -y 
-
+RUN apt-get upgrade python3.6 -y
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 2
 RUN wget https://bootstrap.pypa.io/get-pip.py --no-check-certificate
 RUN python3 get-pip.py
 
@@ -17,4 +18,4 @@ RUN python3 -V
 RUN pip3 -V
 RUN pip3 install --upgrade pip
 RUN pip3 install -U setuptools
-RUN pip3 install torch numpy scipy allennlp pytorch-pretrained-bert tensorflow
+RUN pip3 install torch numpy scipy allennlp pytorch-pretrained-bert tensorflow spacy

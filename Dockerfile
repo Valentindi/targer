@@ -13,4 +13,4 @@ RUN python3 -V
 RUN pip3 -V
 RUN pip3 install --upgrade pip
 RUN pip3 install -U setuptools
-RUN pip3 install torch numpy scipy allennlp pytorch-pretrained-bert tensorflow
+RUN pip3 install torch numpy scipy allennlp pytorch-pretrained-bert tensorflow spacy
