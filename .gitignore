@@ -1,3 +1,5 @@
 .venv
 /.venv/
 /.idea/
+__pycache__/
+embeddings/glove.6B.100d.txt
