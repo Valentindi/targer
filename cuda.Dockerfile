@@ -5,5 +5,4 @@ USER root
 COPY . /targer
 WORKDIR /targer
 
-
-RUN pip3 install -r /targer/requirements.txt
+RUN pip install -r /targer/requirements.txt
