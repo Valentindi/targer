@@ -8,7 +8,7 @@ import re
 import unicodedata
 
 import six
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from .file_utils_custom import cached_path
 

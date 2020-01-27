@@ -1,8 +1,8 @@
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import torch
 from pytorch_transformers.modeling_bert import BertConfig, BertForPreTraining, load_tf_weights_in_bert
 
-with tf.Session() as sess:
+with tf.compat.v1.Session() as sess:
     saver = tf.train.import_meta_graph('./uncased_L-12_H-768_A-12/bert_model.ckpt.meta')
     saver.restore(sess, "./uncased_L-12_H-768_A-12/bert_model.ckpt")
 
