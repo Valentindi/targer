@@ -40,7 +40,7 @@ class EvaluatorF1MacroTokenLevel(EvaluatorBase):
         sum_M_F1 = 0
         sum_precision = 0
         sum_recall = 0
-        for tag in self.tag_list:
+        for tag in self.tag_list[:3]:
             sum_M_F1 += F1[tag]
             sum_precision += precision[tag]
             sum_recall += recall[tag]

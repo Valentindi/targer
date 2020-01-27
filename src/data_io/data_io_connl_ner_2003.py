@@ -31,7 +31,7 @@ class DataIOConnlNer2003():
         curr_tags = list()
         for k in range(len(lines)):
             # print ("read data")
-            line = lines[k].strip()
+            line = lines[k].strip()#.encode('ascii', 'ignore')
             # print (lines[k], len(line))
             if len(line) == 1 or len(line) == 0 or line.startswith('-DOCSTART-'):  # new sentence or new document
                 if len(curr_words) > 0:
