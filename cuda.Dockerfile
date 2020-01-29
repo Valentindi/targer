@@ -5,6 +5,7 @@ MAINTAINER Valentin Dittmar mail@valentindittmar.eu
 USER root
 COPY . /targer
 WORKDIR /targer
+RUN apt-get update
 RUN apt-get install make nano
 RUN export PYTHONIOENCODING=utf8
 RUN pip install -r /targer/requirements.txt
