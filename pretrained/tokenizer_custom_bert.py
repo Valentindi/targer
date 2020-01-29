@@ -16,6 +16,8 @@ import tempfile
 import json
 from file_utils_custom import cached_path
 
+logger = logging.getLogger("foobar")
+
 utf8stdout = open(1, 'w', encoding='utf-8', closefd=False)
 
 PRETRAINED_VOCAB_ARCHIVE_MAP = {
@@ -29,7 +31,10 @@ PRETRAINED_VOCAB_ARCHIVE_MAP = {
 }
 VOCAB_NAME = 'vocab.txt'
 
-PYTORCH_PRETRAINED_BERT_CACHE = '/home/vika/targer/pretrained/uncased_L-12_H-768_A-12/'
+
+os.path(os.path.ge)
+
+PYTORCH_PRETRAINED_BERT_CACHE = '/workspace/targer/pretrained/uncased_L-12_H-768_A-12/'
 
 
 def validate_case_matches_checkpoint(do_lower_case, init_checkpoint):
@@ -212,10 +217,11 @@ class BertTokenizer(object):
             vocab_file = os.path.join(vocab_file, VOCAB_NAME)
         # redirect to the cache, if necessary
         vocab_file = PYTORCH_PRETRAINED_BERT_CACHE+'vocab.txt'
+        print("vocab file:", vocab_file)
         try:
             resolved_vocab_file = cached_path(vocab_file, cache_dir=cache_dir)
         except FileNotFoundError:
-            logger.error(
+            print(
                 "Model name '{}' was not found in model name list ({}). "
                 "We assumed '{}' was a path or url but couldn't find any file "
                 "associated to this path or url.".format(
@@ -224,12 +230,12 @@ class BertTokenizer(object):
                     vocab_file))
             return None
         if resolved_vocab_file == vocab_file:
-            print ("loading vocabulary file %s"%vocab_file)
+            print("loading vocabulary file %s"%vocab_file)
         else:
-            logger.info("loading vocabulary file %s from cache at %s".format(
+            print("loading vocabulary file %s from cache at %s".format(
                 vocab_file, resolved_vocab_file))
         # Instantiate tokenizer.
-        print ("resolved voc file", resolved_vocab_file)
+        print("resolved voc file", resolved_vocab_file)
         tokenizer = cls(resolved_vocab_file, *inputs, **kwargs)
         return tokenizer
 

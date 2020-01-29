@@ -50,7 +50,6 @@ if __name__ == "__main__":
     parser.add_argument('--word-seq-indexer', '-w', type=str, default=None,
                         help='Load word_seq_indexer object from hdf5 file.')
     parser.add_argument('--epoch-num', '-e', type=int, default=100, help='Number of epochs.')
-    parser.add_argument('--epoch-num', '-e', type=int, default=100, help='Number of epochs.')
     parser.add_argument('--min-epoch-num', '-n', type=int, default=50, help='Minimum number of epochs.')
     parser.add_argument('--patience', '-p', type=int, default=15, help='Patience for early stopping.')
     parser.add_argument('--evaluator', '-v', default='f1-connl', help='Evaluation method.',

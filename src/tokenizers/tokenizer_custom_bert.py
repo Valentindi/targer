@@ -14,6 +14,9 @@ import logging
 import shutil
 import tempfile
 import json
+
+from numpy import unicode
+
 from .file_utils_custom import cached_path
 
 utf8stdout = open(1, 'w', encoding='utf-8', closefd=False)

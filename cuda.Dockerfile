@@ -6,6 +6,6 @@ USER root
 COPY . /targer
 WORKDIR /targer
 RUN apt-get update
-RUN apt-get install make nano
+RUN apt-get install make nano wget zip
 RUN export PYTHONIOENCODING=utf8
 RUN pip install -r /targer/requirements.txt
