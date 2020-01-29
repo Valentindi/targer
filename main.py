@@ -14,8 +14,17 @@ from src.factories.factory_datasets_bank import DatasetsBankFactory
 from src.factories.factory_evaluator import EvaluatorFactory
 from src.factories.factory_optimizer import OptimizerFactory
 from src.factories.factory_tagger import TaggerFactory
+from src.seq_indexers.seq_indexer_bert import SeqIndexerBert
+from src.seq_indexers.seq_indexer_elmo import SeqIndexerElmo
 from src.seq_indexers.seq_indexer_tag import SeqIndexerTag
 from src.seq_indexers.seq_indexer_word import SeqIndexerWord
+
+# LC_ALL=en_US.UTF-8
+# LANG=en_US.UTF-8
+utf8stdout = open(1, 'w', encoding='utf-8', closefd=False)
+import sys
+
+CUDA_LAUNCH_BLOCKING = 1
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Learning tagger using neural networks')
@@ -25,16 +34,22 @@ if __name__ == "__main__":
                         help='Development data in format defined by --data-io param.')
     parser.add_argument('--test', default='data/NER/CoNNL_2003_shared_task/test.txt',
                         help='Test data in format defined by --data-io param.')
+    parser.add_argument('--splitter', default='\t')
+
     parser.add_argument('-d', '--data-io', choices=['connl-ner-2003', 'connl-pe', 'connl-wd'],
                         default='connl-ner-2003', help='Data read/write file format.')
+
     parser.add_argument('--gpu', type=int, default=0, help='GPU device number, -1  means CPU.')
     parser.add_argument('--model', help='Tagger model.', choices=['BiRNN', 'BiRNNCNN', 'BiRNNCRF', 'BiRNNCNNCRF'],
                         default='BiRNNCNNCRF')
     parser.add_argument('--load', '-l', default=None, help='Path to load from the trained model.')
     parser.add_argument('--save', '-s', default='%s_tagger.hdf5' % get_datetime_str(),
                         help='Path to save the trained model.')
+    parser.add_argument('--logname', type=str, default=None, help='name of file where std output would be redirected')
+
     parser.add_argument('--word-seq-indexer', '-w', type=str, default=None,
                         help='Load word_seq_indexer object from hdf5 file.')
+    parser.add_argument('--epoch-num', '-e', type=int, default=100, help='Number of epochs.')
     parser.add_argument('--epoch-num', '-e', type=int, default=100, help='Number of epochs.')
     parser.add_argument('--min-epoch-num', '-n', type=int, default=50, help='Minimum number of epochs.')
     parser.add_argument('--patience', '-p', type=int, default=15, help='Patience for early stopping.')
@@ -46,7 +61,8 @@ if __name__ == "__main__":
     parser.add_argument('--dropout-ratio', '-r', type=float, default=0.5, help='Dropout ratio.')
     parser.add_argument('--batch-size', '-b', type=int, default=10, help='Batch size, samples.')
     parser.add_argument('--opt', '-o', help='Optimization method.', choices=['sgd', 'adam'], default='sgd')
-    parser.add_argument('--lr', type=float, default=0.01, help='Learning rate.')
+    parser.add_argument('--lr', type=float, default=0.005, help='Learning rate.')
+    parser.add_argument('--lr_bert', type=float, default=0.000002, help='Learning rate.')
     parser.add_argument('--lr-decay', type=float, default=0.05, help='Learning decay rate.')
     parser.add_argument('--momentum', '-m', type=float, default=0.9, help='Learning momentum rate.')
     parser.add_argument('--clip-grad', type=float, default=5, help='Clipping gradients maximum L2 norm.')
@@ -69,6 +85,20 @@ if __name__ == "__main__":
                         choices=['yes', True, 'no (default)', False], nargs='?',
                         help='False to continue training the char embeddings.')
     parser.add_argument('--word-len', type=int, default=20, help='Max length of words in characters for char CNNs.')
+    parser.add_argument('--elmo', type=str2bool, default=False, help='is used elmo for word embedding')
+    parser.add_argument('--elmo_options_fn', default="embeddings/elmo_2x4096_512_2048cnn_2xhighway_5.5B_options.json",
+                        help='json with pre-trained options')
+    parser.add_argument('--elmo_weights_fn',
+                        default="/home/vika/targer/embeddings/elmo_2x4096_512_2048cnn_2xhighway_5.5B_weights.hdf5",
+                        help='hdf5 with pre-trained weights')
+
+    parser.add_argument('--bert', type=str2bool, default=False, help='is used bert for word embedding')
+    parser.add_argument('--path_to_bert', type=str, default='pretrained')
+    parser.add_argument('--bert_frozen', type=str2bool, default=True,
+                        help='must BERT model be trained togehter with you model?')
+    parser.add_argument('--special_bert', type=str2bool, default=True,
+                        help='should we unfroze all bert and train it with smaller lr ?')
+
     parser.add_argument('--dataset-sort', type=str2bool, default=False, help='Sort sequences by length for training.',
                         nargs='?', choices=['yes', True, 'no (default)', False])
     parser.add_argument('--seed-num', type=int, default=42, help='Random seed number, note that 42 is the answer.')
@@ -82,6 +112,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
     np.random.seed(args.seed_num)
     torch.manual_seed(args.seed_num)
+
+    utf8stdout = open(1, 'w', encoding='utf-8', closefd=False)
+    if (args.logname != None):
+        sys.stdout = open(args.logname, 'w')
+
     if args.gpu >= 0:
         torch.cuda.set_device(args.gpu)
         torch.cuda.manual_seed(args.seed_num)
@@ -89,14 +124,27 @@ if __name__ == "__main__":
     data_io = DataIOFactory.create(args)
     word_sequences_train, tag_sequences_train, word_sequences_dev, tag_sequences_dev, word_sequences_test, tag_sequences_test = data_io.read_train_dev_test(
         args)
+
     # DatasetsBank provides storing the different dataset subsets (train/dev/test) and sampling batches
     datasets_bank = DatasetsBankFactory.create(args)
     datasets_bank.add_train_sequences(word_sequences_train, tag_sequences_train)
     datasets_bank.add_dev_sequences(word_sequences_dev, tag_sequences_dev)
     datasets_bank.add_test_sequences(word_sequences_test, tag_sequences_test)
     # Word_seq_indexer converts lists of lists of words to lists of lists of integer indices and back
-    if args.word_seq_indexer is not None and isfile(args.word_seq_indexer):
+
+    if args.word_seq_indexer is not None and isfile(args.word_seq_indexer) and args.elmo == False:
         word_seq_indexer = torch.load(args.word_seq_indexer)
+    elif args.elmo:
+        word_seq_indexer = SeqIndexerElmo(gpu=args.gpu, check_for_lowercase=args.check_for_lowercase,
+                                          options_file=args.elmo_options_fn, weights_file=args.elmo_weights_fn,
+                                          num_layers_=2, dropout_=0)
+        # continue
+
+    elif args.bert:
+        word_seq_indexer = SeqIndexerBert(gpu=args.gpu, check_for_lowercase=args.check_for_lowercase,
+                                          path_to_pretrained=args.path_to_bert, model_frozen=args.bert_frozen)
+
+
     else:
         word_seq_indexer = SeqIndexerWord(gpu=args.gpu, check_for_lowercase=args.check_for_lowercase,
                                           embeddings_dim=args.emb_dim, verbose=True)
@@ -109,15 +157,19 @@ if __name__ == "__main__":
     # Tag_seq_indexer converts lists of lists of tags to lists of lists of integer indices and back
     tag_seq_indexer = SeqIndexerTag(gpu=args.gpu)
     tag_seq_indexer.load_items_from_tag_sequences(tag_sequences_train)
+
     # Create or load pre-trained tagger
     if args.load is None:
         tagger = TaggerFactory.create(args, word_seq_indexer, tag_seq_indexer, tag_sequences_train)
     else:
         tagger = TaggerFactory.load(args.load, args.gpu)
+
+    print(tagger.gpu)
+
     # Create evaluator
     evaluator = EvaluatorFactory.create(args)
     # Create optimizer
-    optimizer, scheduler = OptimizerFactory.create(args, tagger)
+    optimizer, scheduler = OptimizerFactory.create(args, tagger, special_bert=args.special_bert)
     # Prepare report and temporary variables for "save best" strategy
     report = Report(args.report_fn, args, score_names=('train loss', '%s-train' % args.evaluator,
                                                        '%s-dev' % args.evaluator, '%s-test' % args.evaluator))
@@ -129,15 +181,18 @@ if __name__ == "__main__":
     best_test_msg = 'N\A'
     patience_counter = 0
     print('\nStart training...\n')
-    for epoch in range(0, args.epoch_num + 1):
+    print("epoch num", args.epoch_num)
+    for epoch in range(0, args.epoch_num):
+        print("epoch ", epoch)
         time_start = time.time()
         loss_sum = 0
-        if epoch > 0:
+        if epoch > -1:
             tagger.train()
             if args.lr_decay > 0:
                 scheduler.step()
-            for i, (word_sequences_train_batch, tag_sequences_train_batch) in \
-                    enumerate(datasets_bank.get_train_batches(args.batch_size)):
+
+            for i, (word_sequences_train_batch, tag_sequences_train_batch) in enumerate(
+                    datasets_bank.get_train_batches(args.batch_size)):
                 tagger.train()
                 tagger.zero_grad()
                 loss = tagger.get_loss(word_sequences_train_batch, tag_sequences_train_batch)
@@ -146,47 +201,50 @@ if __name__ == "__main__":
                 optimizer.step()
                 loss_sum += loss.item()
                 if i % 1 == 0:
-                    print('\r-- train epoch %d/%d, batch %d/%d (%1.2f%%), loss = %1.2f.' % (epoch, args.epoch_num,
-                                                                                            i + 1, iterations_num,
-                                                                                            ceil(
-                                                                                                i * 100.0 / iterations_num),
-                                                                                            loss_sum * 100 / iterations_num),
-                          end='', flush=True)
-        # Evaluate tagger
-        train_score, dev_score, test_score, test_msg, clf_report = evaluator.get_evaluation_score_train_dev_test(tagger,
-                                                                                                     datasets_bank,
-                                                                                                     batch_size=100)
-        print('\n== eval epoch %d/%d "%s" train / dev / test | %1.2f / %1.2f / %1.2f.' % (epoch, args.epoch_num,
-                                                                                          args.evaluator, train_score,
-                                                                                          dev_score, test_score))
-        print("\n" + clf_report)
-        # Save curr tagger if required
-        # tagger.save('tagger_NER_epoch_%03d.hdf5' % epoch)
-        # Early stopping
-        if dev_score > best_dev_score:
-            best_dev_score = dev_score
-            best_test_score = test_score
-            best_epoch = epoch
-            best_test_msg = test_msg
-            patience_counter = 0
-            if args.save is not None and args.save_best:
-                tagger.save_tagger(args.save)
-            print('## [BEST epoch], %d seconds.\n' % (time.time() - time_start))
-        else:
-            patience_counter += 1
-            print('## [no improvement micro-f1 on DEV during the last %d epochs (best_f1_dev=%1.2f), %d seconds].\n' %
-                  (patience_counter,
-                   best_dev_score,
-                   (time.time() - time_start)))
-        if patience_counter > args.patience and epoch > args.min_epoch_num:
-            break
+                    print('\r-- train epoch %d/%d, batch %d/%d (%1.2f%%), loss = %1.2f.' % (
+                        epoch, args.epoch_num, i + 1, iterations_num,
+                        ceil(i * 100.0 / iterations_num),
+                        loss_sum * 100 / iterations_num), end='', flush=True)
+
+            # Evaluate tagger
+            train_score, dev_score, test_score, test_msg, clf_report = evaluator.get_evaluation_score_train_dev_test(
+                tagger,
+                datasets_bank,
+                batch_size=args.batch_size)
+            print('\n== eval epoch %d/%d "%s" train / dev / test | %1.2f / %1.2f / %1.2f.' % (epoch, args.epoch_num,
+                                                                                              args.evaluator,
+                                                                                              train_score,
+                                                                                              dev_score, test_score))
+            print("\n" + clf_report)
+            # Save curr tagger if required
+            # tagger.save('tagger_NER_epoch_%03d.hdf5' % epoch)
+            # Early stopping
+            if dev_score > best_dev_score:
+                best_dev_score = dev_score
+                best_test_score = test_score
+                best_epoch = epoch
+                best_test_msg = test_msg
+                patience_counter = 0
+                if args.save is not None and args.save_best:
+                    tagger.save_tagger(args.save)
+                print('## [BEST epoch], %d seconds.\n' % (time.time() - time_start))
+            else:
+                patience_counter += 1
+                print(
+                    '## [no improvement micro-f1 on DEV during the last %d epochs (best_f1_dev=%1.2f), %d seconds].\n' %
+                    (patience_counter,
+                     best_dev_score,
+                     (time.time() - time_start)))
+            if patience_counter > args.patience and epoch > args.min_epoch_num:
+                break
+
     # Save final trained tagger to disk, if it is not already saved according to "save best"
     if args.save is not None and not args.save_best:
         tagger.save_tagger(args.save)
     # Show and save the final scores
     if args.save_best:
-        report.write_final_score('Final eval on test, "save best", best epoch on dev %d, %s, test = %1.2f)' %
-                                 (best_epoch, args.evaluator, best_test_score))
+        report.write_final_score('Final eval on test, "save best", best epoch on dev %d, %s, test = %1.2f)' % (
+        best_epoch, args.evaluator, best_test_score))
         report.write_msg(best_test_msg)
         report.write_input_arguments()
         report.write_final_line_score(best_test_score)

@@ -15,10 +15,11 @@ class TaggerFactory():
             raise ValueError('Can''t find tagger in file "%s". Please, run the main script with non-empty \
                              "--save-best-path" param to create it.' % checkpoint_fn)
         tagger = torch.load(checkpoint_fn)
-        tagger.gpu = gpu
+        if (gpu > -1):
+            tagger.gpu = gpu
 
-        tagger.word_seq_indexer.gpu = gpu # hotfix
-        tagger.tag_seq_indexer.gpu = gpu # hotfix
+            tagger.word_seq_indexer.gpu = gpu # hotfix
+            tagger.tag_seq_indexer.gpu = gpu # hotfix
         if hasattr(tagger, 'char_embeddings_layer'):# very hot hotfix
             tagger.char_embeddings_layer.char_seq_indexer.gpu = gpu # hotfix
         tagger.self_ensure_gpu()
@@ -26,7 +27,7 @@ class TaggerFactory():
 
 
     @staticmethod
-    def create(args, word_seq_indexer, tag_seq_indexer, tag_sequences_train):
+    def create(args, word_seq_indexer, tag_seq_indexer, tag_sequences_train, isElmo = False):
         if args.model == 'BiRNN':
             tagger = TaggerBiRNN(word_seq_indexer=word_seq_indexer,
                                  tag_seq_indexer=tag_seq_indexer,
@@ -38,6 +39,8 @@ class TaggerFactory():
                                  rnn_type=args.rnn_type,
                                  gpu=args.gpu)
         elif args.model == 'BiRNNCNN':
+            if (word_seq_indexer.bert or word_seq_indexer.elmo):
+                raise ValueError('"BiRNNCNN" do not support bert\elmo embedding.')
             tagger = TaggerBiRNNCNN(word_seq_indexer=word_seq_indexer,
                                     tag_seq_indexer=tag_seq_indexer,
                                     class_num=tag_seq_indexer.get_class_num(),
@@ -64,6 +67,8 @@ class TaggerFactory():
                                     gpu=args.gpu)
             tagger.crf_layer.init_transition_matrix_empirical(tag_sequences_train)
         elif args.model == 'BiRNNCNNCRF':
+            if (word_seq_indexer.bert or word_seq_indexer.elmo):
+                raise ValueError('"BiRNNCNNCRF" do not support bert\elmo embedding.')
             tagger = TaggerBiRNNCNNCRF(word_seq_indexer=word_seq_indexer,
                                        tag_seq_indexer=tag_seq_indexer,
                                        class_num=tag_seq_indexer.get_class_num(),
