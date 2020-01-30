@@ -58,6 +58,6 @@ class DataIOConnlNer2003():
             for j, word in enumerate(words):
                 tag_1 = tags_1[j]
                 tag_2 = tags_2[j]
-                text_file.write('%s %s %s\n' % (word, tag_1, tag_2))
+                text_file.write(('%s %s %s\n' % (word, tag_1, tag_2)).encode("UTF-8"))
             text_file.write('\n')
         text_file.close()

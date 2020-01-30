@@ -42,5 +42,5 @@ class DataIOConnlPe():
         with open(fn, mode='w') as text_file:
             for words, tags in zip(word_sequences, tag_sequences):
                 for i, (word, tag) in enumerate(zip(words, tags)):
-                    text_file.write('%d\t%s\t%s\n' % (i+1, word, tag))
+                    text_file.write(('%d\t%s\t%s\n' % (i+1, word, tag)).encode("UTF-8"))
                 text_file.write('\n')

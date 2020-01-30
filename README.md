@@ -423,6 +423,11 @@ Input arguments:
 python3 main.py 
 ```
 
+### Use Docker
+1. Checkout this Repo
+2. Check if the docker deamon is running
+3. run  `docker build . -f cuda.Dockerfile -t targer` or `nvidia-docker build . -f cuda.Dockerfile -t targer` if cuda is availabe
+
 ### Training on various datasets
 
 Training on NER-2003 Shared dataset:

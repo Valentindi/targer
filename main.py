@@ -199,12 +199,11 @@ if __name__ == "__main__":
                                                                                              end='', flush=True)
             
         # Evaluate tagger
-        train_score, dev_score, test_score, test_msg = evaluator.get_evaluation_score_train_dev_test(tagger,
-                                                                                                     datasets_bank,
-                                                                                                     batch_size=args.batch_size, verbose=args.verbose)
+        train_score, dev_score, test_score, test_msg, clf_report = evaluator.get_evaluation_score_train_dev_test(tagger, datasets_bank, batch_size=args.batch_size)
         print('\n== eval epoch %d/%d "%s" train / dev / test | %1.2f / %1.2f / %1.2f.' % (epoch, args.epoch_num,
                                                                                         args.evaluator, train_score,
                                                                                         dev_score, test_score))
+        print(clf_report.encode("UTF-8"))
         report.write_epoch_scores(epoch, (loss_sum*100 / iterations_num, train_score, dev_score, test_score))
         # Save curr tagger if required
         # tagger.save('tagger_NER_epoch_%03d.hdf5' % epoch)

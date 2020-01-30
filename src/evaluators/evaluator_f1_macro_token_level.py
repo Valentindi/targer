@@ -69,8 +69,8 @@ class EvaluatorF1MacroTokenLevel(EvaluatorBase):
         for elem in zip(targets_tag_sequences, outputs_tag_sequences):
             if (i < 4):
                 i = i +1
-                print (elem[0])
-                print (elem[1])
+#                print (elem[0])
+#                print (elem[1])
         # Init values
         TP = self.__get_zeros_tag_dict()
         FP = self.__get_zeros_tag_dict()
@@ -92,7 +92,7 @@ class EvaluatorF1MacroTokenLevel(EvaluatorBase):
             recall[tag] = (TP[tag] / max(TP[tag] + FN[tag], 1))*100
         # Calculate Macro-F1 score and prepare the message
         M_F1, msg = self.__get_M_F1_msg(F1,precision, recall)
-        print(msg)
+        print(M_F1.encode("UTF-8"))
         #self.validate_M_F1_scikitlearn( targets_tag_sequences, outputs_tag_sequences)
         return M_F1, msg
 
