@@ -41,9 +41,19 @@ and [Ma et. al., 2016](https://arxiv.org/pdf/1603.01354.pdf).
 ## Requirements
 
 - Python 3.5.2 or higher
-- NumPy 1.15.1
+- NumPy 1.18.1
+- Pandas 0.23.4
 - SciPy 1.1.0
 - [PyTorch >= 0.4.1](http://pytorch.org/)
+- Keras 2.1.5
+- Conda 4.3.16
+- SciKit-Learn 0.20.2
+
+### Models
+- allennlp==0.9.0
+- pytorch-pretrained-bert==0.6.2
+- pytorch-transformers==1.1.0
+- tensorflow==1.13.1 (needed to convert tensorflow models to pytorch)
 
 
 ## Benefits
