@@ -24,7 +24,7 @@ class SeqIndexerBert(SeqIndexerBaseEmbeddings):
         
         self.bert = True
         self.path_to_pretrained = path_to_pretrained
-        self.tokenizer = tokenizer_custom_bert.FullTokenizer(path_to_pretrained + 'vocab.txt')
+        self.tokenizer = tokenizer_custom_bert.FullTokenizer(path_to_pretrained + '/vocab.txt')
         #self.tokenizer = tokenizer_custom_bert.BertTokenizer.from_pretrained("https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt")
         self.emb = BertModel.from_pretrained(path_to_pretrained)
         self.frozen = model_frozen

@@ -35,7 +35,7 @@ if __name__ == "__main__":
         for v in emb_vector:
             emb_vector_str += ' %1.5f' % v
         emb_vector_str += '\n'
-        out_file.write(emb_vector_str)
+        out_file.write(emb_vector_str.encode("UTF-8"))
         if n % 100 == 0:
             print('\r-- process word %d/%d.' % (n, len(datasets_bank.unique_words_list)), end='', flush=True)
     print('\n')

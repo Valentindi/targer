@@ -66,7 +66,7 @@ class LayerCRF(LayerBase):
             str += '\n%10s' % tag_seq_indexer.idx2item_dict[i]
             for j in range(tag_seq_indexer.get_items_count()):
                 str += '%10s' % ('%1.1f' % transition_matrix[i, j])
-        print(str)
+        print(str.encode("UTF-8"))
 
     def is_cuda(self):
         return self.transition_matrix.is_cuda

@@ -67,11 +67,11 @@ class TagComponent():
         return TagComponent.match(self, tc, match_alpha_ratio)
 
     def print(self):
-        print('--tag_class_name = %s, pos_begin = %s, pos_end = %s' % (self.tag_class_name, self.pos_begin,
-                                                                       self.pos_end))
+        print('--tag_class_name = %s, pos_begin = %s, pos_end = %s' % (self.tag_class_name.encode("UTF-8"), self.pos_begin.encode("UTF-8"),
+                                                                       self.pos_end.encode("UTF-8")))
         word_str = '    '
         for word in self.words: word_str += word + ' '
-        print(word_str, '\n')
+        print(word_str.encode("UTF-8"), '\n')
 
     @staticmethod
     def get_tag_class_name(tag):

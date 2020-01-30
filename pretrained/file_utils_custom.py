@@ -144,7 +144,7 @@ def http_get(url: str, temp_file: IO) -> None:
     for chunk in req.iter_content(chunk_size=1024):
         if chunk: # filter out keep-alive new chunks
             progress.update(len(chunk))
-            temp_file.write(chunk)
+            temp_file.write(chunk.encode("UTF-8"))
     progress.close()
 
 
