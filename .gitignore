@@ -1,2 +1,5 @@
 .venv/
 .idea/
+*.log
+.DS_Store
+pretrained/test_model
