@@ -40,6 +40,7 @@ class LayerContextWordEmbeddingsBert(LayerBase):
 
     def forward(self, word_sequences):
         tokens_tensor, segments_tensor, number_word_in_seq = self.word_seq_indexer.batch_to_ids(word_sequences)
+        #print("word_sequences ==== \n{}\n=====\nnumber_word_in_seq===\n{}\n".format(word_sequences, number_word_in_seq))
         tokens_tensor = self.to_gpu(tokens_tensor)
         segments_tensor = self.to_gpu(segments_tensor)
         self.word_sequence  = word_sequences
@@ -68,16 +69,20 @@ class LayerContextWordEmbeddingsBert(LayerBase):
         answer = torch.stack(batch_embeddings)        
         
         max_seq_len = max([len(word_seq) for word_seq in word_sequences])
-        self_tensor = torch.zeros((answer.shape[0], max_seq_len + 4, answer.shape[2])) # batch_size*max_num_word (word! not token!)*len_embedding
-        # why + 4?
-        # 2 - [cls] and [sep] - bert wrapper, 2 - extra padding for scatter_add function
-        self_tensor = self.to_gpu(self_tensor)
         index =  self.to_gpu(number_word_in_seq)
         index = index.unsqueeze(2)
         index = index.repeat(1, 1, answer.shape[2])
+
+        self_tensor = torch.zeros(index.shape) # batch_size*max_num_word (word! not token!)*len_embedding
+        # why + 4?
+        # 2 - [cls] and [sep] - bert wrapper, 2 - extra padding for scatter_add function
+        self_tensor = self.to_gpu(self_tensor)
+
         #torch.save([index], 'index.pth')
         #torch.save([answer], 'answer.pth')
         #torch.save([self_tensor], 'self_tensor.pth')
+        print("scatter add {}\n====\n{}\n====\n{}".format(self_tensor, index, answer))
+        print("scatter add {}\n====\n{}\n====\n{}".format(self_tensor, index.shape, answer.shape))
         self_tensor1 = self_tensor.scatter_add_(1, index, answer)
         #torch.save([self_tensor1], 'self_tensor1.pth')
         self_tensor1 = self_tensor1[:, 1:max_seq_len]
