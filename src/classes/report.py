@@ -1,4 +1,5 @@
 """stores evaluation results during the training process as text files"""
+import logging
 
 from src.classes.utils import get_input_arguments
 
@@ -45,8 +46,8 @@ class Report():
 
     def __save(self):
         if self.fn is not None:
-            with open(self.fn, mode='w') as text_file:
+            with open(self.fn, mode='w', encoding='utf-8', errors='ignore') as text_file:
                 text_file.write(self.text)
 
     def make_print(self):
-        print(self.text)
+        logging.info(self.text.encode("UTF-8"))

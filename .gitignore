@@ -3,3 +3,6 @@
 *.log
 .DS_Store
 pretrained/test_model
+__pycache__/
+embeddings/*.zip
+embeddings/*.txt

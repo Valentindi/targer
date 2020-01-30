@@ -9,12 +9,11 @@ from src.layers.layer_bigru import LayerBiGRU
 from src.layers.layer_context_word_embeddings import LayerContextWordEmbeddings
 from src.layers.layer_context_word_embeddings_bert import LayerContextWordEmbeddingsBert
 
-utf8stdout = open(1, 'w', encoding='utf-8', closefd=False)
 
 class TaggerBiRNN(TaggerBase):
     """TaggerBiRNN is a Vanilla recurrent network model for sequences tagging."""
     def __init__(self, word_seq_indexer, tag_seq_indexer, class_num, batch_size=1, rnn_hidden_dim=100,
-                 freeze_word_embeddings=False, dropout_ratio=0.5, rnn_type='GRU', gpu=-1):
+                 freeze_word_embeddings=False, dropout_ratio=0.5, rnn_type='GRU', gpu=-1, embedding_dim=768):
         super(TaggerBiRNN, self).__init__(word_seq_indexer, tag_seq_indexer, gpu, batch_size)
         self.tag_seq_indexer = tag_seq_indexer
         self.class_num = class_num
@@ -26,7 +25,7 @@ class TaggerBiRNN(TaggerBase):
         if ((not word_seq_indexer.bert) and (not word_seq_indexer.elmo)):
             self.word_embeddings_layer = LayerWordEmbeddings(word_seq_indexer, gpu, freeze_word_embeddings)
         elif (word_seq_indexer.bert):
-            self.word_embeddings_layer = LayerContextWordEmbeddingsBert(word_seq_indexer, gpu, freeze_word_embeddings)
+            self.word_embeddings_layer = LayerContextWordEmbeddingsBert(word_seq_indexer, gpu, freeze_word_embeddings, embedding_dim=embedding_dim)
         else:
             self.word_embeddings_layer = LayerContextWordEmbeddings(word_seq_indexer, gpu, freeze_word_embeddings)
         self.dropout = torch.nn.Dropout(p=dropout_ratio)
@@ -74,7 +73,7 @@ class TaggerBiRNN(TaggerBase):
         print (self.birnn_layer.rnn._parameters['weight_hh_l0'])
         print (self.birnn_layer.rnn._parameters['weight_hh_l0'].grad)
         #print ("word seq")
-        #print (self.word_sequences[:3], file = utf8stdout)
+        #print (self.word_sequences[:3])
         #print ("word emb")
         #print (self.z_word_embed.shape)
         #torch.save([self.z_word_embed], 'fnm.pth')

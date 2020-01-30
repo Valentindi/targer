@@ -44,8 +44,8 @@ if __name__ == "__main__":
                                        word_sequences=word_sequences)
     # Show the evaluation results
     print('\n\n%s = %1.2f' % (args.evaluator, test_score))
-    print(test_msg)
+    print(test_msg.encode("UTF-8"))
     # Write results to text file
-    with open(args.output, 'w') as f:
+    with open(args.output, 'w', encoding='utf8', errors="ignore") as f:
         json.dump(output_tag_sequences_test, f)
     print('\nThe end.')

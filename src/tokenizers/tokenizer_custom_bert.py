@@ -14,9 +14,11 @@ import logging
 import shutil
 import tempfile
 import json
+
+from numpy import unicode
+
 from .file_utils_custom import cached_path
 
-utf8stdout = open(1, 'w', encoding='utf-8', closefd=False)
 
 PRETRAINED_VOCAB_ARCHIVE_MAP = {
     'bert-base-uncased': "https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt",
@@ -272,9 +274,9 @@ class BasicTokenizer(object):
   def tokenize(self, text):
     """Tokenizes a piece of text."""
     text = convert_to_unicode(text)
-    #print (1, text, file = utf8stdout)
+    #print (1, text)
     text = self._clean_text(text)
-    #print (2, text, file = utf8stdout)
+    #print (2, text)
     # This was added on November 1st, 2018 for the multilingual and Chinese
     # models. This is also applied to the English models now, but it doesn't
     # matter since the English models were not trained on any Chinese data

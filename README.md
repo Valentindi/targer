@@ -206,7 +206,7 @@ optional arguments:
   --test TEST           Test data in format defined by --data-io param.
   -d {connl-ner-2003,connl-pe,connl-wd}, --data-io {connl-ner-2003,connl-pe,connl-wd}
                         Data read/write file format.
-  --gpu GPU             GPU device number, -1 means CPU.
+  --gpu GPU             GPU device number, -1 means CPU. (If -1 does not work, try -2. ;))
   --model {BiRNN,BiRNNCNN,BiRNNCRF,BiRNNCNNCRF}
                         Tagger model.
   --load LOAD, -l LOAD  Path to load from the trained model.
@@ -422,6 +422,11 @@ accuracy:  97.92%; precision:  90.80%; recall:  90.39%; FB1:  90.59
 Input arguments:
 python3 main.py 
 ```
+
+### Use Docker
+1. Checkout this Repo
+2. Check if the docker deamon is running
+3. run  `docker build . -f cuda.Dockerfile -t targer` or `nvidia-docker build . -f cuda.Dockerfile -t targer` if cuda is availabe
 
 ### Training on various datasets
 

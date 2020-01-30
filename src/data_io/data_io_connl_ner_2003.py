@@ -1,6 +1,7 @@
 """input/output data wrapper for CoNNL file format used in  NER-2003 Shared Task dataset"""
 import codecs
 from src.classes.utils import get_words_num
+import logging
 
 
 class DataIOConnlNer2003():
@@ -47,7 +48,7 @@ class DataIOConnlNer2003():
                 word_sequences.append(curr_words)
                 tag_sequences.append(curr_tags)
         if verbose:
-            print('Loading from %s: %d samples, %d words.' % (fn, len(word_sequences), get_words_num(word_sequences)))
+            logging.info('Loading from %s: %d samples, %d words.' % (fn, len(word_sequences), get_words_num(word_sequences)))
         return word_sequences, tag_sequences
 
     def write_data(self, fn, word_sequences, tag_sequences_1, tag_sequences_2):
@@ -58,6 +59,6 @@ class DataIOConnlNer2003():
             for j, word in enumerate(words):
                 tag_1 = tags_1[j]
                 tag_2 = tags_2[j]
-                text_file.write('%s %s %s\n' % (word, tag_1, tag_2))
+                text_file.write(('%s %s %s\n' % (word, tag_1, tag_2)).encode("UTF-8"))
             text_file.write('\n')
         text_file.close()

@@ -17,8 +17,8 @@ class DataIOConnlWd():
         #with open('wd_test_cv_%d.txt' % args.cross_fold_id, 'w') as f:
         #    json.dump([sequences[4], sequences[5]], f)
         if args.verbose:
-            print('*** Loading WD data from dir = %s' % args.train)
-            print('*** train : dev : test = %d : %d : %d, cross-fold-id = %d' % (len(sequences[0]), len(sequences[2]),
+            logging.info('*** Loading WD data from dir = %s' % args.train)
+            logging.info('*** train : dev : test = %d : %d : %d, cross-fold-id = %d' % (len(sequences[0]), len(sequences[2]),
                                                                              len(sequences[4]), args.cross_fold_id))
         return sequences[0], sequences[1], sequences[2], sequences[3], sequences[4], sequences[5]
 

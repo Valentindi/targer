@@ -37,7 +37,8 @@ class TaggerFactory():
                                  freeze_word_embeddings=args.freeze_word_embeddings,
                                  dropout_ratio=args.dropout_ratio,
                                  rnn_type=args.rnn_type,
-                                 gpu=args.gpu)
+                                 gpu=args.gpu,
+                                 embedding_dim=args.embedding_dim)
         elif args.model == 'BiRNNCNN':
             if (word_seq_indexer.bert or word_seq_indexer.elmo):
                 raise ValueError('"BiRNNCNN" do not support bert\elmo embedding.')
@@ -64,7 +65,7 @@ class TaggerFactory():
                                     freeze_word_embeddings=args.freeze_word_embeddings,
                                     dropout_ratio=args.dropout_ratio,
                                     rnn_type=args.rnn_type,
-                                    gpu=args.gpu)
+                                    gpu=args.gpu, embedding_dim=args.embedding_dim)
             tagger.crf_layer.init_transition_matrix_empirical(tag_sequences_train)
         elif args.model == 'BiRNNCNNCRF':
             if (word_seq_indexer.bert or word_seq_indexer.elmo):

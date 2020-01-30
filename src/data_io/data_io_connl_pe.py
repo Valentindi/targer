@@ -1,6 +1,7 @@
 """input/output data wrapper for CoNNL file format used in Persuassive Essays dataset"""
 import codecs
 from src.classes.utils import get_words_num
+import logging
 
 
 class DataIOConnlPe():
@@ -35,12 +36,12 @@ class DataIOConnlPe():
             curr_words.append(word)
             curr_tags.append(tag)
         if verbose:
-            print('Loading from %s: %d samples, %d words.' % (fn, len(word_sequences), get_words_num(word_sequences)))
+            logging.info('Loading from %s: %d samples, %d words.' % (fn, len(word_sequences), get_words_num(word_sequences)))
         return word_sequences, tag_sequences
 
     def write(self, fn, word_sequences, tag_sequences):
         with open(fn, mode='w') as text_file:
             for words, tags in zip(word_sequences, tag_sequences):
                 for i, (word, tag) in enumerate(zip(words, tags)):
-                    text_file.write('%d\t%s\t%s\n' % (i+1, word, tag))
+                    text_file.write(('%d\t%s\t%s\n' % (i+1, word, tag)).encode("UTF-8"))
                 text_file.write('\n')

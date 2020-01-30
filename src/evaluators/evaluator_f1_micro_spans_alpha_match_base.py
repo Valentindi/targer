@@ -1,4 +1,6 @@
 """abstract base class for f1-micro averaging evaluation for tag components, spans detection + classification"""
+import logging
+
 from src.evaluators.evaluator_base import EvaluatorBase
 
 
@@ -67,11 +69,11 @@ class TagComponent():
         return TagComponent.match(self, tc, match_alpha_ratio)
 
     def print(self):
-        print('--tag_class_name = %s, pos_begin = %s, pos_end = %s' % (self.tag_class_name, self.pos_begin,
-                                                                       self.pos_end))
+        logging.info('--tag_class_name = %s, pos_begin = %s, pos_end = %s' % (self.tag_class_name.encode("UTF-8"), self.pos_begin.encode("UTF-8"),
+                                                                       self.pos_end.encode("UTF-8")))
         word_str = '    '
         for word in self.words: word_str += word + ' '
-        print(word_str, '\n')
+        logging.info(word_str.encode("UTF-8"), '\n')
 
     @staticmethod
     def get_tag_class_name(tag):
