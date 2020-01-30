@@ -201,7 +201,7 @@ if __name__ == "__main__":
         # Evaluate tagger
         train_score, dev_score, test_score, test_msg = evaluator.get_evaluation_score_train_dev_test(tagger,
                                                                                                      datasets_bank,
-                                                                                                     batch_size=args.batch_size)
+                                                                                                     batch_size=args.batch_size, verbose=args.verbose)
         print('\n== eval epoch %d/%d "%s" train / dev / test | %1.2f / %1.2f / %1.2f.' % (epoch, args.epoch_num,
                                                                                         args.evaluator, train_score,
                                                                                         dev_score, test_score))
