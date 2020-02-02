@@ -204,7 +204,11 @@ if __name__ == "__main__":
                                                                                         args.evaluator, train_score,
                                                                                         dev_score, test_score))
         print(clf_report.encode("UTF-8"))
-        report.write_epoch_scores(epoch, (loss_sum*100 / iterations_num, train_score, dev_score, test_score))
+        try:
+            report.write_epoch_scores(epoch, (loss_sum*100 / iterations_num, train_score, dev_score, test_score))
+        except ZeroDivisionError:
+            report.write_epoch_scores(epoch, (0, train_score, dev_score, test_score))
+
         # Save curr tagger if required
         # tagger.save('tagger_NER_epoch_%03d.hdf5' % epoch)
         # Early stopping

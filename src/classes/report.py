@@ -46,7 +46,7 @@ class Report():
     def __save(self):
         if self.fn is not None:
             with open(self.fn, mode='w') as text_file:
-                text_file.write(self.text.encode("UTF-8"))
+                text_file.write(self.text)
 
     def make_print(self):
         print(self.text.encode("UTF-8"))

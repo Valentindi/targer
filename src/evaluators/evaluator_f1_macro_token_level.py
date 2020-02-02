@@ -92,7 +92,7 @@ class EvaluatorF1MacroTokenLevel(EvaluatorBase):
             recall[tag] = (TP[tag] / max(TP[tag] + FN[tag], 1))*100
         # Calculate Macro-F1 score and prepare the message
         M_F1, msg = self.__get_M_F1_msg(F1,precision, recall)
-        print(M_F1.encode("UTF-8"))
+        print(msg.encode("UTF-8"))
         #self.validate_M_F1_scikitlearn( targets_tag_sequences, outputs_tag_sequences)
         return M_F1, msg
 
