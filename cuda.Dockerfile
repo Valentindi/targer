@@ -11,3 +11,4 @@ RUN export PYTHONIOENCODING=utf8
 RUN LD_LIBRARY_PATH=/usr/local/lib64/:$LD_LIBRARY_PATH
 RUN export LD_LIBRARY_PATH
 RUN pip install -r /targer/requirements.txt
+RUN sh download_models.sh
