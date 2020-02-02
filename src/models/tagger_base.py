@@ -3,7 +3,6 @@ import math
 import torch
 import torch.nn as nn
 
-utf8stdout = open(1, 'w', encoding='utf-8', closefd=False)
 
 
 class TaggerBase(nn.Module):

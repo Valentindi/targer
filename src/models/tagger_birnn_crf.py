@@ -10,6 +10,7 @@ from src.layers.layer_bigru import LayerBiGRU
 from src.layers.layer_crf import LayerCRF
 from src.layers.layer_context_word_embeddings import LayerContextWordEmbeddings
 from src.layers.layer_context_word_embeddings_bert import LayerContextWordEmbeddingsBert
+import logging
 
 
 class TaggerBiRNNCRF(TaggerBase):
@@ -79,7 +80,7 @@ class TaggerBiRNNCRF(TaggerBase):
     def predict_tags_from_words(self, word_sequences, batch_size=-1):
         if batch_size == -1:
             batch_size = self.batch_size
-        print('\n')
+        logging.info('\n')
         batch_num = math.floor(len(word_sequences) / batch_size)
         if len(word_sequences) > 0 and len(word_sequences) < batch_size:
             batch_num = 1

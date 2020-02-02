@@ -5,6 +5,7 @@ import codecs
 from numpy import mean, std
 from os import listdir
 from os.path import dirname, join, realpath
+import logging
 
 
 def get_score_from_report(fn):
@@ -24,6 +25,6 @@ if __name__ == "__main__":
         if not fn.endswith('.txt'):
             continue
         scores.append(get_score_from_report(join(path, fn)))
-    print('\ndir = %s' % args.dir)
-    print('scores =', scores)
-    print('mean = %1.3f, std = %1.3f' % (mean(scores), std(scores)))
+    logging.info('\ndir = %s' % args.dir)
+    logging.info('scores =', scores)
+    logging.info('mean = %1.3f, std = %1.3f' % (mean(scores), std(scores)))

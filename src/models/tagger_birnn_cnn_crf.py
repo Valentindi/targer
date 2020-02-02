@@ -10,6 +10,7 @@ from src.layers.layer_bigru import LayerBiGRU
 from src.layers.layer_char_embeddings import LayerCharEmbeddings
 from src.layers.layer_char_cnn import LayerCharCNN
 from src.layers.layer_crf import LayerCRF
+import logging
 
 class TaggerBiRNNCNNCRF(TaggerBase):
     """TaggerBiRNNCNNCRF is a model for sequences tagging that includes recurrent network + conv layer + CRF."""
@@ -90,7 +91,7 @@ class TaggerBiRNNCNNCRF(TaggerBase):
     def predict_tags_from_words(self, word_sequences, batch_size=-1):
         if batch_size == -1:
             batch_size = self.batch_size
-        print('\n')
+        logging.info('\n')
         batch_num = math.floor(len(word_sequences) / batch_size)
         if len(word_sequences) > 0 and len(word_sequences) < batch_size:
             batch_num = 1
@@ -107,6 +108,6 @@ class TaggerBiRNNCNNCRF(TaggerBase):
                 curr_output_idx = self.predict_idx_from_words(word_sequences[i:j], -1)
             curr_output_tag_sequences = self.tag_seq_indexer.idx2items(curr_output_idx)
             output_tag_sequences.extend(curr_output_tag_sequences)
-            print('\r++ predicting, batch %d/%d (%1.2f%%).' % (n + 1, batch_num, math.ceil(n * 100.0 / batch_num)),
+            logging.info('\r++ predicting, batch %d/%d (%1.2f%%).' % (n + 1, batch_num, math.ceil(n * 100.0 / batch_num)),
                   end='', flush=True)
         return output_tag_sequences

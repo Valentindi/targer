@@ -5,6 +5,7 @@ from src.layers.layer_base import LayerBase
 import torch
 import torch.nn.functional as F
 from src.tokenizers import tokenizer_custom_bert
+import logging
 
 class LayerContextWordEmbeddingsBert(LayerBase):
     """LayerWordEmbeddings implements word embeddings."""
@@ -15,7 +16,6 @@ class LayerContextWordEmbeddingsBert(LayerBase):
         self.embeddings.padding_idx = pad_idx
         self.word_seq_indexer = word_seq_indexer
         self.embeddings_dim = embedding_dim
-        #print ("self embedding hid size ", self.embeddings.hidden_size)
         self.output_dim = self.embeddings_dim
         self.gpu = gpu
         self.tpnm = tpnm
@@ -81,8 +81,8 @@ class LayerContextWordEmbeddingsBert(LayerBase):
         #torch.save([index], 'index.pth')
         #torch.save([answer], 'answer.pth')
         #torch.save([self_tensor], 'self_tensor.pth')
-        print("scatter add {}\n====\n{}\n====\n{}".format(self_tensor, index, answer))
-        print("scatter add {}\n====\n{}\n====\n{}".format(self_tensor, index.shape, answer.shape))
+        logging.info("scatter add {}\n====\n{}\n====\n{}".format(self_tensor, index, answer))
+        logging.info("scatter add {}\n====\n{}\n====\n{}".format(self_tensor, index.shape, answer.shape))
         self_tensor1 = self_tensor.scatter_add_(1, index, answer)
         #torch.save([self_tensor1], 'self_tensor1.pth')
         self_tensor1 = self_tensor1[:, 1:max_seq_len]

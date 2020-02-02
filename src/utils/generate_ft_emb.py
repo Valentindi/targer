@@ -4,6 +4,7 @@ import argparse
 import fastText as ft
 from src.data_io.data_io_connl_ner_2003 import DataIOConnlNer2003
 from src.classes.datasets_bank import DatasetsBank
+import logging
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Learning tagging problem using neural networks')
@@ -37,6 +38,6 @@ if __name__ == "__main__":
         emb_vector_str += '\n'
         out_file.write(emb_vector_str.encode("UTF-8"))
         if n % 100 == 0:
-            print('\r-- process word %d/%d.' % (n, len(datasets_bank.unique_words_list)), end='', flush=True)
-    print('\n')
+            logging.info('\r-- process word %d/%d.' % (n, len(datasets_bank.unique_words_list)), end='', flush=True)
+    logging.info('\n')
     out_file.close()

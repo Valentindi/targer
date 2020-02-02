@@ -4,7 +4,7 @@ GPU_1="2"
 GPU_2="3"
 
 MODEL_BERT_BASE="--path_to_bert ./pretrained/models/uncased_L-12_H-768_A-12 --embedding-dim 1024"
-MODEL_BERT_LARGE="--path_to_bert ./pretrained/models/uncased_bert-large --embedding-dim 1024"
+MODEL_BERT_LARGE="--path_to_bert ./pretrained/models/bert-large-uncased --embedding-dim 1024"
 
 DATA_TRAIN="data/targer/targer_train.txt"
 DATA_TEST="data/targer/targer_test.txt"

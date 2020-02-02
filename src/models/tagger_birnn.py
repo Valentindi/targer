@@ -9,7 +9,6 @@ from src.layers.layer_bigru import LayerBiGRU
 from src.layers.layer_context_word_embeddings import LayerContextWordEmbeddings
 from src.layers.layer_context_word_embeddings_bert import LayerContextWordEmbeddingsBert
 
-utf8stdout = open(1, 'w', encoding='utf-8', closefd=False)
 
 class TaggerBiRNN(TaggerBase):
     """TaggerBiRNN is a Vanilla recurrent network model for sequences tagging."""
@@ -74,7 +73,7 @@ class TaggerBiRNN(TaggerBase):
         print (self.birnn_layer.rnn._parameters['weight_hh_l0'])
         print (self.birnn_layer.rnn._parameters['weight_hh_l0'].grad)
         #print ("word seq")
-        #print (self.word_sequences[:3], file = utf8stdout)
+        #print (self.word_sequences[:3])
         #print ("word emb")
         #print (self.z_word_embed.shape)
         #torch.save([self.z_word_embed], 'fnm.pth')

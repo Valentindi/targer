@@ -5,10 +5,11 @@ import datetime
 import itertools
 import sys
 import torch
+import logging
 
 
 def info(t, name=''):
-    print(name, '|', t.type(), '|', t.shape)
+    logging.info(name, '|', t.type(), '|', t.shape)
 
 
 def flatten(list_in):
