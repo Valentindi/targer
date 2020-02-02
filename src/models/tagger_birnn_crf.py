@@ -15,7 +15,7 @@ from src.layers.layer_context_word_embeddings_bert import LayerContextWordEmbedd
 class TaggerBiRNNCRF(TaggerBase):
     """TaggerBiRNNCRF is a model for sequences tagging that includes recurrent network + CRF."""
     def __init__(self, word_seq_indexer, tag_seq_indexer, class_num, batch_size=1, rnn_hidden_dim=100,
-                 freeze_word_embeddings=False, dropout_ratio=0.5, rnn_type='GRU', gpu=-1):
+                 freeze_word_embeddings=False, dropout_ratio=0.5, rnn_type='GRU', gpu=-1, embedding_dim=768):
         super(TaggerBiRNNCRF, self).__init__(word_seq_indexer, tag_seq_indexer, gpu, batch_size)
         self.tag_seq_indexer = tag_seq_indexer
         self.class_num = class_num
@@ -27,7 +27,7 @@ class TaggerBiRNNCRF(TaggerBase):
         if ((not word_seq_indexer.bert) and (not word_seq_indexer.elmo)):
             self.word_embeddings_layer = LayerWordEmbeddings(word_seq_indexer, gpu, freeze_word_embeddings)
         elif (word_seq_indexer.bert):
-            self.word_embeddings_layer = LayerContextWordEmbeddingsBert(word_seq_indexer, gpu, freeze_word_embeddings)
+            self.word_embeddings_layer = LayerContextWordEmbeddingsBert(word_seq_indexer, gpu, freeze_word_embeddings, embedding_dim=embedding_dim)
         else:
             self.word_embeddings_layer = LayerContextWordEmbeddings(word_seq_indexer, gpu, freeze_word_embeddings)
         self.dropout = torch.nn.Dropout(p=dropout_ratio)

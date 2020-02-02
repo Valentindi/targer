@@ -8,13 +8,13 @@ from src.tokenizers import tokenizer_custom_bert
 
 class LayerContextWordEmbeddingsBert(LayerBase):
     """LayerWordEmbeddings implements word embeddings."""
-    def __init__(self, word_seq_indexer, gpu, freeze_word_embeddings=False, tpnm = "Bert", pad_idx=0):
+    def __init__(self, word_seq_indexer, gpu, freeze_word_embeddings=False, tpnm = "Bert", pad_idx=0, embedding_dim=768):
         super(LayerContextWordEmbeddingsBert, self).__init__(gpu)
         print ("LayerContextWordEmbeddings dert init")
         self.embeddings = word_seq_indexer.emb
         self.embeddings.padding_idx = pad_idx
         self.word_seq_indexer = word_seq_indexer
-        self.embeddings_dim = 768
+        self.embeddings_dim = embedding_dim
         #print ("self embedding hid size ", self.embeddings.hidden_size)
         self.output_dim = self.embeddings_dim
         self.gpu = gpu
