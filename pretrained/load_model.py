@@ -45,6 +45,7 @@ def download_model(args):
         args.logger.info("file is already loaded")
     else:
         args.logger.info("save file from {} to {}".format(args.url, target_file))
+        os.mkdir(args.model_dir)
         wget.download(args.url, args.model_dir + "/" + file_name)
         args.logger.info("ready")
 
@@ -99,7 +100,7 @@ def main():
 
     # download and save model
     parser.add_argument('--url', type=str, default='https://storage.googleapis.com/bert_models/2018_10_18/uncased_L-12_H-768_A-12.zip', help='url of model for download')
-    parser.add_argument('--model-dir', type=str, default="./model", help="directory all models are saved")
+    parser.add_argument('--model-dir', type=str, default="./models", help="directory all models are saved")
     parser.add_argument('--model_extracted_dir', type=str, default=None, help="directory the extracted model is saved. if None we will create a new one.")
     parser.add_argument('--force-download', type=bool, default=False, help="force download of model")
 

@@ -18,7 +18,7 @@ from src.seq_indexers.seq_indexer_bert import SeqIndexerBert
 
 #LC_ALL=en_US.UTF-8
 #LANG=en_US.UTF-8
-utf8stdout = open(1, 'w', encoding='utf-8', closefd=False)
+utf8stdout = open(1, 'w', encoding='utf-8', errors="ignore", closefd=False)
 import sys
 
 CUDA_LAUNCH_BLOCKING = 1
@@ -104,9 +104,9 @@ if __name__ == "__main__":
     np.random.seed(args.seed_num)
     torch.manual_seed(args.seed_num)
     
-    utf8stdout = open(1, 'w', encoding='utf-8', closefd=False)
+    utf8stdout = open(1, 'w', encoding='utf-8', errors="ignore",  closefd=False)
     if (args.logname != None):
-        sys.stdout = open(args.logname, 'w')
+        sys.stdout = open(args.logname, 'w', errors="ignore", encoding='utf8')
 
     
     if args.gpu >= 0:
@@ -204,7 +204,11 @@ if __name__ == "__main__":
                                                                                         args.evaluator, train_score,
                                                                                         dev_score, test_score))
         print(clf_report.encode("UTF-8"))
-        report.write_epoch_scores(epoch, (loss_sum*100 / iterations_num, train_score, dev_score, test_score))
+        try:
+            report.write_epoch_scores(epoch, (loss_sum*100 / iterations_num, train_score, dev_score, test_score))
+        except ZeroDivisionError:
+            report.write_epoch_scores(epoch, (0, train_score, dev_score, test_score))
+
         # Save curr tagger if required
         # tagger.save('tagger_NER_epoch_%03d.hdf5' % epoch)
         # Early stopping
