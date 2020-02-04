@@ -16,7 +16,6 @@ class LayerContextWordEmbeddingsBert(LayerBase):
         self.embeddings.padding_idx = pad_idx
         self.word_seq_indexer = word_seq_indexer
         self.embeddings_dim = embedding_dim
-        #print ("self embedding hid size ", self.embeddings.hidden_size)
         self.output_dim = self.embeddings_dim
         self.gpu = gpu
         self.tpnm = tpnm
