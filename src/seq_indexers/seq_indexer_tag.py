@@ -2,7 +2,6 @@
 from src.seq_indexers.seq_indexer_base import SeqIndexerBase
 import logging
 
-utf8stdout = open(1, 'w', encoding='utf-8', closefd=False)
 
 
 class SeqIndexerTag(SeqIndexerBase):
@@ -23,4 +22,4 @@ class SeqIndexerTag(SeqIndexerBase):
         if self.verbose:
             logging.info('\nload_vocabulary_from_tag_sequences:')
             logging.info(' -- class_num = %d' % self.get_class_num())
-            logging.info(' --', self.item2idx_dict, file = utf8stdout)
+            logging.info(' --', self.item2idx_dict)

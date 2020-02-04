@@ -11,7 +11,6 @@ import numpy as np
 import torch
 
 from src.tokenizers import tokenizer_custom_bert
-utf8stdout = open(1, 'w', encoding='utf-8', closefd=False)
 
 class SeqIndexerBert(SeqIndexerBaseEmbeddings):
     """SeqIndexerWord converts list of lists of words as strings to list of lists of integer indices and back."""
