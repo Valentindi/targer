@@ -1,6 +1,6 @@
 
 
-GPU_1="4"
+GPU_1="6"
 
 MODEL_BERT_BASE="--path_to_bert ./pretrained/models/uncased_L-12_H-768_A-12 --embedding-dim 768"
 MODEL_BERT_LARGE="--path_to_bert ./pretrained/models/uncased_bert-large --embedding-dim 1024"

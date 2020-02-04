@@ -1,6 +1,6 @@
 
 
-GPU_1="1"
+GPU_1="4"
 
 DATA_TRAIN="data/targer/targer_train.txt"
 DATA_TEST="data/targer/targer_test.txt"
@@ -11,7 +11,7 @@ PATENCE="200"
 RNN_HIDDEN_DIM="200"
 EPOCHS="200"
 
-FILENAME="targer-xlnet-large-capri-patence="$PATENCE"-rnn-hidden-dim="$RNN_HIDDEN_DIM"-epochs="$EPOCHS
+FILENAME="targer-xlnet-base-capri-patence="$PATENCE"-rnn-hidden-dim="$RNN_HIDDEN_DIM"-epochs="$EPOCHS
 LOGGING="--logname $FILENAME.log --report-fn $FILENAME.txt --save $FILENAME.hdf5"
 # comparision of models
 

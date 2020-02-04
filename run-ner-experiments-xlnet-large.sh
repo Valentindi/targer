@@ -1,6 +1,6 @@
 
 
-GPU_1="2"
+GPU_1="1"
 
 DATA_TRAIN="data/NER/CoNNL_2003_shared_task/train.txt"
 DATA_TEST="data/NER/CoNNL_2003_shared_task/test.txt"
@@ -15,4 +15,4 @@ FILENAME="targer-xlnet-large-capri-patence="$PATENCE"-rnn-hidden-dim="$RNN_HIDDE
 LOGGING="--logname $FILENAME.log --report-fn $FILENAME.txt --save $FILENAME.hdf5"
 # comparision of models
 
-python main.py  $DATA  --model BiRNN --embedding-dim 768 --opt adam --save-best yes --patience $PATENCE --rnn-hidden-dim $RNN_HIDDEN_DIM --gpu $GPU_1 --epoch-num $EPOCHS --evaluator f1-macro --xlnet True $MODEL_BERT_BASE --special_bert True $LOGGING
+python main.py  $DATA  --model BiRNN --embedding-dim 1024 -xlnet_type xlnet-large-uncased --opt adam --save-best yes --patience $PATENCE --rnn-hidden-dim $RNN_HIDDEN_DIM --gpu $GPU_1 --epoch-num $EPOCHS --evaluator f1-macro --xlnet True $MODEL_BERT_BASE --special_bert True $LOGGING
