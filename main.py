@@ -20,6 +20,8 @@ from src.seq_indexers.seq_indexer_bert import SeqIndexerBert
 
 #LC_ALL=en_US.UTF-8
 #LANG=en_US.UTF-8
+from src.seq_indexers.seq_indexer_xlnet import SeqIndexerXLNet
+
 utf8stdout = open(1, 'w', encoding='utf-8', errors="ignore", closefd=False)
 import sys
 
@@ -33,7 +35,7 @@ if __name__ == "__main__":
                         help='Development data in format defined by --data-io param.')
     parser.add_argument('--test', default='data/NER/CoNNL_2003_shared_task/test.txt',
                         help='Test data in format defined by --data-io param.')
-    parser.add_argument('--splitter', default = '\t')
+    parser.add_argument('--splitter', default = ' ')
     
     parser.add_argument('-d', '--data-io', choices=['connl-ner-2003', 'connl-pe', 'connl-wd'],
                         default='connl-ner-2003', help='Data read/write file format.')
@@ -87,6 +89,7 @@ if __name__ == "__main__":
     parser.add_argument('--elmo_options_fn', default = "embeddings/elmo_2x4096_512_2048cnn_2xhighway_5.5B_options.json", help = 'json with pre-trained options') 
     parser.add_argument('--elmo_weights_fn', default = "/home/vika/targer/embeddings/elmo_2x4096_512_2048cnn_2xhighway_5.5B_weights.hdf5", help = 'hdf5 with pre-trained weights') 
     
+    parser.add_argument('--xlnet', type=str2bool, default = False, help = 'is used xlnet for word embedding')
     parser.add_argument('--bert', type=str2bool, default = False, help = 'is used bert for word embedding')
     parser.add_argument('--path_to_bert', type=str, default='pretrained')
     parser.add_argument('--bert_frozen', type=str2bool, default = True, help = 'must BERT model be trained togehter with you model?')
@@ -155,10 +158,13 @@ if __name__ == "__main__":
                                           num_layers_ = 2, dropout_ = 0)
         #continue
         
+    elif args.xlnet:
+        word_seq_indexer = SeqIndexerXLNet(gpu=args.gpu, check_for_lowercase=args.check_for_lowercase, path_to_pretrained = args.path_to_bert, model_frozen = args.bert_frozen)
+        
     elif args.bert:
         word_seq_indexer = SeqIndexerBert(gpu=args.gpu, check_for_lowercase=args.check_for_lowercase, path_to_pretrained = args.path_to_bert, model_frozen = args.bert_frozen)
-        
-        
+
+
     else:
         word_seq_indexer = SeqIndexerWord(gpu=args.gpu, check_for_lowercase=args.check_for_lowercase,
                                           embeddings_dim=args.emb_dim, verbose=True)
@@ -217,9 +223,10 @@ if __name__ == "__main__":
                     loss.backward()
                     nn.utils.clip_grad_norm_(tagger.parameters(), args.clip_grad)
                     optimizer.step()
+                    tagger.eval()
                     loss_sum += loss.item()
-                    if i % 100 == 0:
-                        logging.info("-- train epoch {}/{}, batch {}/{} ({1.2f}), loss={1.2f}".format(epoch, args.epoch_num, i+1, iterations_num, i*100.0/iterations_num, loss_sum*100 / iterations_num))
+                    if i % 10 == 9:
+                        logging.info("-- train epoch {}/{}, batch {}/{} ({}), loss={}".format(epoch, args.epoch_num, i+1, iterations_num, i*100.0/iterations_num, loss_sum*100 / iterations_num))
 
         # Evaluate tagger
         train_score, dev_score, test_score, test_msg, clf_report = evaluator.get_evaluation_score_train_dev_test(tagger, datasets_bank, batch_size=args.batch_size)

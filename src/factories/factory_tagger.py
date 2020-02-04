@@ -40,8 +40,8 @@ class TaggerFactory():
                                  gpu=args.gpu,
                                  embedding_dim=args.embedding_dim)
         elif args.model == 'BiRNNCNN':
-            if (word_seq_indexer.bert or word_seq_indexer.elmo):
-                raise ValueError('"BiRNNCNN" do not support bert\elmo embedding.')
+            if (word_seq_indexer.bert or word_seq_indexer.elmo or word_seq_indexer.xlnet):
+                raise ValueError('"BiRNNCNN" do not support bert|elmo|xlnet embedding.')
             tagger = TaggerBiRNNCNN(word_seq_indexer=word_seq_indexer,
                                     tag_seq_indexer=tag_seq_indexer,
                                     class_num=tag_seq_indexer.get_class_num(),
@@ -68,8 +68,8 @@ class TaggerFactory():
                                     gpu=args.gpu, embedding_dim=args.embedding_dim)
             tagger.crf_layer.init_transition_matrix_empirical(tag_sequences_train)
         elif args.model == 'BiRNNCNNCRF':
-            if (word_seq_indexer.bert or word_seq_indexer.elmo):
-                raise ValueError('"BiRNNCNNCRF" do not support bert\elmo embedding.')
+            if (word_seq_indexer.bert or word_seq_indexer.elmo or word_seq_indexer.xlnet):
+                raise ValueError('"BiRNNCNNCRF" do not support bert|elmo|xlnet embedding.')
             tagger = TaggerBiRNNCNNCRF(word_seq_indexer=word_seq_indexer,
                                        tag_seq_indexer=tag_seq_indexer,
                                        class_num=tag_seq_indexer.get_class_num(),

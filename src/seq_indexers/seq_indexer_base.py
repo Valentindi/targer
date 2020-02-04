@@ -13,6 +13,7 @@ class SeqIndexerBase():
         self.gpu = gpu
         self.elmo = False
         self.bert = False
+        self.xlnet = False
         self.check_for_lowercase = check_for_lowercase
         self.zero_digits = zero_digits
         self.pad = pad
