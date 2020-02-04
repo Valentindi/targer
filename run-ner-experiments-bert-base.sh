@@ -16,5 +16,5 @@ RNN_HIDDEN_DIM="200"
 
 # comparision of models
 
-python main.py  $DATA  --model BiRNN --opt adam --save-best yes --patience $PATENCE --rnn-hidden-dim $RNN_HIDDEN_DIM --gpu $GPU_1 --elmo False --epoch-num 50 --evaluator f1-macro --bert True $MODEL_BERT_BASE --logname bert-base.log --report-fn bert-base.txt
+python main.py  $DATA  --model BiRNN --opt adam --save-best yes --patience $PATENCE --rnn-hidden-dim $RNN_HIDDEN_DIM --gpu $GPU_1 --elmo False --epoch-num 50 --evaluator f1-macro --bert True $MODEL_BERT_BASE --logname bert-base.log --report-fn bert-base.txt  --special_bert True
 #python main.py $DATA --model BiRNN --opt adam --save-best yes --patience $PATENCE --rnn-hidden-dim $RNN_HIDDEN_DIM --gpu $GPU_2 --elmo False --epoch-num 50 --evaluator f1-macro --bert True  $MODEL_BERT_LARGE --logname bert-large.log --report-fn bert-large.txt &

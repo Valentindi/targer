@@ -88,7 +88,7 @@ if __name__ == "__main__":
     parser.add_argument('--bert', type=str2bool, default = False, help = 'is used bert for word embedding')
     parser.add_argument('--path_to_bert', type=str, default='pretrained')
     parser.add_argument('--bert_frozen', type=str2bool, default = True, help = 'must BERT model be trained togehter with you model?')
-    parser.add_argument('--special_bert', type=str2bool, default = True, help = 'should we unfroze all bert and train it with smaller lr ?')
+    parser.add_argument('--special_bert', type=str2bool, default = False, help = 'should we unfroze all bert and train it with smaller lr ?')
     parser.add_argument('--embedding-dim', type=int, default=768, help="Size of embedding (768 for bert-base*, 1024 for bert-large*).")
     parser.add_argument('--dataset-sort', type=str2bool, default=False, help='Sort sequences by length for training.',
                         nargs='?', choices=['yes', True, 'no (default)', False])
