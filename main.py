@@ -20,6 +20,8 @@ from src.seq_indexers.seq_indexer_bert import SeqIndexerBert
 
 #LC_ALL=en_US.UTF-8
 #LANG=en_US.UTF-8
+from src.seq_indexers.seq_indexer_xlnet import SeqIndexerXlnet
+
 utf8stdout = open(1, 'w', encoding='utf-8', errors="ignore", closefd=False)
 import sys
 
@@ -33,7 +35,7 @@ if __name__ == "__main__":
                         help='Development data in format defined by --data-io param.')
     parser.add_argument('--test', default='data/NER/CoNNL_2003_shared_task/test.txt',
                         help='Test data in format defined by --data-io param.')
-    parser.add_argument('--splitter', default = '\t')
+    parser.add_argument('--splitter', default = ' ')
     
     parser.add_argument('-d', '--data-io', choices=['connl-ner-2003', 'connl-pe', 'connl-wd'],
                         default='connl-ner-2003', help='Data read/write file format.')
@@ -86,7 +88,13 @@ if __name__ == "__main__":
     parser.add_argument('--elmo', type=str2bool, default = False, help = 'is used elmo for word embedding')
     parser.add_argument('--elmo_options_fn', default = "embeddings/elmo_2x4096_512_2048cnn_2xhighway_5.5B_options.json", help = 'json with pre-trained options') 
     parser.add_argument('--elmo_weights_fn', default = "/home/vika/targer/embeddings/elmo_2x4096_512_2048cnn_2xhighway_5.5B_weights.hdf5", help = 'hdf5 with pre-trained weights') 
-    
+
+
+    parser.add_argument('--xlnet', type=str2bool, default = False, help = 'is used xlnet for word embedding')
+    parser.add_argument('--path_to_xlnet', type=str, default=None)
+    parser.add_argument('--xlnet_type', type=str, default='xlnet-base-cased')
+
+
     parser.add_argument('--bert', type=str2bool, default = False, help = 'is used bert for word embedding')
     parser.add_argument('--path_to_bert', type=str, default='pretrained')
     parser.add_argument('--bert_frozen', type=str2bool, default = True, help = 'must BERT model be trained togehter with you model?')
@@ -158,7 +166,11 @@ if __name__ == "__main__":
     elif args.bert:
         word_seq_indexer = SeqIndexerBert(gpu=args.gpu, check_for_lowercase=args.check_for_lowercase, path_to_pretrained = args.path_to_bert, model_frozen = args.bert_frozen)
         
-        
+
+    elif args.xlnet:
+        word_seq_indexer = SeqIndexerXlnet(gpu=args.gpu, check_for_lowercase=args.check_for_lowercase, path_to_pretrained = args.path_to_xlnet, xlnet_type = args.xlnet_type, model_frozen = args.bert_frozen)
+
+
     else:
         word_seq_indexer = SeqIndexerWord(gpu=args.gpu, check_for_lowercase=args.check_for_lowercase,
                                           embeddings_dim=args.emb_dim, verbose=True)

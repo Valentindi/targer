@@ -18,7 +18,7 @@ class DataIOConnlNer2003():
         return word_sequences_train, tag_sequences_train, word_sequences_dev, tag_sequences_dev, word_sequences_test, \
                tag_sequences_test
 
-    def read_data(self, fn, verbose=True, column_no=-1, splitter = '\t'):
+    def read_data(self, fn, verbose=True, column_no=-1, splitter = ' '):
         word_sequences = list()
         tag_sequences = list()
         with codecs.open(fn, 'r', 'utf-8') as f:
