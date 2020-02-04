@@ -1,0 +1,86 @@
+Evaluation
+
+batch_size=10
+bert=False
+bert_frozen=True
+char_cnn_filter_num=30
+char_embeddings_dim=25
+char_window_size=3
+check_for_lowercase=True
+clip_grad=5
+cross_fold_id=-1
+cross_folds_num=-1
+data_io='connl-ner-2003'
+dataset_sort=False
+dev='data/targer-small/targer_dev.txt'
+dropout_ratio=0.5
+elmo=False
+elmo_options_fn='embeddings/elmo_2x4096_512_2048cnn_2xhighway_5.5B_options.json'
+elmo_weights_fn='/home/vika/targer/embeddings/elmo_2x4096_512_2048cnn_2xhighway_5.5B_weights.hdf5'
+emb_delimiter=' '
+emb_dim=100
+emb_fn='embeddings/glove.6B.100d.txt'
+emb_load_all=False
+embedding_dim=768
+epoch_num=1
+evaluator='f1-macro'
+freeze_char_embeddings=False
+freeze_word_embeddings=False
+gpu=-2
+load=None
+logname=None
+lr=0.005
+lr_bert=2e-06
+lr_decay=0.05
+min_epoch_num=50
+model='BiRNN'
+momentum=0.9
+opt='adam'
+path_to_bert='./pretrained/test_model/uncased_L-12_H-768_A-12/'
+path_to_xlnet=None
+patience=1
+report_fn='2020_02_04_22-29_28_report.txt'
+rnn_hidden_dim=1
+rnn_type='LSTM'
+save='2020_02_04_22-29_28_tagger.hdf5'
+save_best=True
+seed_num=42
+special_bert=False
+splitter=' '
+test='data/targer-small/targer_test.txt'
+train='data/targer-small/targer_train.txt'
+verbose=True
+word_len=20
+word_seq_indexer=None
+xlnet=True
+
+         epoch  |     train loss | f1-macro-train |   f1-macro-dev |  f1-macro-test 
+--------------------------------------------------------------------------------------
+              0 |           0.00 |          18.18 |          11.76 |          10.50 
+--------------------------------------------------------------------------------------
+Final eval on test, "save best", best epoch on dev 0, f1-macro, test = 10.50)
+--------------------------------------------------------------------------------------
+F1 scores
+------------------------
+              0 = f1 = 0.00, precision = 0.00, recall = 0.00
+             CI = f1 = 31.50, precision = 18.69, recall = 100.00
+             CP = f1 = 0.00, precision = 0.00, recall = 0.00
+------------------------
+Macro-F1 = 10.499Macro-Prescion = 6.231Macro-Recall = 33.333
+              precision    recall  f1-score   support
+
+          CC       0.00      0.00      0.00        26
+          CP       0.00      0.00      0.00        23
+          CA       0.00      0.00      0.00         7
+          CI       0.19      1.00      0.31        20
+           0       0.00      0.00      0.00        31
+
+   micro avg       0.19      0.19      0.19       107
+   macro avg       0.04      0.20      0.06       107
+weighted avg       0.03      0.19      0.06       107
+
+
+Input arguments:
+python3 main.py --train data/targer-small/targer_train.txt --dev data/targer-small/targer_dev.txt --test data/targer-small/targer_test.txt --data-io connl-ner-2003 --model BiRNN --opt adam --save-best yes --patience 1 --rnn-hidden-dim 1 --gpu -2 --elmo False --epoch-num 1 --evaluator f1-macro --bert False --xlnet True --path_to_bert ./pretrained/test_model/uncased_L-12_H-768_A-12/ --special_bert False
+
+10.4987
