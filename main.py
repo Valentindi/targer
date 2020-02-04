@@ -4,6 +4,8 @@ from os.path import isfile
 import time
 import numpy as np
 import torch.nn as nn
+import logging
+
 from src.classes.report import Report
 from src.classes.utils import *
 from src.factories.factory_data_io import DataIOFactory
@@ -103,26 +105,48 @@ if __name__ == "__main__":
     args = parser.parse_args()
     np.random.seed(args.seed_num)
     torch.manual_seed(args.seed_num)
-    
-    utf8stdout = open(1, 'w', encoding='utf-8', errors="ignore",  closefd=False)
-    if (args.logname != None):
-        sys.stdout = open(args.logname, 'w', errors="ignore", encoding='utf8')
+
+    ogFormatter = logging.Formatter("%(asctime)s [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s")
+    rootLogger = logging.getLogger()
+    logging.getLogger().setLevel(logging.INFO)
+
+    if args.logname != None:
+        fileHandler = logging.FileHandler("{0}".format(args.logname))
+        fileHandler.setFormatter(ogFormatter)
+        rootLogger.addHandler(fileHandler)
+
+    consoleHandler = logging.StreamHandler()
+    consoleHandler.setFormatter(ogFormatter)
+    rootLogger.addHandler(consoleHandler)
+    rootLogger.setLevel(logging.DEBUG)
+
+    #utf8stdout = open(1, 'w', encoding='utf-8', errors="ignore",  closefd=False)
+    #if (args.logname != None):
+    #    sys.stdout = open(args.logname, 'w', errors="ignore", encoding='utf8')
+
+    logging.info("=========================================")
+    logging.info("==============Begin logging==============")
+    logging.info("=========================================")
 
     
     if args.gpu >= 0:
         torch.cuda.set_device(args.gpu)
         torch.cuda.manual_seed(args.seed_num)
+        logging.info("use device {}".format(torch.cuda.get_device_name()))
+    else:
+        logging.info("use cpu")
     # Load text data as lists of lists of words (sequences) and corresponding list of lists of tags
     data_io = DataIOFactory.create(args)
+    logging.info("load dataset")
     word_sequences_train, tag_sequences_train, word_sequences_dev, tag_sequences_dev, word_sequences_test, tag_sequences_test = data_io.read_train_dev_test(args)
-
+    logging.info("create DatasetsBank")
     # DatasetsBank provides storing the different dataset subsets (train/dev/test) and sampling batches
     datasets_bank = DatasetsBankFactory.create(args)
     datasets_bank.add_train_sequences(word_sequences_train, tag_sequences_train)
     datasets_bank.add_dev_sequences(word_sequences_dev, tag_sequences_dev)
     datasets_bank.add_test_sequences(word_sequences_test, tag_sequences_test)
     # Word_seq_indexer converts lists of lists of words to lists of lists of integer indices and back
-
+    logging.info("create Word Sequence Indexer")
     if args.word_seq_indexer is not None and isfile(args.word_seq_indexer) and args.elmo == False:
         word_seq_indexer = torch.load(args.word_seq_indexer)
     elif args.elmo:
@@ -142,6 +166,7 @@ if __name__ == "__main__":
                                                                                emb_delimiter=args.emb_delimiter,
                                                                                emb_load_all=args.emb_load_all,
                                                                                unique_words_list=datasets_bank.unique_words_list)
+    logging.info("maybe save model")
     if args.word_seq_indexer is not None and not isfile(args.word_seq_indexer):
         torch.save(word_seq_indexer, args.word_seq_indexer)
     # Tag_seq_indexer converts lists of lists of tags to lists of lists of integer indices and back
@@ -149,6 +174,7 @@ if __name__ == "__main__":
     tag_seq_indexer.load_items_from_tag_sequences(tag_sequences_train)
 
     # Create or load pre-trained tagger
+    logging.info("Create or load pre-trained tagger")
     if args.load is None:
         tagger = TaggerFactory.create(args, word_seq_indexer, tag_seq_indexer, tag_sequences_train)
     else:
@@ -157,6 +183,7 @@ if __name__ == "__main__":
     print (tagger.gpu)   
     
     # Create evaluator
+    logging.info("Create evaluator")
     evaluator = EvaluatorFactory.create(args)
     # Create optimizer
     optimizer, scheduler = OptimizerFactory.create(args, tagger, special_bert = args.special_bert)
@@ -170,7 +197,7 @@ if __name__ == "__main__":
     best_test_score = -1
     best_test_msg = 'N\A'
     patience_counter = 0
-    print('\nStart training...\n')
+    logging.info('\nStart training...\n')
     print ("epoch num", args.epoch_num)
     for epoch in range(0, args.epoch_num):
         print ("epoch ", epoch)
@@ -192,7 +219,7 @@ if __name__ == "__main__":
                     optimizer.step()
                     loss_sum += loss.item()
                     if i % 100 == 0:
-                        print('\r-- train epoch %d/%d, batch %d/%d (%1.2f%%), loss = %1.2f.' % (epoch, args.epoch_num,
+                        logging.info('\r-- train epoch %d/%d, batch %d/%d (%1.2f%%), loss = %1.2f.' % (epoch, args.epoch_num,
                                                                                              i + 1, iterations_num,
                                                                                              ceil(i*100.0/iterations_num),
                                                                                              loss_sum*100 / iterations_num),
@@ -200,10 +227,10 @@ if __name__ == "__main__":
             
         # Evaluate tagger
         train_score, dev_score, test_score, test_msg, clf_report = evaluator.get_evaluation_score_train_dev_test(tagger, datasets_bank, batch_size=args.batch_size)
-        print('\n== eval epoch %d/%d "%s" train / dev / test | %1.2f / %1.2f / %1.2f.' % (epoch, args.epoch_num,
+        logging.info('\n== eval epoch %d/%d "%s" train / dev / test | %1.2f / %1.2f / %1.2f.' % (epoch, args.epoch_num,
                                                                                         args.evaluator, train_score,
                                                                                         dev_score, test_score))
-        print(clf_report.encode("UTF-8"))
+        logging.info(clf_report.encode("UTF-8"))
         try:
             report.write_epoch_scores(epoch, (loss_sum*100 / iterations_num, train_score, dev_score, test_score))
         except ZeroDivisionError:
@@ -220,10 +247,10 @@ if __name__ == "__main__":
             patience_counter = 0
             if args.save is not None and args.save_best:
                 tagger.save_tagger(args.save)
-            print('## [BEST epoch], %d seconds.\n' % (time.time() - time_start))
+            logging.info('## [BEST epoch], %d seconds.\n' % (time.time() - time_start))
         else:
             #patience_counter += 1
-            print('## [no improvement micro-f1 on DEV during the last %d epochs (best_f1_dev=%1.2f), %d seconds].\n' %
+            logging.info('## [no improvement micro-f1 on DEV during the last %d epochs (best_f1_dev=%1.2f), %d seconds].\n' %
                                                                                             (patience_counter,
                                                                                              best_dev_score,
                                                                                              (time.time()-time_start)))

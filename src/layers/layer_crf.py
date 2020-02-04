@@ -3,6 +3,7 @@ import torch
 import torch.nn as nn
 from src.layers.layer_base import LayerBase
 from src.classes.utils import log_sum_exp
+import logging
 
 
 class LayerCRF(LayerBase):
@@ -50,9 +51,9 @@ class LayerCRF(LayerBase):
                     self.transition_matrix.data[i, j] = -9999.0
                 #self.transition_matrix.data[i, j] = torch.log(empirical_transition_matrix[i, j].float() + 10**-32)
         if self.verbose:
-            print('Empirical transition matrix from the train dataset:')
+            logging.info('Empirical transition matrix from the train dataset:')
             self.pretty_print_transition_matrix(empirical_transition_matrix)
-            print('\nInitialized transition matrix:')
+            logging.info('\nInitialized transition matrix:')
             self.pretty_print_transition_matrix(self.transition_matrix.data)
 
     def pretty_print_transition_matrix(self, transition_matrix, tag_seq_indexer=None):
@@ -66,7 +67,7 @@ class LayerCRF(LayerBase):
             str += '\n%10s' % tag_seq_indexer.idx2item_dict[i]
             for j in range(tag_seq_indexer.get_items_count()):
                 str += '%10s' % ('%1.1f' % transition_matrix[i, j])
-        print(str.encode("UTF-8"))
+        logging.info(str.encode("UTF-8"))
 
     def is_cuda(self):
         return self.transition_matrix.is_cuda

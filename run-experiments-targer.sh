@@ -16,4 +16,4 @@ RNN_HIDDEN_DIM="200"
 
 # comparision of models
 
-python main.py  $DATA  --model BiRNN --opt adam --save-best yes --patience $PATENCE --rnn-hidden-dim $RNN_HIDDEN_DIM --gpu $GPU_1 --elmo False --epoch-num 50 --evaluator f1-macro --bert False --logname targer.log --report-fn targer.txt
+python main.py  $DATA  --model BiRNN --opt adam --save-best yes --patience $PATENCE --rnn-hidden-dim $RNN_HIDDEN_DIM --gpu $GPU_1 --elmo False --epoch-num 50 --evaluator f1-macro --bert False --special_bert False --logname targer.log --report-fn targer.txt

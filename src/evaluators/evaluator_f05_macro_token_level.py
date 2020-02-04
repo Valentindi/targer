@@ -1,5 +1,6 @@
 """macro-F05 scores + Prec + Recall evaluator for each class of BOI-like tags"""
 from src.evaluators.evaluator_base import EvaluatorBase
+import logging
 
 
 class EvaluatorF05MacroTokenLevel(EvaluatorBase):
@@ -92,6 +93,6 @@ class EvaluatorF05MacroTokenLevel(EvaluatorBase):
             P[tag], R[tag] = self.__get_p_r(TP[tag], FN[tag], FP[tag])
         # Calculate Macro-F05 score and prepare the message
         M_F05, msg = self.__get_M_F05_P_R_msg(F05, P, R)
-        print(msg.encode("UTF-8"))
+        logging.info(msg.encode("UTF-8"))
         #self.validate_M_F05_scikitlearn( targets_tag_sequences, outputs_tag_sequences)
         return M_F05, msg

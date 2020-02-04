@@ -1,5 +1,6 @@
 """macro-F1 scores evaluator for each class of BOI-like tags"""
 from src.evaluators.evaluator_base import EvaluatorBase
+import logging
 
 
 class EvaluatorF1MacroTokenLevel(EvaluatorBase):
@@ -92,7 +93,7 @@ class EvaluatorF1MacroTokenLevel(EvaluatorBase):
             recall[tag] = (TP[tag] / max(TP[tag] + FN[tag], 1))*100
         # Calculate Macro-F1 score and prepare the message
         M_F1, msg = self.__get_M_F1_msg(F1,precision, recall)
-        print(msg.encode("UTF-8"))
+        logging.info(msg.encode("UTF-8"))
         #self.validate_M_F1_scikitlearn( targets_tag_sequences, outputs_tag_sequences)
         return M_F1, msg
 
@@ -104,5 +105,5 @@ class EvaluatorF1MacroTokenLevel(EvaluatorBase):
         y_true = self.tag_seq_2_idx_list(targets_tag_sequences_flat)
         y_pred = self.tag_seq_2_idx_list(outputs_tag_sequences_flat)
         M_F1_scikitlearn = f1_score(y_true=y_true, y_pred=y_pred, average='macro', sample_weight=None)*100
-        print('Macro-F1_scikitlearn = %1.3f, for validation' % M_F1_scikitlearn)'''
+        logging.info('Macro-F1_scikitlearn = %1.3f, for validation' % M_F1_scikitlearn)'''
 

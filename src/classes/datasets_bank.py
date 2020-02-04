@@ -3,6 +3,7 @@
 import numpy as np
 from random import randint
 from src.classes.utils import argsort_sequences_by_lens, get_sequences_by_indices
+import logging
 
 
 class DatasetsBank():
@@ -17,7 +18,7 @@ class DatasetsBank():
                 if word not in self.unique_words_list:
                     self.unique_words_list.append(word)
         if self.verbose:
-            print('DatasetsBank: len(unique_words_list) = %d unique words.' % (len(self.unique_words_list)))
+            logging.info('DatasetsBank: len(unique_words_list) = %d unique words.' % (len(self.unique_words_list)))
 
     def add_train_sequences(self, word_sequences_train, tag_sequences_train):
         self.train_data_num = len(word_sequences_train)
@@ -59,7 +60,7 @@ class DatasetsBankSorted():
                 if word not in self.unique_words_list:
                     self.unique_words_list.append(word)
         if self.verbose:
-            print('DatasetsBank: len(unique_words_list) = %d unique words.' % (len(self.unique_words_list)))
+            logging.info('DatasetsBank: len(unique_words_list) = %d unique words.' % (len(self.unique_words_list)))
 
     def add_train_sequences(self, word_sequences_train, tag_sequences_train):
         sort_indices, _ = argsort_sequences_by_lens(word_sequences_train)

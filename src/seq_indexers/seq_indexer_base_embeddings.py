@@ -2,6 +2,7 @@
 import numpy as np
 import torch
 from src.seq_indexers.seq_indexer_base import SeqIndexerBase
+import logging
 
 
 class SeqIndexerBaseEmbeddings(SeqIndexerBase):
@@ -21,7 +22,7 @@ class SeqIndexerBaseEmbeddings(SeqIndexerBase):
             emb_vector = list(map(lambda t: float(t), filter(lambda n: n and not n.isspace(), values[1:])))
             if verbose:
                 if k % 25000 == 0:
-                    print('Reading embeddings file %s, line = %d' % (emb_fn, k))
+                    logging.info('Reading embeddings file %s, line = %d' % (emb_fn, k))
             yield word, emb_vector
 
     def generate_zero_emb_vector(self):

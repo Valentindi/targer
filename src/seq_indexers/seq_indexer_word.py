@@ -2,6 +2,7 @@
 import string
 import re
 from src.seq_indexers.seq_indexer_base_embeddings import SeqIndexerBaseEmbeddings
+import logging
 
 
 class SeqIndexerWord(SeqIndexerBaseEmbeddings):
@@ -41,17 +42,17 @@ class SeqIndexerWord(SeqIndexerBaseEmbeddings):
                 for unique_word in emb_word_dict2unique_word_list[emb_word]:
                     self.add_word_emb_vec(unique_word, emb_vec)
         if self.verbose:
-            print('\nload_vocabulary_from_embeddings_file_and_unique_words_list:')
-            print('    First 50 OOV words:')
+            logging.info('\nload_vocabulary_from_embeddings_file_and_unique_words_list:')
+            logging.info('    First 50 OOV words:')
             for i, oov_word in enumerate(out_of_vocabulary_words_list):
-                print('        out_of_vocabulary_words_list[%d] = %s' % (i, oov_word.encode('utf-8')))
+                logging.info('        out_of_vocabulary_words_list[%d] = %s' % (i, oov_word.encode('utf-8')))
                 if i > 49:
                     break
-            print(' -- len(out_of_vocabulary_words_list) = %d' % len(out_of_vocabulary_words_list))
-            print(' -- original_words_num = %d' % self.original_words_num)
-            print(' -- lowercase_words_num = %d' % self.lowercase_words_num)
-            print(' -- zero_digits_replaced_num = %d' % self.zero_digits_replaced_num)
-            print(' -- zero_digits_replaced_lowercase_num = %d' % self.zero_digits_replaced_lowercase_num)
+            logging.info(' -- len(out_of_vocabulary_words_list) = %d' % len(out_of_vocabulary_words_list))
+            logging.info(' -- original_words_num = %d' % self.original_words_num)
+            logging.info(' -- lowercase_words_num = %d' % self.lowercase_words_num)
+            logging.info(' -- zero_digits_replaced_num = %d' % self.zero_digits_replaced_num)
+            logging.info(' -- zero_digits_replaced_lowercase_num = %d' % self.zero_digits_replaced_lowercase_num)
         # Load all embeddings
         if emb_load_all:
             loaded_words_list = self.get_items_list()
@@ -76,9 +77,9 @@ class SeqIndexerWord(SeqIndexerBaseEmbeddings):
                 self.add_emb_vector(emb_vec)
             load_all_words_num_after = len(self.get_items_list())
             if self.verbose:
-                print(' ++ load_all_words_num_before = %d ' % load_all_words_num_before)
-                print(' ++ load_all_words_lower_num = %d ' % load_all_words_lower_num)
-                print(' ++ load_all_words_num_after = %d ' % load_all_words_num_after)
+                logging.info(' ++ load_all_words_num_before = %d ' % load_all_words_num_before)
+                logging.info(' ++ load_all_words_lower_num = %d ' % load_all_words_lower_num)
+                logging.info(' ++ load_all_words_num_after = %d ' % load_all_words_num_after)
 
     def get_embeddings_word(self, word, embeddings_word_list):
         if word in embeddings_word_list:
@@ -111,7 +112,7 @@ class SeqIndexerWord(SeqIndexerBaseEmbeddings):
             unique_characters_set = unique_characters_set.union(set(word))
             if verbose and len(unique_characters_set) > len_delta:
                 cnt += 1
-                print('n = %d/%d (%d) %s' % (n, len(self.get_items_list), cnt, word))
+                logging.info('n = %d/%d (%d) %s' % (n, len(self.get_items_list), cnt, word))
         return list(unique_characters_set)
 
 
@@ -135,9 +136,9 @@ class SeqIndexerWord(SeqIndexerBaseEmbeddings):
             if emb_word.upper() not in embeddings_words_list:
                 self.add_or_replace_word_emb_vec(word=emb_word.upper(), emb_vec=emb_vec)
                 self.uppercase_word_num += 1
-        print(' ++ original_words_num = %d' % self.original_words_num)
-        print(' ++ capitalize_word_num = %d' % self.capitalize_word_num)
-        print(' ++ uppercase_word_num = %d' % self.uppercase_word_num)
+        logging.info(' ++ original_words_num = %d' % self.original_words_num)
+        logging.info(' ++ capitalize_word_num = %d' % self.capitalize_word_num)
+        logging.info(' ++ uppercase_word_num = %d' % self.uppercase_word_num)
 
     def load_items_from_embeddings_file_and_unique_words_list(self, emb_fn, emb_delimiter, unique_words_list):
         # Get the full list of available case-sensitive words from text file with pretrained embeddings
@@ -163,17 +164,17 @@ class SeqIndexerWord(SeqIndexerBaseEmbeddings):
                 for unique_word in emb_word_dict2unique_word_list[emb_word]:
                     self.add_word_emb_vec(unique_word, emb_vec)
         if self.verbose:
-            print('\nload_vocabulary_from_embeddings_file_and_unique_words_list:')
-            print('    First 50 OOV words:')
+            logging.info('\nload_vocabulary_from_embeddings_file_and_unique_words_list:')
+            logging.info('    First 50 OOV words:')
             for i, oov_word in enumerate(out_of_vocabulary_words_list):
-                print('        out_of_vocabulary_words_list[%d] = %s' % (i, oov_word))
+                logging.info('        out_of_vocabulary_words_list[%d] = %s' % (i, oov_word))
                 if i > 49:
                     break
-            print(' -- len(out_of_vocabulary_words_list) = %d' % len(out_of_vocabulary_words_list))
-            print(' -- original_words_num = %d' % self.original_words_num)
-            print(' -- lowercase_words_num = %d' % self.lowercase_words_num)
-            print(' -- zero_digits_replaced_num = %d' % self.zero_digits_replaced_num)
-            print(' -- zero_digits_replaced_lowercase_num = %d' % self.zero_digits_replaced_lowercase_num)
+            logging.info(' -- len(out_of_vocabulary_words_list) = %d' % len(out_of_vocabulary_words_list))
+            logging.info(' -- original_words_num = %d' % self.original_words_num)
+            logging.info(' -- lowercase_words_num = %d' % self.lowercase_words_num)
+            logging.info(' -- zero_digits_replaced_num = %d' % self.zero_digits_replaced_num)
+            logging.info(' -- zero_digits_replaced_lowercase_num = %d' % self.zero_digits_replaced_lowercase_num)
 
     def add_or_replace_word_emb_vec(self, word, emb_vec):
         if self.item_exists(word):
