@@ -219,15 +219,11 @@ if __name__ == "__main__":
                     optimizer.step()
                     loss_sum += loss.item()
                     if i % 100 == 0:
-                        logging.info('\r-- train epoch %d/%d, batch %d/%d (%1.2f%%), loss = %1.2f.' % (epoch, args.epoch_num,
-                                                                                             i + 1, iterations_num,
-                                                                                             ceil(i*100.0/iterations_num),
-                                                                                             loss_sum*100 / iterations_num),
-                                                                                             end='', flush=True)
-            
+                        logging.info("-- train epoch {}/{}, batch {}/{} ({1.2f}), loss={1.2f}".format(epoch, args.epoch_num, i+1, iterations_num, i*100.0/iterations_num, loss_sum*100 / iterations_num))
+
         # Evaluate tagger
         train_score, dev_score, test_score, test_msg, clf_report = evaluator.get_evaluation_score_train_dev_test(tagger, datasets_bank, batch_size=args.batch_size)
-        logging.info('\n== eval epoch %d/%d "%s" train / dev / test | %1.2f / %1.2f / %1.2f.' % (epoch, args.epoch_num,
+        logging.info('\n== eval epoch {}/{} {} train / dev / test | {} / {} / {}.'.format (epoch, args.epoch_num,
                                                                                         args.evaluator, train_score,
                                                                                         dev_score, test_score))
         logging.info(clf_report.encode("UTF-8"))

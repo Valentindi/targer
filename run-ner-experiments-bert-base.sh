@@ -13,8 +13,10 @@ DATA="--train $DATA_TRAIN --dev $DATA_DEV --test $DATA_TEST --data-io connl-ner-
 
 PATENCE="20"
 RNN_HIDDEN_DIM="200"
+EPOCHS=50
 
+FILENAME="targer-bert-base-ner-patence="$PATENCE"-rnn-hidden-dim="RNN_HIDDEN_DIM"-epochs="$EPOCHS
+LOGGING="--logname $FILENAME.log --report-fn $FILENAME.txt --save $FILENAME.hdf5"
 # comparision of models
 
-python main.py  $DATA  --model BiRNN --opt adam --save-best yes --patience $PATENCE --rnn-hidden-dim $RNN_HIDDEN_DIM --gpu $GPU_1 --elmo False --epoch-num 50 --evaluator f1-macro --bert True $MODEL_BERT_BASE --logname bert-base.log --report-fn bert-base.txt  --special_bert True
-#python main.py $DATA --model BiRNN --opt adam --save-best yes --patience $PATENCE --rnn-hidden-dim $RNN_HIDDEN_DIM --gpu $GPU_2 --elmo False --epoch-num 50 --evaluator f1-macro --bert True  $MODEL_BERT_LARGE --logname bert-large.log --report-fn bert-large.txt &
+python main.py  $DATA  --model BiRNN --opt adam --save-best yes --patience $PATENCE --rnn-hidden-dim $RNN_HIDDEN_DIM --gpu $GPU_1 --elmo False --epoch-num $EPOCHS --evaluator f1-macro --bert True $MODEL_BERT_BASE  --special_bert True $LOGGING

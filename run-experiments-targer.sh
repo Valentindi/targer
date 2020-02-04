@@ -13,7 +13,11 @@ DATA="--train $DATA_TRAIN --dev $DATA_DEV --test $DATA_TEST --data-io connl-ner-
 
 PATENCE="20"
 RNN_HIDDEN_DIM="200"
+EPOCHS="50"
 
+FILENAME="targer-default-capri-patence="$PATENCE"-rnn-hidden-dim="RNN_HIDDEN_DIM"-epochs="$EPOCHS
+LOGGING="--logname $FILENAME.log --report-fn $FILENAME.txt --save $FILENAME.hdf5"
 # comparision of models
 
-python main.py  $DATA  --model BiRNN --opt adam --save-best yes --patience $PATENCE --rnn-hidden-dim $RNN_HIDDEN_DIM --gpu $GPU_1 --elmo False --epoch-num 50 --evaluator f1-macro --bert False --special_bert False --logname targer-default-capri.log --report-fn targer-default-capri.txt --save targer-default-capri.hdf5
+python main.py  $DATA  --model BiRNN --opt adam --save-best yes --patience $PATENCE --rnn-hidden-dim $RNN_HIDDEN_DIM --gpu $GPU_1 --elmo False --epoch-num $EPOCHS --evaluator f1-macro --bert False --special_bert False $LOGGING
+
