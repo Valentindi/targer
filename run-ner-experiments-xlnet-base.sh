@@ -11,7 +11,7 @@ PATENCE="200"
 RNN_HIDDEN_DIM="200"
 EPOCHS="200"
 
-FILENAME="targer-xlnet-large-capri-patence="$PATENCE"-rnn-hidden-dim="$RNN_HIDDEN_DIM"-epochs="$EPOCHS
+FILENAME="targer-xlnet-large-ner-patence="$PATENCE"-rnn-hidden-dim="$RNN_HIDDEN_DIM"-epochs="$EPOCHS
 LOGGING="--logname $FILENAME.log --report-fn $FILENAME.txt --save $FILENAME.hdf5"
 # comparision of models
 

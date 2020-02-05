@@ -1,32 +1,26 @@
-"""indexer for BERT model"""
+"""indexer for XLNet model"""
 import transformers as transformers
 
 """join list of input words into string"""
-"""provide BERT tokenization"""
+"""provide XLNet tokenization"""
 
-import string
-import re
 from src.seq_indexers.seq_indexer_base_embeddings import SeqIndexerBaseEmbeddings
-from pytorch_pretrained_bert import BertTokenizer, BertModel
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import numpy as np
 import torch
-
-from src.tokenizers import tokenizer_custom_bert
 
 class SeqIndexerXlnet(SeqIndexerBaseEmbeddings):
     """SeqIndexerWord converts list of lists of words as strings to list of lists of integer indices and back."""
     def __init__(self, gpu=-1, check_for_lowercase=True, embeddings_dim=0, verbose=True, path_to_pretrained = None, xlnet_type = 'xlnet-base-cased', model_frozen = True):
         SeqIndexerBaseEmbeddings.__init__(self, gpu=gpu, check_for_lowercase=check_for_lowercase, zero_digits=True,
                                           pad='<pad>', unk='<unk>', load_embeddings=True, embeddings_dim=embeddings_dim,
-                                          verbose=verbose, isBert = True)
+                                          verbose=verbose, isXlnet=True)
         
         print ("create seq indexer XLNet")
         
         self.xlnet = True
         self.path_to_pretrained = path_to_pretrained
-        self.tokenizer = transformers.XLNetTokenizer.from_pretrained(xlnet_type) #tokenizer_custom_bert.FullTokenizer(path_to_pretrained + '/vocab.txt')
-        #self.tokenizer = tokenizer_custom_bert.BertTokenizer.from_pretrained("https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt")
+        self.tokenizer = transformers.XLNetTokenizer.from_pretrained(xlnet_type)
         self.emb = transformers.XLNetModel.from_pretrained(xlnet_type)
         self.frozen = model_frozen
 
@@ -35,9 +29,9 @@ class SeqIndexerXlnet(SeqIndexerBaseEmbeddings):
         for param in self.emb.parameters():
             param.requires_grad = False
 
-        ## froze - unfroze layer of loaded bert pre-trained model. Now only pooler leayer is unfrozen. You can unfroze layers from encoders, decoders, etc.
+        ## froze - unfroze layer of loaded xlnet pre-trained model. Now only pooler leayer is unfrozen. You can unfroze layers from encoders, decoders, etc.
         if (not self.frozen):
-            #print ("loaded BERT model will be trained")
+            #print ("loaded XLNET model will be trained")
             #for i in [0]:
                 #for param in self.emb.encoder.layer[i].parameters():
                     #param.requires_grad = True

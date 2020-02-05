@@ -1,15 +1,15 @@
-"""class implements context word embeddings, like Elmo, Bert"""
+"""class implements context word embeddings, like Elmo, Bert, XlNet"""
 """The meaning of the equal word can change in different context, in different batch"""
-import torch.nn as nn
+
 from src.layers.layer_base import LayerBase
 import torch
 import torch.nn.functional as F
-from src.tokenizers import tokenizer_custom_bert
+
 import logging
 
 class LayerContextWordEmbeddingsXlNet(LayerBase):
     """LayerWordEmbeddings implements word embeddings."""
-    def __init__(self, word_seq_indexer, gpu, freeze_word_embeddings=False, tpnm = "Bert", pad_idx=0, embedding_dim=768):
+    def __init__(self, word_seq_indexer, gpu, freeze_word_embeddings=False, tpnm = "XlNet", pad_idx=0, embedding_dim=768):
         super(LayerContextWordEmbeddingsXlNet, self).__init__(gpu)
         print ("LayerContextWordEmbeddings dert init")
         self.embeddings = word_seq_indexer.emb
@@ -46,11 +46,6 @@ class LayerContextWordEmbeddingsXlNet(LayerBase):
         self.word_sequence  = word_sequences
         self.token_tensor = tokens_tensor
         self.segment_tensor = segments_tensor
-        
-        
-        
-        #print ("forward: token_tensor shape", tokens_tensor.shape)
-        #print ("forward: number_word_in_seq shape", number_word_in_seq.shape)
 
         encoded_layers = self.embeddings(self.token_tensor, self.segment_tensor)
         
@@ -76,7 +71,7 @@ class LayerContextWordEmbeddingsXlNet(LayerBase):
 
         self_tensor = torch.zeros(index.shape) # batch_size*max_num_word (word! not token!)*len_embedding
         # why + 4?
-        # 2 - [cls] and [sep] - bert wrapper, 2 - extra padding for scatter_add function
+
         self_tensor = self.to_gpu(self_tensor)
 
         #torch.save([index], 'index.pth')

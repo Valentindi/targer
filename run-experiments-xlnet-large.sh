@@ -3,7 +3,7 @@
 GPU_1="5"
 
 DATA_TRAIN="data/targer/targer_train.txt"
-DATA_TEST="data/targer/targer_test.txt"
+DATA_TEST="data/targer/targer_test.txt"x
 DATA_DEV="data/targer/targer_dev.txt"
 DATA="--train $DATA_TRAIN --dev $DATA_DEV --test $DATA_TEST --data-io connl-ner-2003"
 
