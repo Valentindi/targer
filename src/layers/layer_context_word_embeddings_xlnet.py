@@ -42,9 +42,9 @@ class LayerContextWordEmbeddingsXlNet(LayerBase):
 
 
         tokens_tensor, segments_tensor, number_word_in_seq = self.word_seq_indexer.batch_to_ids(word_sequences)
-        self.to_gpu(tokens_tensor)
-        self.to_gpu(segments_tensor)
-        self.to_gpu(number_word_in_seq)
+        tokens_tensor = self.to_gpu(tokens_tensor)
+        segments_tensor = self.to_gpu(segments_tensor)
+        number_word_in_seq = self.to_gpu(number_word_in_seq)
         encoded_layers = self.embeddings(tokens_tensor, segments_tensor)
 
 
