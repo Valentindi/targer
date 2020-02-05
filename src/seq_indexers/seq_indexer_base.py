@@ -9,7 +9,7 @@ class SeqIndexerBase():
     to the list of lists of integer indices and back. Items could be either words, tags or characters.
     """
     def __init__(self, gpu=-1, check_for_lowercase=True, zero_digits=False, pad='<pad>', unk='<unk>',
-                 load_embeddings=False, embeddings_dim=0, verbose=False, isElmo = False, isBert = False, isXlNet=False, elmo_options_file = '', elmo_weights_file = ''):
+                 load_embeddings=False, embeddings_dim=0, verbose=False, isElmo = False, isBert = False, isXlnet=False, elmo_options_file = '', elmo_weights_file = ''):
         self.gpu = gpu
         self.elmo = False
         self.bert = False
