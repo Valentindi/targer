@@ -40,17 +40,11 @@ class LayerContextWordEmbeddingsBert(LayerBase):
 
     def forward(self, word_sequences):
         tokens_tensor, segments_tensor, number_word_in_seq = self.word_seq_indexer.batch_to_ids(word_sequences)
-        #print("word_sequences ==== \n{}\n=====\nnumber_word_in_seq===\n{}\n".format(word_sequences, number_word_in_seq))
         tokens_tensor = self.to_gpu(tokens_tensor)
         segments_tensor = self.to_gpu(segments_tensor)
         self.word_sequence  = word_sequences
         self.token_tensor = tokens_tensor
         self.segment_tensor = segments_tensor
-        
-        
-        
-        #print ("forward: token_tensor shape", tokens_tensor.shape)
-        #print ("forward: number_word_in_seq shape", number_word_in_seq.shape)
 
         encoded_layers, _ = self.embeddings(self.token_tensor, self.segment_tensor)
         

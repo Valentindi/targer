@@ -1,13 +1,16 @@
 """provides storing the train/dev/test data subsets and sampling batches from the train dataset"""
 
-import numpy as np
-from random import randint
-from src.classes.utils import argsort_sequences_by_lens, get_sequences_by_indices
 import logging
+from random import randint
+
+import numpy as np
+
+from src.classes.utils import argsort_sequences_by_lens, get_sequences_by_indices
 
 
 class DatasetsBank():
     """DatasetsBank provides storing the train/dev/test data subsets and sampling batches from the train dataset."""
+
     def __init__(self, verbose=True):
         self.verbose = verbose
         self.unique_words_list = list()
@@ -43,7 +46,7 @@ class DatasetsBank():
 
     def get_train_batches(self, batch_size):
         random_indices = np.random.permutation(np.arange(self.train_data_num))
-        for k in range(self.train_data_num // batch_size): # oh yes, we drop the last batch
+        for k in range(self.train_data_num // batch_size):  # oh yes, we drop the last batch
             batch_indices = random_indices[k:k + batch_size].tolist()
             word_sequences_train_batch, tag_sequences_train_batch = self.__get_train_batch(batch_indices)
             yield word_sequences_train_batch, tag_sequences_train_batch
@@ -106,4 +109,4 @@ class DatasetsBankSorted():
         batch_num = self.train_data_num // batch_size
         random_indices = np.random.permutation(np.arange(batch_num)).tolist()
         for k in random_indices:
-            yield self.__get_train_batch_regularized(batch_size-2, rand_batch_size=2, batch_no=k)
+            yield self.__get_train_batch_regularized(batch_size - 2, rand_batch_size=2, batch_no=k)
