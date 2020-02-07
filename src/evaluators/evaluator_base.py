@@ -40,5 +40,5 @@ class EvaluatorBase():
         ttruth = sum(truth, [])
         if labels is None:
             labels = list(set(ttruth + ppredicted))
-            return "\n" + classification_report(ttruth, ppredicted, labels) + "\n"
-        return "\n" + classification_report(ttruth, ppredicted, labels) + "\n"
+            return "\n"# + classification_report(ttruth, ppredicted, labels) + "\n"
+        return "\n"# + classification_report(ttruth, ppredicted, labels) + "\n"

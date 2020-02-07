@@ -53,7 +53,7 @@ class TaggerBase(nn.Module):
         self.eval()
         #print ("predict idx from word")
         if self.xlnet:
-            outputs_tensor = self.forward(word_sequences, labels)
+            outputs_tensor, res_labels = self.forward(word_sequences, labels, labels_return=True)
         else:# batch_size x num_class+1 x max_seq_len
             outputs_tensor = self.forward(word_sequences) # batch_size x num_class+1 x max_seq_len
         #if (self.bert): #token embeddings instead of word embeddings
@@ -64,11 +64,14 @@ class TaggerBase(nn.Module):
         output_idx_sequences = list()
         for k in range(len(word_sequences)):
             idx_seq = list()
-            for l in range(len(word_sequences[k])):
+            len_of_sequence = sum(word_sequences[k]['attention_mask']) if type(word_sequences[k]) is dict else len(word_sequences[k])
+            for l in range(len_of_sequence):
                 curr_output = outputs_tensor[k, 1:, l] # ignore the first component of output
                 max_no = curr_output.argmax(dim=0)
                 idx_seq.append(max_no.item() + 1)
             output_idx_sequences.append(idx_seq)
+        if self.xlnet:
+            return output_idx_sequences, res_labels
         return output_idx_sequences
 
     def predict_tags_from_words(self, word_sequences, batch_size=-1, labels=None):
@@ -88,7 +91,7 @@ class TaggerBase(nn.Module):
 
             if isinstance(self.word_seq_indexer, SeqIndexerXlnet)  :
                 prediction_input = self.word_seq_indexer.generate_input(word_sequences[i:j], labels[i:j])
-                curr_output_idx = self.predict_idx_from_words(prediction_input, labels[i:j])
+                curr_output_idx, some_labels = self.predict_idx_from_words(prediction_input, labels[i:j])
             else:
                 curr_output_idx = self.predict_idx_from_words(word_sequences[i:j])
             curr_output_tag_sequences = self.tag_seq_indexer.idx2items(curr_output_idx)
