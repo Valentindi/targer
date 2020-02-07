@@ -45,8 +45,11 @@ class LayerContextWordEmbeddingsXlNet(LayerBase):
     def forward(self, word_sequences, labels):
         inputs = self.word_seq_indexer.generate_input(word_sequences, labels)
         input_ids = torch.tensor([x["input_ids"] for x in inputs])
+        input_ids = self.to_gpu(input_ids)
         attention_mask = torch.tensor([x["attention_mask"] for x in inputs])
+        attention_mask = self.to_gpu(attention_mask)
         label_ids = torch.tensor([x["labels"] for x in inputs])
+        label_ids = self.to_gpu(label_ids)
         outputs = self.word_seq_indexer.emb(input_ids)
         return outputs[0], attention_mask, label_ids
 
