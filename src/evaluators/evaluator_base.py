@@ -21,7 +21,7 @@ class EvaluatorBase():
         return score_train, score_dev, score_test, msg_test, clf_report
 
     def predict_evaluation_score(self, tagger, word_sequences, targets_tag_sequences, batch_size):
-        outputs_tag_sequences = tagger.predict_tags_from_words(word_sequences, batch_size, targets_tag_sequences)
+        outputs_tag_sequences = tagger.predict_tags_from_words(word_sequences, batch_size, labels=targets_tag_sequences)
         acc, msg = self.get_evaluation_score(targets_tag_sequences, outputs_tag_sequences, word_sequences)
         msg += self.generate_classification_report(targets_tag_sequences, outputs_tag_sequences)
         #msg += self.generate_confusion_matrix(targets_tag_sequences, outputs_tag_sequences)
