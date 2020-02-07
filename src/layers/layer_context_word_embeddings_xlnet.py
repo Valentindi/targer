@@ -22,6 +22,9 @@ class LayerContextWordEmbeddingsXlNet(LayerBase):
         self.gpu = gpu
         self.tpnm = tpnm
 
+        if gpu >= 0:
+            self.cuda(device=self.gpu)
+
     def is_cuda(self):
         return self.embeddings.weight.is_cuda
     
