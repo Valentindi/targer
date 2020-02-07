@@ -49,11 +49,12 @@ class TaggerBase(nn.Module):
         pass
 
     
-    def predict_idx_from_words(self, word_sequences):
+    def predict_idx_from_words(self, word_sequences, labels=None):
         self.eval()
         #print ("predict idx from word")
-        
-        outputs_tensor = self.forward(word_sequences) # batch_size x num_class+1 x max_seq_len
+        if self.xlnet:
+            outputs_tensor = self.forward(word_sequences) # batch_size x num_class+1 x max_seq_len
+        outputs_tensor = self.forward(word_sequences, labels) # batch_size x num_class+1 x max_seq_len
         #if (self.bert): #token embeddings instead of word embeddings
             #print ("predict idx from word is bert")
             #tokens_tensor, segments_tensor, number_word_in_seq = self.word_seq_indexer.batch_to_ids(word_sequences)
@@ -86,7 +87,7 @@ class TaggerBase(nn.Module):
 
             if isinstance(self.word_seq_indexer, SeqIndexerXlnet)  :
                 prediction_input = self.word_seq_indexer.generate_input(word_sequences[i:j], labels[i:j])
-                curr_output_idx = self.predict_idx_from_words(prediction_input)
+                curr_output_idx = self.predict_idx_from_words(prediction_input, labels[i:j])
             else:
                 curr_output_idx = self.predict_idx_from_words(word_sequences[i:j])
             curr_output_tag_sequences = self.tag_seq_indexer.idx2items(curr_output_idx)

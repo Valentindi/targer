@@ -239,7 +239,7 @@ if __name__ == "__main__":
                 nn.utils.clip_grad_norm_(tagger.parameters(), args.clip_grad)
                 optimizer.step()
                 loss_sum += loss.item()
-                if i % 1 == 0:
+                if i % 10 == 0:
                     logging.info("-- train epoch {}/{}, batch {}/{} ({}), loss={}".format(epoch, args.epoch_num, i + 1,
                                                                                           iterations_num,
                                                                                           i * 100.0 / iterations_num,
