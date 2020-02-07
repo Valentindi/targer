@@ -10,6 +10,7 @@ from src.layers.layer_bilstm import LayerBiLSTM
 from src.layers.layer_bigru import LayerBiGRU
 from src.layers.layer_context_word_embeddings import LayerContextWordEmbeddings
 from src.layers.layer_context_word_embeddings_bert import LayerContextWordEmbeddingsBert
+from src.seq_indexers.seq_indexer_xlnet import SeqIndexerXlnet
 
 
 class TaggerBiRNN(TaggerBase):
@@ -55,20 +56,29 @@ class TaggerBiRNN(TaggerBase):
             self.cuda(device=self.gpu)
         self.nll_loss = nn.NLLLoss(ignore_index=0) # "0" target values actually are zero-padded parts of sequences
 
-    def forward(self, word_sequences):
-        mask = self.get_mask_from_word_sequences(word_sequences)        
-        z_word_embed = self.word_embeddings_layer(word_sequences)       
+    def forward(self, word_sequences, labels, labels_return = False):
+        labell=None
+        if isinstance(self.word_embeddings_layer, LayerContextWordEmbeddingsXlNet):
+            z_word_embed, mask, labels = self.word_embeddings_layer(word_sequences, labels)
+        else:
+            mask = self.get_mask_from_word_sequences(word_sequences)
+            z_word_embed = self.word_embeddings_layer(word_sequences)
         self.z_word_embed = z_word_embed
         self.word_sequences = word_sequences
         z_word_embed_d = self.dropout(z_word_embed)
         rnn_output_h = self.birnn_layer(z_word_embed_d, mask)
         z_rnn_out = self.apply_mask(self.lin_layer(rnn_output_h), mask) # shape: batch_size x class_num + 1 x max_seq_len
         y = self.log_softmax_layer(z_rnn_out.permute(0, 2, 1))
+        if labels_return:
+            return y, labels
         return y
 
     def get_loss(self, word_sequences_train_batch, tag_sequences_train_batch):
-        outputs_tensor_train_batch_one_hot = self.forward(word_sequences_train_batch)
-        targets_tensor_train_batch = self.tag_seq_indexer.items2tensor(tag_sequences_train_batch)
+        if isinstance(self.word_seq_indexer, SeqIndexerXlnet):
+            outputs_tensor_train_batch_one_hot, targets_tensor_train_batch = self.forward(word_sequences_train_batch, tag_sequences_train_batch, labels_return=True)
+        else:
+            outputs_tensor_train_batch_one_hot = self.forward(word_sequences_train_batch)
+            targets_tensor_train_batch = self.tag_seq_indexer.items2tensor(tag_sequences_train_batch)
         loss = self.nll_loss(outputs_tensor_train_batch_one_hot, targets_tensor_train_batch)
         return loss
     

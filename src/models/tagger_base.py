@@ -1,8 +1,10 @@
 """abstract base class for all types of taggers"""
+import itertools
 import math
 import torch
 import torch.nn as nn
 
+from src.seq_indexers.seq_indexer_xlnet import SeqIndexerXlnet
 
 
 class TaggerBase(nn.Module):
@@ -18,6 +20,13 @@ class TaggerBase(nn.Module):
         self.batch_size = batch_size
         self.elmo = word_seq_indexer.elmo
         self.bert = word_seq_indexer.bert
+        self.xlnet = word_seq_indexer.xlnet
+
+    def to_gpu(self, item):
+        if self.gpu >= -1:
+            return item.to(device=self.gpu)
+        else:
+            return item
 
     def tensor_ensure_gpu(self, tensor):
         if self.gpu >= -1:
@@ -60,7 +69,7 @@ class TaggerBase(nn.Module):
             output_idx_sequences.append(idx_seq)
         return output_idx_sequences
 
-    def predict_tags_from_words(self, word_sequences, batch_size=-1):
+    def predict_tags_from_words(self, word_sequences, batch_size=-1, labels=None):
         if batch_size == -1:
             batch_size = self.batch_size
         #print('\n')
@@ -74,7 +83,12 @@ class TaggerBase(nn.Module):
                 j = (n + 1)*batch_size
             else:
                 j = len(word_sequences)
-            curr_output_idx = self.predict_idx_from_words(word_sequences[i:j])
+
+            if isinstance(self.word_seq_indexer, SeqIndexerXlnet)  :
+                prediction_input = self.word_seq_indexer.generate_input(word_sequences[i:j], labels[i:j])
+                curr_output_idx = self.predict_idx_from_words(prediction_input)
+            else:
+                curr_output_idx = self.predict_idx_from_words(word_sequences[i:j])
             curr_output_tag_sequences = self.tag_seq_indexer.idx2items(curr_output_idx)
             output_tag_sequences.extend(curr_output_tag_sequences)
             #print('\r++ predicting, batch %d/%d (%1.2f%%).' % (n + 1, batch_num, math.ceil(n * 100.0 / batch_num)),

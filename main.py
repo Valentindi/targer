@@ -174,9 +174,10 @@ if __name__ == "__main__":
 
 
     elif args.xlnet:
+        unique_labels = list(set(list(itertools.chain.from_iterable(tag_sequences_train + tag_sequences_dev + tag_sequences_test))))
         word_seq_indexer = SeqIndexerXlnet(gpu=args.gpu, check_for_lowercase=args.check_for_lowercase,
                                            path_to_pretrained=args.path_to_xlnet, xlnet_type=args.xlnet_type,
-                                           model_frozen=args.bert_frozen, embeddings_dim=args.embedding_dim)
+                                           model_frozen=args.bert_frozen, embeddings_dim=args.embedding_dim, unique_label_list=unique_labels)
 
 
     else:

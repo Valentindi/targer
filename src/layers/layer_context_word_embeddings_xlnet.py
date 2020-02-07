@@ -1,4 +1,6 @@
 """class implements context word embeddings, like Elmo, Bert, XlNet"""
+import itertools
+
 """The meaning of the equal word can change in different context, in different batch"""
 
 from src.layers.layer_base import LayerBase
@@ -37,11 +39,19 @@ class LayerContextWordEmbeddingsXlNet(LayerBase):
             mask_tensor[k, :len(token_seq)] = 1
         return mask_tensor # batch_size x max_seq_len
         
+    def forward(self, word_sequences, labels):
+        inputs = self.word_seq_indexer.generate_input(word_sequences, labels)
+        input_ids = torch.tensor([x["input_ids"] for x in inputs])
+        attention_mask = torch.tensor([x["attention_mask"] for x in inputs])
+        label_ids = torch.tensor([x["labels"] for x in inputs])
+        outputs = self.word_seq_indexer.emb(input_ids)
+        return outputs[0], attention_mask, label_ids
 
-    def forward(self, word_sequences):
 
+    def _forward(self, word_sequences):
 
         tokens_tensor, segments_tensor, number_word_in_seq = self.word_seq_indexer.batch_to_ids(word_sequences)
+
         tokens_tensor = self.to_gpu(tokens_tensor)
         segments_tensor = self.to_gpu(segments_tensor)
         number_word_in_seq = self.to_gpu(number_word_in_seq)
