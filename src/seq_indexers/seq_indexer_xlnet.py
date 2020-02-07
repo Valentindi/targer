@@ -25,6 +25,9 @@ class SeqIndexerXlnet(SeqIndexerBaseEmbeddings):
         self.frozen = model_frozen
         self.label_map = {label: i for i, label in enumerate(unique_label_list)}
 
+        if gpu >= 0:
+            self.emb.cuda(device=self.gpu)
+
         for param in self.emb.parameters():
             param.requires_grad = False
 
@@ -37,6 +40,7 @@ class SeqIndexerXlnet(SeqIndexerBaseEmbeddings):
             for param in self.emb.pooler.parameters():
                 param.requires_grad = True
         self.emb.eval()
+
         print ("XLnet model loaded succesifully")
         
     def get_word_indexes(self, tokenized_text, maxlen): #assign token to num of word in sentence
