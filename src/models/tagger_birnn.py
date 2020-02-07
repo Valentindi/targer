@@ -60,7 +60,7 @@ class TaggerBiRNN(TaggerBase):
         labell=None
         if isinstance(self.word_embeddings_layer, LayerContextWordEmbeddingsXlNet):
             if self.gpu >= 0:
-                self.word_embeddings_layer.to_gpu(self.gpu)
+                self.word_embeddings_layer.to(self.gpu)
             z_word_embed, mask, labels = self.word_embeddings_layer(word_sequences, labels)
         else:
             mask = self.get_mask_from_word_sequences(word_sequences)
