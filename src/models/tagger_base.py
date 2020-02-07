@@ -64,7 +64,7 @@ class TaggerBase(nn.Module):
         output_idx_sequences = list()
         for k in range(len(word_sequences)):
             idx_seq = list()
-            len_of_sequence = sum(word_sequences[k]['attention_mask']) if type(word_sequences[k]) is dict else len(word_sequences[k])
+            len_of_sequence = len(labels[k]) if type(word_sequences[k]) is dict else len(word_sequences[k])
             for l in range(len_of_sequence):
                 curr_output = outputs_tensor[k, 1:, l] # ignore the first component of output
                 max_no = curr_output.argmax(dim=0)
