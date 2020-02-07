@@ -53,8 +53,9 @@ class TaggerBase(nn.Module):
         self.eval()
         #print ("predict idx from word")
         if self.xlnet:
-            outputs_tensor = self.forward(word_sequences, labels) # batch_size x num_class+1 x max_seq_len
-        outputs_tensor = self.forward(word_sequences) # batch_size x num_class+1 x max_seq_len
+            outputs_tensor = self.forward(word_sequences, labels)
+        else:# batch_size x num_class+1 x max_seq_len
+            outputs_tensor = self.forward(word_sequences) # batch_size x num_class+1 x max_seq_len
         #if (self.bert): #token embeddings instead of word embeddings
             #print ("predict idx from word is bert")
             #tokens_tensor, segments_tensor, number_word_in_seq = self.word_seq_indexer.batch_to_ids(word_sequences)
