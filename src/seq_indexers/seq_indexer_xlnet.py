@@ -92,15 +92,15 @@ class SeqIndexerXlnet(SeqIndexerBaseEmbeddings):
         labels,
         max_seq_length,
         tokenizer,
-        cls_token_at_end=False,
-        cls_token="[CLS]",
-        cls_token_segment_id=1,
-        sep_token="[SEP]",
+        cls_token_at_end=True,
+        cls_token="<cls>",
+        cls_token_segment_id=2,
+        sep_token="<sep>",
         sep_token_extra=False,
-        pad_on_left=False,
-        pad_token=0,
-        pad_token_segment_id=0,
-        pad_token_label_id=100,
+        pad_on_left=True,
+        pad_token=5,
+        pad_token_segment_id=4,
+        pad_token_label_id=5,
         sequence_a_segment_id=0,
         mask_padding_with_zero=True,
     ):
@@ -111,10 +111,6 @@ class SeqIndexerXlnet(SeqIndexerBaseEmbeddings):
             `cls_token_segment_id` define the segment id associated to the CLS token (0 for BERT, 2 for XLNet)
         """
 
-        pad_token = 0 #len(self.label_map) + 0
-        pad_token_segment_id = 0# len(self.label_map) + 1
-        pad_token_label_id = 0#len(self.label_map) + 2
-        sequence_a_segment_id = 0#len(self.label_map) + 3
 
         features = []
         for (ex_index, _) in enumerate(tokenlist):
@@ -196,5 +192,5 @@ class SeqIndexerXlnet(SeqIndexerBaseEmbeddings):
             assert len(segment_ids) == max_seq_length
             assert len(label_ids) == max_seq_length
 
-            features.append({"input_ids": input_ids, "attention_mask": input_mask, "labels": label_ids})
+            features.append({"input_ids": input_ids, "attention_mask": input_mask, "labels": label_ids, "segment_ids": segment_ids})
         return features
