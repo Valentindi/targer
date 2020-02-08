@@ -99,7 +99,7 @@ class SeqIndexerXlnet(SeqIndexerBaseEmbeddings):
         pad_on_left=True,
         pad_token=5,
         pad_token_segment_id=4,
-        pad_token_label_id=0,
+        pad_token_label_id=5,
         sequence_a_segment_id=0,
         mask_padding_with_zero=True,
     ):
