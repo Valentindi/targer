@@ -54,7 +54,7 @@ class TaggerBiRNN(TaggerBase):
         self.log_softmax_layer = nn.LogSoftmax(dim=1)
         if gpu >= 0:
             self.cuda(device=self.gpu)
-        self.nll_loss = nn.NLLLoss(ignore_index=0) # "0" target values actually are zero-padded parts of sequences
+        self.nll_loss = nn.NLLLoss(ignore_index=0, reduction="sum") # "0" target values actually are zero-padded parts of sequences
 
     def forward(self, word_sequences, labels, labels_return = False):
         labell=None

@@ -65,7 +65,6 @@ class SeqIndexerXlnet(SeqIndexerBaseEmbeddings):
     def batch_to_ids(self, batch):
         input_ids = batch# [x["input_ids"] for x in batch]
 
-        MAX_LEN = np.max(np.array([len(seq) for seq in input_ids]))
         MAX_LEN_IN_BATCH = np.max(np.array([len(seq) for seq in batch]))
 
         #word_in_sent_indexes = [x["attention_mask"] for x in batch]
@@ -100,7 +99,7 @@ class SeqIndexerXlnet(SeqIndexerBaseEmbeddings):
         pad_on_left=True,
         pad_token=5,
         pad_token_segment_id=4,
-        pad_token_label_id=5,
+        pad_token_label_id=0,
         sequence_a_segment_id=0,
         mask_padding_with_zero=True,
     ):
@@ -192,5 +191,5 @@ class SeqIndexerXlnet(SeqIndexerBaseEmbeddings):
             assert len(segment_ids) == max_seq_length
             assert len(label_ids) == max_seq_length
 
-            features.append({"input_ids": input_ids, "attention_mask": input_mask, "labels": label_ids, "segment_ids": segment_ids})
+            features.append({"input_ids": input_ids, "attention_mask": input_mask, "labels": label_ids, "segment_ids": label_ids})
         return features
