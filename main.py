@@ -20,8 +20,8 @@ from src.seq_indexers.seq_indexer_bert import SeqIndexerBert
 
 #LC_ALL=en_US.UTF-8
 #LANG=en_US.UTF-8
-from src.seq_indexers.seq_indexer_xlnet import SeqIndexerXLNet
 
+from src.seq_indexers.seq_indexer_xlnet import SeqIndexerXLNet
 utf8stdout = open(1, 'w', encoding='utf-8', errors="ignore", closefd=False)
 import sys
 
@@ -227,6 +227,7 @@ if __name__ == "__main__":
                     loss_sum += loss.item()
                     if i % 10 == 9:
                         logging.info("-- train epoch {}/{}, batch {}/{} ({}), loss={}".format(epoch, args.epoch_num, i+1, iterations_num, i*100.0/iterations_num, loss_sum*100 / iterations_num))
+
 
         # Evaluate tagger
         train_score, dev_score, test_score, test_msg, clf_report = evaluator.get_evaluation_score_train_dev_test(tagger, datasets_bank, batch_size=args.batch_size)

@@ -83,6 +83,7 @@ class LayerContextWordEmbeddingsBert(LayerBase):
         #torch.save([self_tensor], 'self_tensor.pth')
         #logging.info("scatter add {}\n====\n{}\n====\n{}".format(self_tensor, index, answer))
         #logging.info("scatter add {}\n====\n{}\n====\n{}".format(self_tensor, index.shape, answer.shape))
+
         self_tensor1 = self_tensor.scatter_add_(1, index, answer)
         #torch.save([self_tensor1], 'self_tensor1.pth')
         self_tensor1 = self_tensor1[:, 1:max_seq_len]
