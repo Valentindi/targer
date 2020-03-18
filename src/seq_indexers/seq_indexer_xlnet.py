@@ -84,7 +84,7 @@ class SeqIndexerXLNet(SeqIndexerBaseEmbeddings):
         return torch.tensor(word_index)
 
     def batch_to_ids(self, batch):
-        batch = [' '.join(sent) for sent in batch]
+        batch = [''.join(sent) for sent in batch]
         batch = ["<s>" + text + "</s>" for text in batch]
         tokenized_texts = [self.tokenizer.tokenize(sent) for sent in batch]
         MAX_LEN = np.max(np.array([len(seq) for seq in tokenized_texts]))

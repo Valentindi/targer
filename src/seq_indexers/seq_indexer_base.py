@@ -33,6 +33,7 @@ class SeqIndexerBase():
         self.verbose = verbose
         self.out_of_vocabulary_list = list()
         self.item2idx_dict = dict()
+        self.idx2item_dict = dict()
         self.offset_class_num = 0
         if (isElmo == False and isBert == False and isXlnet == False):
             if load_embeddings:
