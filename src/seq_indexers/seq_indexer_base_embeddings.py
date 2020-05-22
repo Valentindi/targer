@@ -11,8 +11,8 @@ class SeqIndexerBaseEmbeddings(SeqIndexerBase):
     """
     def __init__(self, load_embeddings, embeddings_dim, verbose, *args, isElmo = False, isBert =
     False, isXlNet = False, **kwargs, ):
-        SeqIndexerBase.__init__(self, load_embeddings, embeddings_dim,
-                                verbose, isElmo, isBert, isXlNet, args, kwargs)
+        SeqIndexerBase.__init__(self, load_embeddings=load_embeddings, embeddings_dim=embeddings_dim,
+                                verbose=verbose, isElmo=isElmo, isBert=isBert, isXlnet=isXlNet)
     @staticmethod
     def load_embeddings_from_file(emb_fn, emb_delimiter, verbose=True):
         for k, line in enumerate(open(emb_fn, 'r', encoding="utf-8")):
