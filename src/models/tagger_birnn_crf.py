@@ -2,8 +2,6 @@
 import math
 import torch
 import torch.nn as nn
-
-from src.layers.layer_context_word_embeddings_xlnet import LayerContextWordEmbeddingsXlNet
 from src.models.tagger_base import TaggerBase
 from src.layers.layer_word_embeddings import LayerWordEmbeddings
 from src.layers.layer_bivanilla import LayerBiVanilla
@@ -27,11 +25,8 @@ class TaggerBiRNNCRF(TaggerBase):
         self.dropout_ratio = dropout_ratio
         self.rnn_type = rnn_type
         self.gpu = gpu
-        if ((not word_seq_indexer.bert) and (not word_seq_indexer.elmo) and (not word_seq_indexer.xlnet)):
+        if ((not word_seq_indexer.bert) and (not word_seq_indexer.elmo)):
             self.word_embeddings_layer = LayerWordEmbeddings(word_seq_indexer, gpu, freeze_word_embeddings)
-        elif (word_seq_indexer.xlnet):
-            self.word_embeddings_layer = LayerContextWordEmbeddingsXlNet(word_seq_indexer, gpu, freeze_word_embeddings,
-                                                                         embedding_dim=embedding_dim)
         elif (word_seq_indexer.bert):
             self.word_embeddings_layer = LayerContextWordEmbeddingsBert(word_seq_indexer, gpu, freeze_word_embeddings, embedding_dim=embedding_dim)
         else:

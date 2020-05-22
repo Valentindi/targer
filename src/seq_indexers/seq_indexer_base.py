@@ -8,33 +8,22 @@ class SeqIndexerBase():
     SeqIndexerBase is a base abstract class for sequence indexers. It converts list of lists of string items
     to the list of lists of integer indices and back. Items could be either words, tags or characters.
     """
-
-    def __init__(self, gpu=-1, check_for_lowercase=True, zero_digits=False, pad='<pad>',
-                 unk='<unk>', bos_token=None,
-                 eos_token=None,
-                 pad_token=None,
-                 cls_token=None,
-                 mask_token=None,
-                 load_embeddings=False, embeddings_dim=0, verbose=False, isElmo=False, isBert=False, isXlnet=False):
+    def __init__(self, gpu=-1, check_for_lowercase=True, zero_digits=False, pad='<pad>', unk='<unk>',
+                 load_embeddings=False, embeddings_dim=0, verbose=False, isElmo = False, isBert = False, elmo_options_file = '', elmo_weights_file = ''):
         self.gpu = gpu
         self.elmo = False
         self.bert = False
-        self.xlnet = False
         self.check_for_lowercase = check_for_lowercase
         self.zero_digits = zero_digits
         self.pad = pad
         self.unk = unk
-        self.bos_token = bos_token,
-        self.eos_token = eos_token
-        self.cls_token = cls_token
-        self.mask_token = mask_token
         self.load_embeddings = load_embeddings
         self.embeddings_dim = embeddings_dim
         self.verbose = verbose
         self.out_of_vocabulary_list = list()
         self.item2idx_dict = dict()
-        self.offset_class_num = 0
-        if (isElmo == False and isBert == False and isXlnet == False):
+        self.idx2item_dict = dict()
+        if (isElmo == False and isBert == False):
             if load_embeddings:
                 self.embeddings_loaded = False
                 self.embedding_vectors_list = list()
@@ -42,38 +31,10 @@ class SeqIndexerBase():
                 self.pad_idx = self.add_item(pad)
                 if load_embeddings:
                     self.add_emb_vector(self.generate_zero_emb_vector())
-                self.offset_class_num += 1
-
             if unk is not None:
                 self.unk_idx = self.add_item(unk)
                 if load_embeddings:
                     self.add_emb_vector(self.generate_random_emb_vector())
-                self.offset_class_num += 1
-
-            if bos_token is not None:
-                self.bos_idx = self.add_item(bos_token)
-                if load_embeddings:
-                    self.add_emb_vector(self.generate_random_emb_vector())
-                self.offset_class_num += 1
-
-            if eos_token is not None:
-                self.eos_idx = self.add_item(eos_token)
-                if load_embeddings:
-                    self.add_emb_vector(self.generate_random_emb_vector())
-                self.offset_class_num += 1
-
-            if cls_token is not None:
-                self.eos_idx = self.add_item(cls_token)
-                if load_embeddings:
-                    self.add_emb_vector(self.generate_random_emb_vector())
-                self.offset_class_num += 1
-
-            if mask_token is not None:
-                self.mask_idx = self.add_item(mask_token)
-                if load_embeddings:
-                    self.add_emb_vector(self.generate_random_emb_vector())
-                self.offset_class_num += 1
-
 
     def get_items_list(self):
         return list(self.item2idx_dict.keys())
@@ -91,7 +52,11 @@ class SeqIndexerBase():
         return idx
 
     def get_class_num(self):
-        return self.get_items_count() - self.offset_class_num
+        if self.pad is not None and self.unk is not None:
+            return self.get_items_count() - 2
+        if self.pad is not None or self.unk is not None:
+            return self.get_items_count() - 1
+        return self.get_items_count()
 
     def items2idx(self, item_sequences):
         idx_sequences = []
@@ -124,9 +89,9 @@ class SeqIndexerBase():
         if word_len == -1:
             word_len = max([len(idx_seq) for idx_seq in idx_sequences])
         tensor = torch.zeros(batch_size, word_len, dtype=torch.long)
-        # if self.gpu >= 0:
+        #if self.gpu >= 0:
         #    tensor = torch.cuda.LongTensor(batch_size, word_len).fill_(0)
-        # else:
+        #else:
         #    tensor = torch.LongTensor(batch_size, word_len).fill_(0)
         for k, idx_seq in enumerate(idx_sequences):
             curr_seq_len = len(idx_seq)
@@ -137,7 +102,7 @@ class SeqIndexerBase():
                 tensor[k, :curr_seq_len] = torch.LongTensor(np.asarray(idx_seq))
             elif align == 'center':
                 start_idx = (word_len - curr_seq_len) // 2
-                tensor[k, start_idx:start_idx + curr_seq_len] = torch.LongTensor(np.asarray(idx_seq))
+                tensor[k, start_idx:start_idx+curr_seq_len] = torch.LongTensor(np.asarray(idx_seq))
             else:
                 raise ValueError('Unknown align string.')
         if self.gpu >= 0:

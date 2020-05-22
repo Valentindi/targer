@@ -3,6 +3,7 @@
 """provide BERT tokenization"""
 
 import string
+import re
 from src.seq_indexers.seq_indexer_base_embeddings import SeqIndexerBaseEmbeddings
 from pytorch_pretrained_bert import BertTokenizer, BertModel
 from tensorflow.keras.preprocessing.sequence import pad_sequences

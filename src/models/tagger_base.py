@@ -18,7 +18,6 @@ class TaggerBase(nn.Module):
         self.batch_size = batch_size
         self.elmo = word_seq_indexer.elmo
         self.bert = word_seq_indexer.bert
-        self.xlnet = word_seq_indexer.xlnet
 
     def tensor_ensure_gpu(self, tensor):
         if self.gpu >= -1:
@@ -40,10 +39,6 @@ class TaggerBase(nn.Module):
     def forward(self, *input):
         pass
 
-    def get_simple_loss(self, word_sequences_train_batch, tag_sequences_train_batch):
-        mask = self.get_mask_from_word_sequences(word_sequences_train_batch)
-        z_word_embed = self.word_embeddings_layer(word_sequences_train_batch)
-        return outputs[0].mean()
     
     def predict_idx_from_words(self, word_sequences):
         self.eval()
