@@ -2,8 +2,8 @@
   
 what WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 ampa NN 0
 receptors NNS 0
@@ -13,8 +13,8 @@ receptors NNS 0
   
 who WP 0
 was VBD 0
-the DT CP
-first JJ CP
+the DT X
+first JJ X
 documented VBN 0
 person NN 0
 to TO 0
@@ -24,21 +24,21 @@ on IN 0
 the DT 0
 continent NN 0
 of IN 0
-antarctica NN 0
+antarctiX NN 0
   
 Which WDT 0
 is VBZ 0
-a DT CP
-better JJR CP
+a DT X
+better JJR X
 bike NN 0
-for IN CA
-commuting VBG CA
-as RB CA
-well RB CA
-as IN CA
-o0asional JJ CA
-long JJ CA
-rides NNS CA
+for IN X
+commuting VBG X
+as RB X
+well RB X
+as IN X
+o0asional JJ X
+long JJ X
+rides NNS X
 - : 0
 Street NN 0
 220 CD 0
@@ -51,9 +51,9 @@ Enfield NNP 0
   
 who WP 0
 has VBZ 0
-the DT CP
-most JJS CP
-followers NNS CA
+the DT X
+most JJS X
+followers NNS X
 on IN 0
 twitter RB 0
 in IN 0
@@ -61,8 +61,8 @@ india NN 0
   
 What WP 0
 is VBZ 0
-a DT CP
-good JJ CP
+a DT X
+good JJ X
 laptop NN 0
 cooling VBG 0
 pad NN 0
@@ -70,10 +70,10 @@ pad NN 0
   
 What WP 0
 are VBP 0
-some DT CP
-of IN CP
-the DT CP
-best JJS CP
+some DT X
+of IN X
+the DT X
+best JJS X
 ways NNS 0
 to TO 0
 learn VB 0
@@ -82,8 +82,8 @@ programming NN 0
   
 who WP 0
 is VBZ 0
-the DT CP
-youngest JJS CP
+the DT X
+youngest JJS X
 person NN 0
 on IN 0
 the DT 0
@@ -93,14 +93,14 @@ court NN 0
 What WP 0
 are VBP 0
 your PRP$ 0
-favorite JJ CP
+favorite JJ X
 animals NNS 0
 ? . 0
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 way NN 0
 to TO 0
 get VB 0
@@ -113,7 +113,7 @@ fat JJ 0
 which WDT 0
 vitamin NN 0
 is VBZ 0
-good JJ CP
+good JJ X
 for IN 0
 hair NN 0
 growth NN 0
@@ -122,9 +122,9 @@ Is VBZ 0
 Mississippi NNP 0
 or 0 0
 Alabama NNP 0
-the DT CP
-most RBS CP
-ra0st JJ CA
+the DT X
+most RBS X
+ra0st JJ X
 state NN 0
 in IN 0
 the DT 0
@@ -133,8 +133,8 @@ US NNP 0
   
 who WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 nba JJ 0
 player NN 0
 of IN 0
@@ -148,7 +148,7 @@ life NN 0
 in IN 0
 India NNP 0
 like IN 0
-compared VBN CP
+compared VBN X
 to IN 0
 Nepal NNP 0
 ? . 0
@@ -160,7 +160,7 @@ first JJ 0
 - HYPH 0
 time NN 0
 founder NN 0
-best JJS CP
+best JJS X
 meet VBP 0
 investors NNS 0
 in IN 0
@@ -170,8 +170,8 @@ Valley NNP 0
   
 what WP 0
 's VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 a DT 0
 therapist NN 0
@@ -181,8 +181,8 @@ psychologist NN 0
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 TV NN 0
 series NN 0
 you PRP 0
@@ -197,15 +197,15 @@ is VBZ 0
 the DT 0
 world NN 0
 's POS 0
-largest JJS CP
-aquarium NN CA
-located VBN CA
+largest JJS X
+aquarium NN X
+loXted VBN X
   
 who WP 0
 is VBZ 0
-the DT CP
-longest JJS CP
-serving VBG CA
+the DT X
+longest JJS X
+serving VBG X
 member NN 0
 of IN 0
 the DT 0
@@ -215,16 +215,16 @@ history NN 0
   
 What WP 0
 is VBZ 0
-a DT CP
-good JJ CP
+a DT X
+good JJ X
 YouTube NNP 0
 username NN 0
 ? . 0
   
 when WRB 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 time NN 0
 to TO 0
 plant VB 0
@@ -237,12 +237,12 @@ northwest NN 0
   
 What WP 0
 are VBP 0
-some DT CP
-of IN CP
-the DT CP
-craziest JJS CP
-/ SYM CP
-weirdest JJS CP
+some DT X
+of IN X
+the DT X
+craziest JJS X
+/ SYM X
+weirdest JJS X
 things NNS 0
 you PRP 0
 've VB 0
@@ -253,8 +253,8 @@ LinkedIn NNP 0
   
 What WP 0
 are VBP 0
-some DT CP
-good JJ CP
+some DT X
+good JJ X
 side NN 0
 dishes NNS 0
 for IN 0
@@ -271,8 +271,8 @@ What WP 0
 are VBP 0
 some DT 0
 of IN 0
-the DT CP
-greatest JJS CP
+the DT X
+greatest JJS X
 examples NNS 0
 of IN 0
 presence NN 0
@@ -283,8 +283,8 @@ mind NN 0
 Which WDT 0
 country NN 0
 has VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 prices NNS 0
 for IN 0
 Rolex NNP 0
@@ -302,8 +302,8 @@ relatively RB 0
   
 What WP 0
 is VBZ 0
-the DT CP
-worst JJS CP
+the DT X
+worst JJS X
 thing NN 0
 that WDT 0
 could MD 0
@@ -317,8 +317,8 @@ President NNP 0
   
 what WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 a DT 0
 processor NN 0
@@ -328,8 +328,8 @@ developer NN 0
   
 What WP 0
 's VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 fantasy NN 0
 book NN 0
 ? . 0
@@ -337,19 +337,19 @@ book NN 0
 is VBZ 0
 jimmy NN 0
 anderson NN 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 bowler NN 0
 in IN 0
 the DT 0
 world NN 0
   
-When WRB CA
+When WRB X
 is VBZ 0
 the DT 0
 random JJ 0
 forest NN 0
-better JJR CP
+better JJR X
 than IN 0
 de0sion NN 0
 tree NN 0
@@ -359,20 +359,20 @@ How WRB 0
 do VBP 0
 you PRP 0
 get VB 0
-the DT CP
-most JJS CP
+the DT X
+most JJS X
 thrill NN 0
 out IN 0
 of IN 0
 a DT 0
-scary JJ 0
+sXry JJ 0
 movie NN 0
 ? . 0
   
 when WRB 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 time NN 0
 of IN 0
 year NN 0
@@ -380,9 +380,9 @@ to TO 0
 grow VB 0
 beans NNS 0
   
-top JJ CP
-10 CD CP
-best JJS CP
+top JJ X
+10 CD X
+best JJS X
 songs NNS 0
 with IN 0
 over IN 0
@@ -392,16 +392,16 @@ views NNS 0
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 programming NN 0
 language NN 0
 in IN 0
 2016 CD 0
 ? . 0
   
-the DT CP
-first JJ CP
+the DT X
+first JJ X
 submarine NN 0
 was VBD 0
 made VBN 0
@@ -411,8 +411,8 @@ country NN 0
   
 Which WDT 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 platform NN 0
 to TO 0
 learn VB 0
@@ -421,7 +421,7 @@ and 0 0
 get VB 0
 knowledge NN 0
 + SYM 0
-certification NN 0
+certifiXtion NN 0
 for IN 0
 Digital NNP 0
 Marketing NNP 0
@@ -435,7 +435,7 @@ general JJ 0
 What WP 0
 is VBZ 0
 your PRP$ 0
-favourite JJ CP
+favourite JJ X
 anime NN 0
 character NN 0
 and 0 0
@@ -444,20 +444,20 @@ why WRB 0
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 online JJ 0
 resources NNS 0
-to TO CA
-learn VB CA
-SASS NNP CA
-interactively RB CA
+to TO X
+learn VB X
+SASS NNP X
+interactively RB X
 ? . 0
   
-the DT CP
-highest JJS CP
-classification NN 0
-category NN 0
+the DT X
+highest JJS X
+classifiXtion NN 0
+Xtegory NN 0
 in IN 0
 the DT 0
 linnaean NN 0
@@ -466,8 +466,8 @@ is VBZ 0
   
 what WP 0
 is VBZ 0
-a DT CP
-good JJ CP
+a DT X
+good JJ X
 vitamin NN 0
 to TO 0
 enhance VB 0
@@ -476,8 +476,8 @@ brain NN 0
   
 who WP 0
 was VBD 0
-the DT CP
-first JJ CP
+the DT X
+first JJ X
 actor NN 0
 who WP 0
 played VBD 0
@@ -495,22 +495,22 @@ development NN 0
 of IN 0
 renaissance NN 0
 individualism NN 0
-most RBS CP
-closely RB CA
-linked VBN CA
+most RBS X
+closely RB X
+linked VBN X
   
 how WRB 0
 tall JJ 0
 is VBZ 0
-the DT CP
-tallest JJS CP
+the DT X
+tallest JJS X
 building NN 0
 ? . 0
   
 When WRB 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 time NN 0
 to TO 0
 shave VB 0
@@ -527,8 +527,8 @@ Is VBZ 0
 mg NN 0
 of IN 0
 ibuprofen RB 0
-more RBR CP
-effective JJ CA
+more RBR X
+effective JJ X
 than IN 0
 4 CD 0
 x SYM 0
@@ -544,8 +544,8 @@ why WRB 0
 ? . 0
   
 Who WP 0
-will MD CP
-win VB CP
+will MD X
+win VB X
 the DT 0
 US NNP 0
 election NN 0
@@ -555,9 +555,9 @@ in IN 0
   
 what WP 0
 was VBD 0
-the DT CP
-major JJ CP
-cause NN 0
+the DT X
+major JJ X
+Xuse NN 0
 of IN 0
 the DT 0
 seven CD 0
@@ -566,8 +566,8 @@ war NN 0
   
 What WP 0
 are VBP 0
-the DT CP
-most RBS CP
+the DT X
+most RBS X
 common JJ 0
 mistakes NNS 0
 that WDT 0
@@ -580,8 +580,8 @@ make VB 0
   
 What WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 a DT 0
 condo NN 0
@@ -592,17 +592,17 @@ townhouse NN 0
   
 who WP 0
 was VBD 0
-the DT CP
-highest JJS CP
-paid VBN CA
+the DT X
+highest JJS X
+paid VBN X
 actor NN 0
 in IN 0
 1971 CD 0
   
 Which WDT 0
 is VBZ 0
-overall RB CA
-better JJR CP
+overall RB X
+better JJR X
 , , 0
 Amazon NNP 0
 Echo NNP 0
@@ -615,18 +615,18 @@ What WP 0
 real JJ 0
 life NN 0
 bands VBZ 0
-most RBS CP
-sound JJ CA
-like IN CA
-the DT CA
-fictional JJ CA
-Dethklok NNP CA
+most RBS X
+sound JJ X
+like IN X
+the DT X
+fictional JJ X
+Dethklok NNP X
 ? . 0
   
 What WP 0
 was VBD 0
 that DT 0
-best JJS CP
+best JJS X
 moment NN 0
 of IN 0
 your PRP$ 0
@@ -640,11 +640,11 @@ powerbank NN 0
 got VBD 0
 damaged VBN 0
 . . 0
-Shall MD CP
-I PRP CP
-give VB CP
-it PRP CP
-to IN CP
+Shall MD X
+I PRP X
+give VB X
+it PRP X
+to IN X
 service NN 0
 centre NN 0
 or 0 0
@@ -667,16 +667,16 @@ service NN 0
 what WDT 0
 0ty NN 0
 is VBZ 0
-the DT CP
-first JJ CP
+the DT X
+first JJ X
 to TO 0
 celebrate VB 0
 new JJ 0
 years NNS 0
   
 Who WP 0
-will MD CP
-win VB CP
+will MD X
+win VB X
 FIFA NNP 0
 world NN 0
 cup NN 0
@@ -691,7 +691,7 @@ and 0 0
 polynesia NN 0
 have VBP 0
 in IN 0
-common JJ CP
+common JJ X
   
 What WP 0
 are VBP 0
@@ -701,15 +701,15 @@ online JJ 0
 graphic JJ 0
 design NN 0
 services NNS 0
-similar JJ CP
-to IN CP
-Canva NNP 0
+similar JJ X
+to IN X
+Xnva NNP 0
 ? . 0
   
 what WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 jpmorgan NN 0
 and 0 0
@@ -718,8 +718,8 @@ chase NN 0
   
 What WP 0
 was VBD 0
-the DT CP
-weirdest JJS CP
+the DT X
+weirdest JJS X
 thing NN 0
 you PRP 0
 ’ve VB 0
@@ -731,17 +731,17 @@ do VB 0
   
 What WP 0
 is VBZ 0
-cheapest JJS CP
+cheapest JJS X
 method NN 0
 to TO 0
-calculate VB 0
+Xlculate VB 0
 shipping NN 0
 rates NNS 0
 ? . 0
   
 is VBZ 0
 it PRP 0
-better JJR CP
+better JJR X
 to TO 0
 have VB 0
 your PRP$ 0
@@ -756,8 +756,8 @@ class NN 0
   
 What WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 PayPal NNP 0
 , , 0
@@ -770,8 +770,8 @@ wallet NN 0
   
 Which WDT 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 places NNS 0
 in IN 0
 Goa NNP 0
@@ -782,8 +782,8 @@ alone RB 0
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 laptop NN 0
 in IN 0
 50000 CD 0
@@ -793,8 +793,8 @@ India NNP 0
   
 What WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 AAVMC NNP 0
 and 0 0
@@ -802,13 +802,13 @@ AVMA NNP 0
 in IN 0
 terms NNS 0
 of IN 0
-veterinary JJ CA
+veterinary JJ X
 ? . 0
   
 7 CD 0
 india NN 0
 's POS 0
-first JJ CP
+first JJ X
 woman NN 0
 judge NN 0
 in IN 0
@@ -817,8 +817,8 @@ court NN 0
   
 What WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 Uber NNP 0
 x SYM 0
@@ -829,8 +829,8 @@ xl NNS 0
   
 what WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 bn NN 0
 and 0 0
@@ -846,7 +846,7 @@ to TO 0
 work VB 0
 at IN 0
 Microsoft NNP 0
-instead RB CP
+instead RB X
 of IN 0
 Facebook NNP 0
 and 0 0
@@ -854,11 +854,11 @@ Google NNP 0
 ? . 0
   
 How WRB 0
-different JJ CP
+different JJ X
 was VBD 0
 Coelorusauria NNP 0
 from IN 0
-Carnosauria NNP 0
+Xrnosauria NNP 0
 ? . 0
   
 I PRP 0
@@ -873,7 +873,7 @@ suggest VB 0
 me PRP 0
 which WDT 0
 is VBZ 0
-better JJR CP
+better JJR X
 and 0 0
 why WRB 0
 , , 0
@@ -892,13 +892,13 @@ is VBZ 0
 Will MD 0
 DRDO NNP 0
 's POS 0
-excaliber JJ 0
+exXliber JJ 0
 rifle NN 0
 be VB 0
-the DT CP
-one CD CP
-of IN CP
-best JJS CP
+the DT X
+one CD X
+of IN X
+best JJS X
 rifles NNS 0
 of IN 0
 the DT 0
@@ -907,17 +907,17 @@ world NN 0
   
 what WP 0
 is VBZ 0
-the DT CP
-most RBS CP
-popular JJ CA
+the DT X
+most RBS X
+popular JJ X
 beer NN 0
 in IN 0
 australia NN 0
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 destinations NNS 0
 I PRP 0
 should MD 0
@@ -928,18 +928,18 @@ Vietnam NNP 0
   
 who WP 0
 has VBZ 0
-the DT CP
-highest JJS CP
-fg JJ CA
-percentage NN CA
+the DT X
+highest JJS X
+fg JJ X
+percentage NN X
 in IN 0
 the DT 0
 nba NN 0
   
 who WP 0
 was VBD 0
-the DT CP
-first JJ CP
+the DT X
+first JJ X
 living NN 0
 indian JJ 0
 to TO 0
@@ -952,9 +952,9 @@ india NN 0
   
 What WP 0
 are VBP 0
-the DT CP
-most RBS CP
-unrealistic JJ CA
+the DT X
+most RBS X
+unrealistic JJ X
 parts NNS 0
 of IN 0
 It PRP 0
@@ -966,8 +966,8 @@ movie NN 0
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 compliment NN 0
 you PRP 0
 've VB 0
@@ -977,9 +977,9 @@ got VBN 0
   
 where WRB 0
 is VBZ 0
-the DT CP
-best JJS CP
-soil NN CA
+the DT X
+best JJS X
+soil NN X
 in IN 0
 the DT 0
 us PRP 0
@@ -987,8 +987,8 @@ us PRP 0
 What WP 0
 would MD 0
 be VB 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 way NN 0
 to TO 0
 use VB 0
@@ -997,8 +997,8 @@ usefully RB 0
 ? . 0
   
 who WP 0
-won VBD CA
-more JJR CP
+won VBD X
+more JJR X
 el NN 0
 clasico JJ 0
 real JJ 0
@@ -1009,7 +1009,7 @@ barcelona VB 0
 What WP 0
 was VBD 0
 the DT 0
-significance NN 0
+signifiXnce NN 0
 of IN 0
 the DT 0
 battle NN 0
@@ -1021,9 +1021,9 @@ how WRB 0
 did VBD 0
 this DT 0
 battle NN 0
-compare VB CP
-and 0 CP
-contrast VB CP
+compare VB X
+and 0 X
+contrast VB X
 to IN 0
 the DT 0
 Battle NNP 0
@@ -1034,7 +1034,7 @@ Arthur NNP 0
   
 Which WDT 0
 is VBZ 0
-better JJR CP
+better JJR X
 , , 0
 the DT 0
 HMS NNP 0
@@ -1046,13 +1046,13 @@ new JJ 0
 Ford NNP 0
 class NN 0
 Aircraft NNP 0
-Carrier NNP 0
+Xrrier NNP 0
 ? . 0
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 ways NNS 0
 to TO 0
 overcome VB 0
@@ -1062,8 +1062,8 @@ fright NN 0
   
 what WP 0
 's VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 cbc NN 0
 and 0 0
@@ -1071,8 +1071,8 @@ fbc NN 0
   
 What WP 0
 is VBZ 0
-the DT CP
-hardest JJS CP
+the DT X
+hardest JJS X
 barrier NN 0
 to TO 0
 overcome VB 0
@@ -1083,30 +1083,30 @@ life NN 0
 Why WRB 0
 do VBP 0
 I PRP 0
-study VB CA
-better RBR CP
+study VB X
+better RBR X
 at IN 0
 night NN 0
 ? . 0
   
 what WP 0
 is VBZ 0
-a DT CP
-major JJ CP
-difference NN CP
+a DT X
+major JJ X
+difference NN X
 between IN 0
 eukaryotic JJ 0
 dna NN 0
-replication NN 0
+repliXtion NN 0
 and 0 0
 prokaryotic JJ 0
 dna NN 0
-replication NN 0
+repliXtion NN 0
 ? . 0
   
 What WP 0
 's VBZ 0
-healthier JJR CP
+healthier JJR X
 : : 0
 bread NN 0
 and 0 0
@@ -1119,8 +1119,8 @@ salsa NN 0
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 torrent JJ 0
 site NN 0
 for IN 0
@@ -1129,17 +1129,17 @@ movies NNS 0
   
 which WDT 0
 was VBD 0
-the DT CP
-first JJ CP
+the DT X
+first JJ X
 country NN 0
-to IN CA
-bad JJ CA
-slavery NN CA
+to IN X
+bad JJ X
+slavery NN X
   
 Which WDT 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 torrent JJ 0
 site NN 0
 for IN 0
@@ -1150,15 +1150,15 @@ movies NNS 0
 How WRB 0
 are VBP 0
 neurotransmitters NNS 0
-different JJ CP
+different JJ X
 from IN 0
 hormones NNS 0
 ? . 0
   
 What WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 Opti NNP 0
 - HYPH 0
@@ -1170,8 +1170,8 @@ Express NNP 0
   
 What WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 a DT 0
 compressor NN 0
@@ -1182,27 +1182,27 @@ pump NN 0
   
 Which WDT 0
 is VBZ 0
-a DT CP
-good JJ CP
+a DT X
+good JJ X
 IDE NNP 0
-for IN CA
-developing VBG CA
-front JJ CA
-- HYPH CA
-end NN CA
-javascript NN CA
+for IN X
+developing VBG X
+front JJ X
+- HYPH X
+end NN X
+javascript NN X
 ? . 0
   
 Vaginaplasty NNP 0
 : : 0
 Who WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 surgeons NNS 0
 in IN 0
 North NNP 0
-America NNP 0
+AmeriX NNP 0
 that WDT 0
 perform VBP 0
 it PRP 0
@@ -1211,9 +1211,9 @@ and 0 0
 what WDT 0
 criteria NNS 0
 is VBZ 0
-the DT CP
-most RBS CP
-important JJ CA
+the DT X
+most RBS X
+important JJ X
 to TO 0
 consider VB 0
 when WRB 0
@@ -1224,8 +1224,8 @@ choice NN 0
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 roller NN 0
 pen NN 0
 in IN 0
@@ -1235,8 +1235,8 @@ India NNP 0
 who WP 0
 has VBZ 0
 won VBN 0
-maximum JJ CP
-oscar NN CA
+maximum JJ X
+osXr NN X
 in IN 0
 his PRP$ 0
 lifetime NN 0
@@ -1248,16 +1248,16 @@ holds VBZ 0
 the DT 0
 record NN 0
 for IN 0
-the DT CP
-greatest JJS CP
-age NN CA
+the DT X
+greatest JJS X
+age NN X
   
 what WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
-canapes NNS 0
+Xnapes NNS 0
 and 0 0
 hors NNS 0
 d SYM 0
@@ -1267,8 +1267,8 @@ Who WP 0
 do VBP 0
 you PRP 0
 think VB 0
-would MD CP
-win VB CP
+would MD X
+win VB X
 the DT 0
 2016 CD 0
 USA NNP 0
@@ -1277,9 +1277,9 @@ Election NNP 0
   
 who WP 0
 is VBZ 0
-worth JJ CA
-the DT CP
-most JJS CP
+worth JJ X
+the DT X
+most JJS X
 in IN 0
 the DT 0
 united JJ 0
@@ -1287,8 +1287,8 @@ states NNS 0
   
 who WP 0
 has VBZ 0
-the DT CP
-highest JJS CP
+the DT X
+highest JJS X
 tides NNS 0
 in IN 0
 the DT 0
@@ -1296,9 +1296,9 @@ world NN 0
   
 Is VBZ 0
 USA NNP 0
-the DT CP
-most RBS CP
-powerful JJ CA
+the DT X
+most RBS X
+powerful JJ X
 country NN 0
 of IN 0
 the DT 0
@@ -1307,9 +1307,9 @@ world NN 0
   
 What WP 0
 are VBP 0
-the DT CP
-most RBS CP
-interesting JJ CA
+the DT X
+most RBS X
+interesting JJ X
 facts NNS 0
 about IN 0
 Earth NNP 0
@@ -1317,8 +1317,8 @@ Earth NNP 0
   
 what WP 0
 is VBZ 0
-the DT CP
-tallest JJS CP
+the DT X
+tallest JJS X
 mt PRP 0
 in IN 0
 the DT 0
@@ -1328,29 +1328,29 @@ what WDT 0
 weather NN 0
 conditions NNS 0
 are VBP 0
-most RBS CP
-likely JJ CA
-to TO CA
-produce VB CA
-tornadoes NNS CA
+most RBS X
+likely JJ X
+to TO X
+produce VB X
+tornadoes NNS X
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 way NN 0
 to TO 0
 prepare VB 0
 for IN 0
-CA NNP 0
+X NNP 0
 final JJ 0
-ISCA NNP 0
+ISX NNP 0
 ? . 0
   
 what WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 air NN 0
 brakes NNS 0
@@ -1360,8 +1360,8 @@ brakes NNS 0
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 way NN 0
 to TO 0
 start VB 0
@@ -1377,8 +1377,8 @@ college NN 0
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 resources NNS 0
 ( -LRB- 0
 blogs NNS 0
@@ -1399,26 +1399,26 @@ attack NN 0
 on IN 0
 titan NN 0
 manga NN 0
-the DT CP
-same JJ CP
+the DT X
+same JJ X
 as IN 0
 the DT 0
 anime NN 0
   
 who WP 0
 has VBZ 0
-the DT CP
-most RBS CP
-grand JJ CA
-slam NN CA
-victories NNS CA
+the DT X
+most RBS X
+grand JJ X
+slam NN X
+victories NNS X
 in IN 0
 tennis NN 0
   
 What WP 0
 were VBD 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 movies NNS 0
 of IN 0
 2015 CD 0
@@ -1428,8 +1428,8 @@ Why WRB 0
   
 What WP 0
 is VBZ 0
-the DT CP
-dumbest JJS CP
+the DT X
+dumbest JJS X
 thing NN 0
 you PRP 0
 have VBP 0
@@ -1438,8 +1438,8 @@ done VBN 0
   
 What WP 0
 it PRP 0
-the DT CP
-biggest JJS CP
+the DT X
+biggest JJS X
 thing NN 0
 you PRP 0
 got VBD 0
@@ -1454,11 +1454,11 @@ status NN 0
   
 What WP 0
 are VBP 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 resin NN 0
-cast NN 0
+Xst NN 0
 and 0 0
 normal JJ 0
 transformer NN 0
@@ -1466,8 +1466,8 @@ transformer NN 0
   
 what WP 0
 are VBP 0
-the DT CP
-oldest JJS CP
+the DT X
+oldest JJS X
 0ties NNS 0
 in IN 0
 the DT 0
@@ -1475,15 +1475,15 @@ us PRP 0
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 condoms NNS 0
 ? . 0
   
 What WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 pre0sion NN 0
 and 0 0
@@ -1492,8 +1492,8 @@ a0uracy NN 0
   
 What WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 stainless JJ 0
 steel NN 0
@@ -1508,16 +1508,16 @@ is VBZ 0
 the DT 0
 name NN 0
 of IN 0
-the DT CP
-highest JJS CP
+the DT X
+highest JJS X
 summit NN 0
 nilgiri NN 0
 hills NNS 0
   
 What WP 0
 's VBZ 0
-the DT CP
-easiest JJS CP
+the DT X
+easiest JJS X
 way NN 0
 to TO 0
 kill VB 0
@@ -1528,19 +1528,19 @@ pain NN 0
   
 who WP 0
 gets VBZ 0
-the DT CP
-most JJS CP
-punishments NNS CA
+the DT X
+most JJS X
+punishments NNS X
 on IN 0
-impractical JJ 0
+impractiXl JJ 0
 jokers NNS 0
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
-and 0 CP
-high JJ CP
+the DT X
+best JJS X
+and 0 X
+high JJ X
 PR NN 0
 so0al JJ 0
 bookmarking NN 0
@@ -1549,8 +1549,8 @@ site NN 0
   
 What WP 0
 is VBZ 0
-a DT CP
-good JJ CP
+a DT X
+good JJ X
 book NN 0
 to TO 0
 start VB 0
@@ -1566,34 +1566,34 @@ and 0 0
 inter VB 0
 milan NN 0
 share VBP 0
-the DT CP
-same JJ CP
-stadium NN CA
+the DT X
+same JJ X
+stadium NN X
   
 when WRB 0
 was VBD 0
-the DT CP
-last JJ CP
+the DT X
+last JJ X
 time NN 0
 australia NN 0
 had VBD 0
 a DT 0
-hurricane NN 0
+hurriXne NN 0
   
-where WRB CP
+where WRB X
 does VBZ 0
 india NN 0
 stand VB 0
 in IN 0
-education NN CA
+eduXtion NN X
 in IN 0
 the DT 0
 world NN 0
   
-the DT CP
-four CD CP
-most RBS CP
-recent JJ CA
+the DT X
+four CD X
+most RBS X
+recent JJ X
 movies NNS 0
 directed VBN 0
 by IN 0
@@ -1609,16 +1609,16 @@ screen NN 0
 what WP 0
 vitamins NNS 0
 are VBP 0
-good JJ CP
-for IN CA
-skin NN CA
-and 0 CA
-acne NN CA
+good JJ X
+for IN X
+skin NN X
+and 0 X
+acne NN X
   
 What WP 0
 is VBZ 0
 your PRP$ 0
-favorite JJ CP
+favorite JJ X
 movie NN 0
 all RB 0
 about IN 0
@@ -1626,18 +1626,18 @@ about IN 0
   
 who WP 0
 was VBD 0
-the DT CP
-oldest JJS CP
-cast NN 0
+the DT X
+oldest JJS X
+Xst NN 0
 member NN 0
 in IN 0
 grease NN 0
   
 What WP 0
 's VBZ 0
-the DT CP
-most RBS CP
-important JJ CA
+the DT X
+most RBS X
+important JJ X
 lesson NN 0
 you PRP 0
 've VB 0
@@ -1648,8 +1648,8 @@ life NN 0
   
 What WP 0
 is VBZ 0
-the DT CP
-biggest JJS CP
+the DT X
+biggest JJS X
 mistake NN 0
 you PRP 0
 have VBP 0
@@ -1662,8 +1662,8 @@ life NN 0
 What WP 0
 do VBP 0
 you PRP 0
-like VB CA
-most JJS CP
+like VB X
+most JJS X
 about IN 0
 student NN 0
 life NN 0
@@ -1671,8 +1671,8 @@ life NN 0
   
 What WP 0
 is VBZ 0
-a DT CP
-good JJ CP
+a DT X
+good JJ X
 book NN 0
 for IN 0
 behavioral JJ 0
@@ -1687,17 +1687,17 @@ mind NN 0
 and 0 0
 heart NN 0
 are VBP 0
-different JJ CP
+different JJ X
 things NNS 0
-or 0 CP
-the DT CP
-same JJ CP
+or 0 X
+the DT X
+same JJ X
 ? . 0
   
 What WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 living VBG 0
 to IN 0
@@ -1709,9 +1709,9 @@ live VB 0
 ? . 0
   
 How WRB 0
-different JJ CP
-or 0 CP
-similar JJ CP
+different JJ X
+or 0 X
+similar JJ X
 is VBZ 0
 Toronto NNP 0
 to IN 0
@@ -1725,9 +1725,9 @@ type NN 0
 of IN 0
 movement NN 0
 is VBZ 0
-the DT CP
-most RBS CP
-complex JJ CA
+the DT X
+most RBS X
+complex JJ X
 and 0 0
 is VBZ 0
 integrated VBN 0
@@ -1740,11 +1740,11 @@ cortex NN 0
 what WP 0
 was VBD 0
 probably RB 0
-the DT CP
-greatest JJS CP
+the DT X
+greatest JJS X
 factor NN 0
 in IN 0
-americas NNS 0
+ameriXs NNS 0
 entrance NN 0
 into IN 0
 the DT 0
@@ -1753,8 +1753,8 @@ war NN 0
 Which WDT 0
 books NNS 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 for IN 0
 beginners NNS 0
 to TO 0
@@ -1765,15 +1765,15 @@ Python NNP 0
   
 what WP 0
 is VBZ 0
-best JJS CP
+best JJS X
 grass NN 0
 for IN 0
-cattle NNS 0
+Xttle NNS 0
   
 what WP 0
 's VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 a DT 0
 spe0alist NN 0
@@ -1783,8 +1783,8 @@ generalist NN 0
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 way NN 0
 to TO 0
 stay VB 0
@@ -1795,52 +1795,52 @@ after IN 0
   
 who WP 0
 will MD 0
-typically RB 0
+typiXlly RB 0
 have VB 0
-the DT CP
-most JJS CP
-de0sion NN CA
-- HYPH CA
-making VBG CA
-ability NN CA
+the DT X
+most JJS X
+de0sion NN X
+- HYPH X
+making VBG X
+ability NN X
 in IN 0
 this DT 0
 relationship NN 0
   
 what WP 0
 is VBZ 0
-the DT CP
-biggest JJS CP
+the DT X
+biggest JJS X
 and 0 0
-loudest JJS CP
+loudest JJS X
 subwoofer NN 0
 ever RB 0
 made VBN 0
   
 who WP 0
 was VBD 0
-first JJ CP
+first JJ X
 doctor NN 0
 fate NN 0
 or 0 0
 doctor NN 0
 strange JJ 0
   
-Can MD 0
+Xn MD 0
 cows NNS 0
 be VB 0
-better JJR CP
-pets NNS CA
+better JJR X
+pets NNS X
 than IN 0
 dogs NNS 0
 and 0 0
-cats NNS 0
+Xts NNS 0
 ? . 0
   
 what WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 teller NN 0
 1 CD 0
@@ -1850,7 +1850,7 @@ and 0 0
   
 What WP 0
 are VBP 0
-differences NNS CP
+differences NNS X
 between IN 0
 Disc NNP 0
 Brake NNP 0
@@ -1861,19 +1861,19 @@ Brake NNP 0
   
 what WP 0
 is VBZ 0
-the DT CP
-best JJS CP
-medication NN 0
-for IN CA
-anxiety NN CA
-for IN CA
-immediate JJ CA
-relief NN CA
+the DT X
+best JJS X
+mediXtion NN 0
+for IN X
+anxiety NN X
+for IN X
+immediate JJ X
+relief NN X
   
 Which WDT 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 bulk JJ 0
 sms NN 0
 service NN 0
@@ -1885,18 +1885,18 @@ Mangalore NNP 0
 Is VBZ 0
 French JJ 0
 culture NN 0
-more RBR CP
-intellectual JJ CA
+more RBR X
+intellectual JJ X
 than IN 0
-American JJ 0
+AmeriXn JJ 0
 culture NN 0
 ? . 0
   
 Who WP 0
-will MD CP
-win VB CP
-a DT CA
-war NN CA
+will MD X
+win VB X
+a DT X
+war NN X
 between IN 0
 China NNP 0
 and 0 0
@@ -1905,8 +1905,8 @@ Japan NNP 0
   
 Which WDT 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 PC NN 0
 game NN 0
 of IN 0
@@ -1915,10 +1915,10 @@ of IN 0
   
 what WP 0
 are VBP 0
-the DT CP
-advantages NNS CP
-and 0 CP
-disadvantages NNS CP
+the DT X
+advantages NNS X
+and 0 X
+disadvantages NNS X
 of IN 0
 batch NN 0
 production NN 0
@@ -1926,11 +1926,11 @@ production NN 0
   
 What WP 0
 is VBZ 0
-the DT CP
-most RBS CP
-easy JJ CA
-and 0 CA
-trusted JJ CA
+the DT X
+most RBS X
+easy JJ X
+and 0 X
+trusted JJ X
 way NN 0
 to TO 0
 earn VB 0
@@ -1941,14 +1941,14 @@ online RB 0
 why WRB 0
 is VBZ 0
 concrete JJ 0
-best JJS CP
+best JJS X
 for IN 0
 skateparks NNS 0
   
 what WP 0
 is VBZ 0
-the DT CP
-biggest JJS CP
+the DT X
+biggest JJS X
 airlines NNS 0
 in IN 0
 asia JJ 0
@@ -1956,8 +1956,8 @@ pa0fic NN 0
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 movies NNS 0
 that WDT 0
 are VBP 0
@@ -1968,13 +1968,13 @@ novels NNS 0
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 way NN 0
 to TO 0
 prepare VB 0
 for IN 0
-CA NNP 0
+X NNP 0
 final JJ 0
 law NN 0
 and 0 0
@@ -1983,18 +1983,18 @@ audit NN 0
   
 What WP 0
 are VBP 0
-the DT CP
-strengths NNS CP
-and 0 CP
-weaknesses NNS CP
+the DT X
+strengths NNS X
+and 0 X
+weaknesses NNS X
 of IN 0
 Infosys NNP 0
 ? . 0
   
 Who WP 0
 is VBZ 0
-the DT CP
-popular JJ CP
+the DT X
+popular JJ X
 politi0ans NNS 0
 in IN 0
 Chhattisgarh NNP 0
@@ -2002,8 +2002,8 @@ Chhattisgarh NNP 0
   
 who WP 0
 was VBD 0
-the DT CP
-first JJ CP
+the DT X
+first JJ X
 child NN 0
 star NN 0
 signed VBD 0
@@ -2012,8 +2012,8 @@ motown NN 0
   
 What WP 0
 is VBZ 0
-the DT CP
-hardest JJS CP
+the DT X
+hardest JJS X
 thing NN 0
 to TO 0
 get VB 0
@@ -2025,10 +2025,10 @@ lives NNS 0
 what WDT 0
 store NN 0
 credit NN 0
-card NN 0
+Xrd NN 0
 is VBZ 0
-the DT CP
-easiest JJS CP
+the DT X
+easiest JJS X
 to TO 0
 get VB 0
 online RB 0
@@ -2047,39 +2047,39 @@ MBA NNP 0
 programs NNS 0
 would MD 0
 be VB 0
-easier JJR CP
-to TO CA
-get VB CA
-a0epted VBN CA
-with IN CA
-a DT CA
-low JJ CA
-GPA NN CA
-but 0 CA
-very RB CA
-high JJ CA
-scores NNS CA
-on IN CA
-the DT CA
-GMAT NNP CA
-and 0 CA
-TOEFL NNP CA
+easier JJR X
+to TO X
+get VB X
+a0epted VBN X
+with IN X
+a DT X
+low JJ X
+GPA NN X
+but 0 X
+very RB X
+high JJ X
+scores NNS X
+on IN X
+the DT X
+GMAT NNP X
+and 0 X
+TOEFL NNP X
 for IN 0
 an DT 0
 international JJ 0
-applicant NN 0
+appliXnt NN 0
 ? . 0
   
 where WRB 0
 do VBP 0
-most JJS CP
-immigrants NNS CA
-come VB CA
-from IN CA
-to IN CA
-australia NN CA
+most JJS X
+immigrants NNS X
+come VB X
+from IN X
+to IN X
+australia NN X
   
-major JJ CP
+major JJ X
 lakes NNS 0
 rivers NNS 0
 and 0 0
@@ -2092,8 +2092,8 @@ china NN 0
   
 What WP 0
 are VBP 0
-some DT CP
-interesting JJ CA
+some DT X
+interesting JJ X
 areas NNS 0
 of IN 0
 English NNP 0
@@ -2109,8 +2109,8 @@ in IN 0
   
 Which WDT 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 Android NNP 0
 smartphone NN 0
 under IN 0
@@ -2121,12 +2121,12 @@ What WDT 0
 brand NN 0
 of IN 0
 dry JJ 0
-cat NN 0
+Xt NN 0
 food NN 0
 is VBZ 0
-the DT CP
-most RBS CP
-popular JJ CA
+the DT X
+most RBS X
+popular JJ X
 with IN 0
 picky JJ 0
 eaters NNS 0
@@ -2134,8 +2134,8 @@ eaters NNS 0
   
 what WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 an DT 0
 equivalency NN 0
@@ -2147,8 +2147,8 @@ challenge NN 0
   
 What WP 0
 are VBP 0
-the DT CP
-main JJ CP
+the DT X
+main JJ X
 reasons NNS 0
 why WRB 0
 students NNS 0
@@ -2169,19 +2169,19 @@ time NN 0
 who WP 0
 has VBZ 0
 won VBN 0
-the DT CP
-most JJS CP
-academy NN CA
-awards NNS CA
+the DT X
+most JJS X
+aXdemy NN X
+awards NNS X
 for IN 0
 best JJS 0
 actress NN 0
   
 What WP 0
 are VBP 0
-the DT CP
-least JJS CP
-popular JJ CA
+the DT X
+least JJS X
+popular JJ X
 Olympic JJ 0
 sports NNS 0
 ? . 0
@@ -2193,8 +2193,8 @@ unpopular JJ 0
   
 what WP 0
 is VBZ 0
-the DT CP
-longest JJS CP
+the DT X
+longest JJS X
 town NN 0
 name NN 0
 in IN 0
@@ -2204,8 +2204,8 @@ states NNS 0
   
 Is VBZ 0
 there EX 0
-a DT CP
-best JJS CP
+a DT X
+best JJS X
 time NN 0
 to TO 0
 study VB 0
@@ -2216,13 +2216,13 @@ type NN 0
 of IN 0
 rock NN 0
 would MD 0
-most RBS CP
-likely RB CA
-be VB CA
-at IN CA
-a DT CA
-subduction NN CA
-zone NN CA
+most RBS X
+likely RB X
+be VB X
+at IN X
+a DT X
+subduction NN X
+zone NN X
   
 during IN 0
 which WDT 0
@@ -2231,16 +2231,16 @@ of IN 0
 cellular JJ 0
 respiration NN 0
 is VBZ 0
-the DT CP
-majority NN CP
+the DT X
+majority NN X
 of IN 0
 atp NN 0
 formed VBN 0
   
 who WP 0
 was VBD 0
-the DT CP
-first JJ CP
+the DT X
+first JJ X
 person NN 0
 to TO 0
 be VB 0
@@ -2251,8 +2251,8 @@ bible JJ 0
   
 who WP 0
 was VBD 0
-the DT CP
-first JJ CP
+the DT X
+first JJ X
 player NN 0
 in IN 0
 bb NN 0
@@ -2268,7 +2268,7 @@ evicted VBN 0
   
 what WP 0
 is VBZ 0
-bigger JJR CP
+bigger JJR X
 bits NNS 0
 or 0 0
 giga JJ 0
@@ -2277,8 +2277,8 @@ Where WRB 0
 do VBP 0
 I PRP 0
 get VB 0
-the DT CP
-latest JJS CP
+the DT X
+latest JJS X
 1Z0 CD 0
 - HYPH 0
 508 CD 0
@@ -2287,10 +2287,10 @@ materials NNS 0
   
 What WP 0
 are VBP 0
-some DT CP
-must MD CA
-- HYPH CA
-watch VB CA
+some DT X
+must MD X
+- HYPH X
+watch VB X
 Indian JJ 0
 short JJ 0
 movies NNS 0
@@ -2300,8 +2300,8 @@ films NNS 0
   
 What WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 atomic JJ 0
 mass NN 0
@@ -2313,9 +2313,9 @@ mass NN 0
   
 What WP 0
 is VBZ 0
-the DT CP
-most RBS CP
-beautiful JJ CA
+the DT X
+most RBS X
+beautiful JJ X
 thing NN 0
 you PRP 0
 've VB 0
@@ -2324,8 +2324,8 @@ seen VBN 0
   
 What WP 0
 are VBP 0
-the DT CP
-latest JJS CP
+the DT X
+latest JJS X
 SEO NN 0
 off IN 0
 page NN 0
@@ -2334,8 +2334,8 @@ activities NNS 0
   
 what WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 service NN 0
 and 0 0
@@ -2344,8 +2344,8 @@ rendered VBN 0
   
 What WP 0
 's VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 thing NN 0
 you PRP 0
 've VB 0
@@ -2357,8 +2357,8 @@ Quora NNP 0
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 way NN 0
 to TO 0
 get VB 0
@@ -2368,8 +2368,8 @@ orgasm NN 0
   
 Which WDT 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 free JJ 0
 video NN 0
 editor NN 0
@@ -2377,15 +2377,15 @@ editor NN 0
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 resources NNS 0
 for IN 0
 learning VBG 0
 Spanish NNP 0
 and 0 0
 how WRB 0
-can MD 0
+Xn MD 0
 I PRP 0
 become VB 0
 a DT 0
@@ -2403,20 +2403,20 @@ language NN 0
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 online JJ 0
 course NN 0
-for IN CA
-studying VBG CA
-basic JJ CA
-computer NN CA
-s0ence NN CA
+for IN X
+studying VBG X
+basic JJ X
+computer NN X
+s0ence NN X
 ? . 0
   
 what WP 0
 is VBZ 0
-difference NN CP
+difference NN X
 between IN 0
 a DT 0
 warranty NN 0
@@ -2425,8 +2425,8 @@ guarantee VB 0
   
 What WP 0
 is VBZ 0
-a DT CP
-good JJ CP
+a DT X
+good JJ X
 book NN 0
 about IN 0
 data NNS 0
@@ -2440,9 +2440,9 @@ javascript NN 0
   
 what WP 0
 is VBZ 0
-the DT CP
-most RBS CP
-important JJ CA
+the DT X
+most RBS X
+important JJ X
 night NN 0
 of IN 0
 hanukkah NN 0
@@ -2450,7 +2450,7 @@ hanukkah NN 0
 Which WDT 0
 one NN 0
 is VBZ 0
-correct JJ CP
+correct JJ X
 : : 0
 """" `` 0
 It PRP 0
@@ -2488,8 +2488,8 @@ correct JJ 0
 Why WRB 0
 MyAssignmenthelp.com ADD 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 custom NN 0
 dissertation NN 0
 writing NN 0
@@ -2502,16 +2502,16 @@ UK NNP 0
 what WDT 0
 airport NN 0
 is VBZ 0
-the DT CP
-closest JJS CP
-to TO CA
-jupiter VB CA
-florida NN CA
+the DT X
+closest JJS X
+to TO X
+jupiter VB X
+florida NN X
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 YA NNP 0
 fairy NN 0
 tale NN 0
@@ -2520,7 +2520,7 @@ retellings NNS 0
   
 Which WDT 0
 is VBZ 0
-best JJS CP
+best JJS X
 hair NN 0
 loss NN 0
 treatment NN 0
@@ -2531,20 +2531,20 @@ Ahmedabad NNP 0
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 Gate NNP 0
 exam NN 0
 Books NNS 0
 for IN 0
-mechanical JJ 0
+mechaniXl JJ 0
 engineering NN 0
 ? . 0
   
 which WDT 0
 is VBZ 0
-the DT CP
-fastest JJS CP
+the DT X
+fastest JJS X
 running VBG 0
 train NN 0
 on IN 0
@@ -2554,8 +2554,8 @@ railways NNS 0
 Is VBZ 0
 Joaquin NNP 0
 Phoenix NNP 0
-the DT CP
-greatest JJS CP
+the DT X
+greatest JJS X
 actor NN 0
 of IN 0
 this DT 0
@@ -2564,8 +2564,8 @@ generation NN 0
   
 Where WRB 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 coworking VBG 0
 office NN 0
 space NN 0
@@ -2579,29 +2579,29 @@ cougars NNS 0
 and 0 0
 mountain NN 0
 lions NNS 0
-the DT CP
-same JJ CP
+the DT X
+same JJ X
 animal NN 0
   
 where WRB 0
 is VBZ 0
-the DT CP
-least JJS CP
-populated JJ CA
+the DT X
+least JJS X
+populated JJ X
 place NN 0
 in IN 0
 england NN 0
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 place NN 0
-to TO CA
-get VB CA
-a DT CA
-hair NN CA
-transplant NN CA
+to TO X
+get VB X
+a DT X
+hair NN X
+transplant NN X
 in IN 0
 Bangalore NNP 0
 ? . 0
@@ -2609,16 +2609,16 @@ Bangalore NNP 0
 which WDT 0
 professional JJ 0
 sport NN 0
-pays VBZ CA
-the DT CP
-most JJS CP
-money NN CA
+pays VBZ X
+the DT X
+most JJS X
+money NN X
   
 What WP 0
 are VBP 0
-the DT CP
-most RBS CP
-embarrassing JJ CA
+the DT X
+most RBS X
+embarrassing JJ X
 moments NNS 0
 you PRP 0
 have VBP 0
@@ -2630,8 +2630,8 @@ office NN 0
   
 What WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 public JJ 0
 and 0 0
@@ -2654,7 +2654,7 @@ balance NN 0
 ? . 0
 Does VBZ 0
 this DT 0
-differ VB CP
+differ VB X
 across IN 0
 positions NNS 0
 and 0 0
@@ -2663,9 +2663,9 @@ departments NNS 0
   
 what WP 0
 is VBZ 0
-the DT CP
-highest JJS CP
-elevation NN CA
+the DT X
+highest JJS X
+elevation NN X
 town NN 0
 in IN 0
 colorado NN 0
@@ -2673,14 +2673,14 @@ colorado NN 0
 What WP 0
 was VBD 0
 your PRP$ 0
-best JJS CP
+best JJS X
 moment NN 0
 ? . 0
   
 What WP 0
 are VBP 0
-some DT CP
-good JJ CP
+some DT X
+good JJ X
 books NNS 0
 by IN 0
 Indian JJ 0
@@ -2689,8 +2689,8 @@ authors NNS 0
   
 what WP 0
 's VBZ 0
-the DT CP
-tallest JJS CP
+the DT X
+tallest JJS X
 building NN 0
 in IN 0
 washington NN 0
@@ -2698,15 +2698,15 @@ dc NNS 0
   
 Which WDT 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 place NN 0
 where WRB 0
 one PRP 0
-can MD 0
+Xn MD 0
 get VB 0
 free JJ 0
-certification NN 0
+certifiXtion NN 0
 for IN 0
 IFRS NN 0
 ? . 0
@@ -2714,9 +2714,9 @@ IFRS NN 0
 What WP 0
 are VBP 0
 some DT 0
-mind NN CP
-- HYPH CP
-blowing VBG CP
+mind NN X
+- HYPH X
+blowing VBG X
 Wallets NNPS 0
 that IN 0
 most JJS 0
@@ -2727,10 +2727,10 @@ have VB 0
   
 who WP 0
 has VBZ 0
-the DT CP
-most JJS CP
-home NN CA
-runs NNS CA
+the DT X
+most JJS X
+home NN X
+runs NNS X
 as IN 0
 a DT 0
 rookie NN 0
@@ -2738,8 +2738,8 @@ ever RB 0
   
 Which WDT 0
 is VBZ 0
-the DT CP
-largest JJS CP
+the DT X
+largest JJS X
 black JJ 0
 hole NN 0
 found VBN 0
@@ -2752,9 +2752,9 @@ fireside NN 0
 poet NN 0
 is VBZ 0
 considered VBN 0
-the DT CP
-most RBS CP
-influential JJ CA
+the DT X
+most RBS X
+influential JJ X
 writer NN 0
 connected VBN 0
 to IN 0
@@ -2765,10 +2765,10 @@ movement NN 0
   
 What WP 0
 are VBP 0
-the DT CP
-similarities NNS CP
+the DT X
+similarities NNS X
 between IN 0
-Mexican JJ 0
+MexiXn JJ 0
 and 0 0
 Indian NNP 0
 Food NNP 0
@@ -2776,8 +2776,8 @@ Food NNP 0
   
 who WP 0
 was VBD 0
-the DT CP
-first JJ CP
+the DT X
+first JJ X
 person NN 0
 rogue NN 0
 used VBD 0
@@ -2787,8 +2787,8 @@ on IN 0
   
 What WP 0
 's VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 way NN 0
 to TO 0
 prepare VB 0
@@ -2797,8 +2797,8 @@ college NN 0
 ? . 0
   
 If IN 0
-a DT CA
-war NN CA
+a DT X
+war NN X
 breaks VBZ 0
 out RP 0
 between IN 0
@@ -2806,8 +2806,8 @@ India NNP 0
 and 0 0
 Pakistan NNP 0
 who WP 0
-would MD CP
-win VB CP
+would MD X
+win VB X
 ? . 0
   
 What WP 0
@@ -2815,8 +2815,8 @@ do VBP 0
 you PRP 0
 think VB 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 solution NN 0
 for IN 0
 the DT 0
@@ -2826,8 +2826,8 @@ issue NN 0
   
 What WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT X
+difference NN X
 between IN 0
 a DT 0
 degree NN 0
@@ -2838,17 +2838,17 @@ diploma NN 0
   
 who WP 0
 has VBZ 0
-the DT CP
-most JJS CP
-championship NN CA
-belts NNS CA
+the DT X
+most JJS X
+championship NN X
+belts NNS X
 in IN 0
 wwe NN 0
   
 Who WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 Bulk NNP 0
 SMS NNP 0
 service NN 0
@@ -2859,7 +2859,7 @@ Bhubaneswar NNP 0
   
 Which WDT 0
 are VBP 0
-best JJS CP
+best JJS X
 apps NNS 0
 for IN 0
 photo NN 0
@@ -2868,10 +2868,10 @@ edit NN 0
   
 Which WDT 0
 are VBP 0
-some DT CP
-of IN CP
-the DT CP
-best JJS CP
+some DT X
+of IN X
+the DT X
+best JJS X
 web NN 0
 data NNS 0
 scraping NN 0
@@ -2880,8 +2880,8 @@ tools NNS 0
   
 Which WDT 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT X
+best JJS X
 way NN 0
 to TO 0
 learn VB 0
@@ -2899,18 +2899,18 @@ level NN 0
 is VBZ 0
 hong JJ 0
 kong NN 0
-the DT CP
-largest JJS CP
+the DT X
+largest JJS X
 0ty NN 0
 in IN 0
 the DT 0
 world NN 0
   
 who WP 0
-got VBD CA
-the DT CP
-most RBS CP
-gold NN CA
-medals NNS CA
+got VBD X
+the DT X
+most RBS X
+gold NN X
+medals NNS X
 this DT 0
 year NN 0
