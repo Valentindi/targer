@@ -16,6 +16,7 @@ RNN_TYPE="LSTM"
 MODEL="BiRNNCRF"
 
 TAGS=("CI" "CA" "CC" "CP")
+TAGS=("CP-CI" "CP-CA" "CP-CC" "CI-CA" "CI-CP" "CA-CC")
 for TAG in "${TAGS[@]}"
 do
 	

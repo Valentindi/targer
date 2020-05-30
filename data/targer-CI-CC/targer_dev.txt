@@ -2,10 +2,10 @@
   
 What WP 0
 are VBP 0
-the DT CP
-pros NNS CP
-and CC CP
-cons NNS CP
+the DT 0
+pros NNS 0
+and CC 0
+cons NNS 0
 of IN CI
 becoming VBG CI
 an DT CI
@@ -15,13 +15,13 @@ investor NN CI
   
 What WP 0
 is VBZ 0
-the DT CP
-most RBS CP
-viewed VBN CA
+the DT 0
+most RBS 0
+viewed VBN 0
 and CC 0
 most RBS 0
-up RB CA
-voted JJ CA
+up RB 0
+voted JJ 0
 answer NN CI
 on IN CC
 Quora NNP CC
@@ -29,24 +29,24 @@ Quora NNP CC
   
 who WP 0
 is VBZ 0
-the DT CP
-highest JJS CP
-paid VBN CA
+the DT 0
+highest JJS 0
+paid VBN 0
 wwe NN CI
 star NN CI
   
 what WP 0
 is VBZ 0
-the DT CP
-purpose NN CP
+the DT 0
+purpose NN 0
 of IN 0
 barfoed NN CI
 test NN CI
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 method NN CI
 to TO CC
 develop VB CC
@@ -56,10 +56,10 @@ memory NN CC
   
 where WRB CI
 are VBP 0
-the DT CP
-most JJS CP
-hops NNS CA
-grown VBN CA
+the DT 0
+most JJS 0
+hops NNS 0
+grown VBN 0
 in IN CC
 the DT CC
 world NN CC
@@ -80,22 +80,22 @@ atmosphere NN 0
 ( -LRB- 0
 hin NN 0
 ) -RRB- 0
-highest JJS CP
+highest JJS 0
   
 what WP 0
 a DT CI
 technician NN CI
 does VBZ 0
-vs IN CP
+vs IN 0
 certified VBN CI
 technicians NNS CI
 pharmacy NN CC
   
 What WP 0
 is VBZ 0
-the DT CP
-most RBS CP
-important JJ CA
+the DT 0
+most RBS 0
+important JJ 0
 human JJ CI
 skill NN CI
 in IN CC
@@ -107,14 +107,14 @@ world NN CC
 what WP 0
 planets NNS CI
 are VBP 0
-larger JJR CP
+larger JJR 0
 than IN 0
 mercury NN CI
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 way NN CI
 to TO CC
 spend VB CC
@@ -126,16 +126,16 @@ Mumbai NNP CC
   
 Which WDT 0
 is VBZ 0
-the DT CP
-biggest JJS CP
+the DT 0
+biggest JJS 0
 prime JJ CI
 number NN CI
 ? . 0
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 books NNS CI
 for IN CC
 learning VBG CC
@@ -145,7 +145,7 @@ market NN CC
   
 which WDT 0
 is VBZ 0
-easier JJR CP
+easier JJR 0
 to TO 0
 make VB CI
 lava NN CI
@@ -155,9 +155,9 @@ slime NN CI
   
 What WP 0
 is VBZ 0
-the DT CP
-most RBS CP
-believable JJ CA
+the DT 0
+most RBS 0
+believable JJ 0
 paranormal JJ CI
 experience NN CI
 you PRP CC
@@ -170,8 +170,8 @@ of IN CC
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 software NN CI
 to TO CC
 implement VB CC
@@ -179,7 +179,7 @@ machine NN CC
 learning VBG CC
 / SYM CC
 large JJ CC
-scale NN CC
+s0le NN CC
 data NNS CC
 mining NN CC
 algorithms NNS CC
@@ -187,8 +187,8 @@ algorithms NNS CC
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 way NN CI
 to TO CC
 add VB CC
@@ -201,7 +201,7 @@ in IN CC
   
 What WP 0
 is VBZ 0
-difference NN CP
+difference NN 0
 between IN 0
 MMRDA NNS CI
 act NN CI
@@ -230,7 +230,7 @@ College NNP CC
 How WRB 0
 is VBZ 0
 it PRP 0
-different JJ CP
+different JJ 0
 from IN 0
 the DT CI
 normal JJ CI
@@ -241,16 +241,16 @@ year NN CI
 What WP 0
 are VBP 0
 some DT 0
-best JJS CP
+best JJS 0
 revenge NN CI
 movies NNS CI
 ? . 0
   
 What WP 0
 are VBP 0
-the DT CP
-most RBS CP
-popular JJ CA
+the DT 0
+most RBS 0
+popular JJ 0
 strategies NNS CI
 used VBN CC
 in IN CC
@@ -262,8 +262,8 @@ trading NN CC
   
 What WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT 0
+difference NN 0
 between IN 0
 oscillation NN CI
 and CC 0
@@ -272,8 +272,8 @@ resonance NN CI
   
 what WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT 0
+difference NN 0
 between IN 0
 brandy NN CI
 and CC 0
@@ -282,7 +282,7 @@ whiskey NN CI
 Which WDT 0
 show VBP 0
 is VBZ 0
-better JJR CP
+better JJR 0
 , , 0
 The DT CI
 Office NNP CI
@@ -294,44 +294,44 @@ Recreation NNP CI
   
 What WP 0
 ’s NNP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 whey NN CI
 protein NN CI
 I PRP 0
-can MD 0
+0n MD 0
 take VB 0
 ? . 0
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 place NN CI
-to TO CA
-live VB CA
-in IN CA
-after IN CA
-retirement NN CA
+to TO 0
+live VB 0
+in IN 0
+after IN 0
+retirement NN 0
 ? . 0
   
 is VBZ 0
 the DT CI
 color NN CI
 ivory NN CI
-the DT CP
-same JJ CP
+the DT 0
+same JJ 0
 as IN 0
 white JJ CI
   
 What WP 0
 are VBP 0
-some DT CP
-mind NN CA
-- HYPH CA
-blowing VBG CA
+some DT 0
+mind NN 0
+- HYPH 0
+blowing VBG 0
 Mobile NNP CI
-cases NNS CI
+0ses NNS CI
 that WDT CC
 exist VBP CC
 that IN CC
@@ -345,17 +345,17 @@ about IN CC
   
 what WP 0
 is VBZ 0
-the DT CP
-most RBS CP
-disliked JJ CA
+the DT 0
+most RBS 0
+disliked JJ 0
 song NN CI
 on IN CC
 youtube NN CC
   
 What WP 0
 is VBZ 0
-a DT CP
-suitable JJ CP
+a DT 0
+suitable JJ 0
 inpatient NN CI
 drug NN CI
 and CC CI
@@ -378,15 +378,15 @@ gas NN CI
 - HYPH CI
 solid JJ CI
 chromatography NN CI
-differ NN CP
+differ NN 0
 ? . 0
   
 where WRB 0
 do VBP 0
 we PRP 0
 have VB 0
-the DT CP
-smallest JJS CP
+the DT 0
+smallest JJS 0
 bone NN CI
 in IN CI
 our PRP$ CI
@@ -394,8 +394,8 @@ body NN CI
   
 who WP CI
 won VBD 0
-the DT CP
-first JJ CP
+the DT 0
+first JJ 0
 battle NN CC
 of IN CC
 the DT CC
@@ -404,8 +404,8 @@ war NN CC
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 way NN CI
 to TO CC
 control VB CC
@@ -416,7 +416,7 @@ emotions NNS CC
 What WP 0
 was VBD 0
 the DT 0
-significance NN 0
+signifi0nce NN 0
 of IN 0
 the DT CI
 battle NN CI
@@ -428,9 +428,9 @@ how WRB 0
 did VBD 0
 this DT 0
 battle NN 0
-compare VB CP
-and CC CP
-contrast VB CP
+compare VB 0
+and CC 0
+contrast VB 0
 to IN 0
 the DT CI
 Battle NNP CI
@@ -440,8 +440,8 @@ Penang NNP CI
   
 Which WDT 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 place NN CI
 to TO CI
 live VB CI
@@ -455,8 +455,8 @@ Uttarakhand NNP CC
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 mobile JJ CI
 phones NNS CI
 under IN CC
@@ -465,8 +465,8 @@ under IN CC
   
 what WP 0
 was VBD 0
-the DT CP
-first JJ CP
+the DT 0
+first JJ 0
 theme NN CI
 park NN CI
 in IN CC
@@ -475,8 +475,8 @@ world NN CC
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 book NN CI
 to TO CC
 refer VB CC
@@ -490,8 +490,8 @@ UPSC NNP CC
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 way NN CI
 to TO CC
 quit VB CC
@@ -502,9 +502,9 @@ job NN CC
 who WP 0
 has VBZ 0
 won VBN 0
-the DT CP
-most JJS CP
-games NNS CA
+the DT 0
+most JJS 0
+games NNS 0
 between IN 0
 real JJ CI
 madrid NN CI
@@ -513,15 +513,15 @@ barcelona VB CI
   
 who WP 0
 is VBZ 0
-the DT CP
-largest JJS CP
+the DT 0
+largest JJS 0
 broadband NN CI
 provider NN CI
   
 what WP 0
 's VBZ 0
-the DT CP
-difference NN CP
+the DT 0
+difference NN 0
 between IN 0
 de FW CI
 jure NN CI
@@ -532,8 +532,8 @@ facto FW CI
 what WP 0
 are VBP 0
 2 CD 0
-major JJ CP
-nascar JJ CI
+major JJ 0
+nas0r JJ CI
 events NNS CI
 that WDT CC
 occur VBP CC
@@ -543,14 +543,14 @@ beach NN CC
   
 where WRB CI
 do VBP 0
-the DT CP
-largest JJS CP
-concentrations NNS CA
-of IN CA
-asian JJ CA
-and CC CA
-pacific JJ CA
-islanders NNS CA
+the DT 0
+largest JJS 0
+concentrations NNS 0
+of IN 0
+asian JJ 0
+and CC 0
+pacific JJ 0
+islanders NNS 0
 live VBP CC
 in IN CC
 the DT CC
@@ -562,16 +562,16 @@ holds VBZ 0
 the DT 0
 record NN 0
 for IN 0
-the DT CP
-most JJS CP
-number NN CA
-one CD CA
-hits NNS CA
+the DT 0
+most JJS 0
+number NN 0
+one CD 0
+hits NNS 0
   
 What WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT 0
+difference NN 0
 between IN 0
 Vedas NNP CI
 Upanisads NNP CI
@@ -581,8 +581,8 @@ Puranas NNP CI
   
 What WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT 0
+difference NN 0
 between IN 0
 a DT CI
 laptop NN CI
@@ -595,17 +595,17 @@ tablet NN CI
   
 who WP 0
 was VBD 0
-the DT CP
-first JJ CP
+the DT 0
+first JJ 0
 serial JJ CI
 killer NN CI
 in IN CC
-america NN CC
+ameri0 NN CC
   
 What WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT 0
+difference NN 0
 between IN 0
 zamindari NN CI
 , , 0
@@ -617,10 +617,10 @@ system NN CI
   
 What WP 0
 is VBZ 0
-the DT CP
-most RBS CP
-practical JJ CA
-application NN CI
+the DT 0
+most RBS 0
+practi0l JJ 0
+appli0tion NN CI
 of IN CI
 math NN CI
 in IN CC
@@ -634,18 +634,18 @@ company NN CI
 in IN CC
 India NNP CC
 offers VBZ 0
-the DT CP
-best JJS CP
-Protection NNP CA
-plan NN CA
+the DT 0
+best JJS 0
+Protection NNP 0
+plan NN 0
 ? . 0
   
 who WP CI
 hit VBD 0
-the DT CP
-most JJS CP
-home NN CA
-runs NNS CA
+the DT 0
+most JJS 0
+home NN 0
+runs NNS 0
 in IN CC
 major JJ CC
 league NN CC
@@ -655,8 +655,8 @@ in IN CC
   
 What WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT 0
+difference NN 0
 between IN 0
 current JJ CI
 accounts NNS CI
@@ -672,21 +672,21 @@ of IN CI
 the DT CI
 country NN CI
 were VBD 0
-most JJS CP
+most JJS 0
 of IN 0
-the DT CA
-states NNS CA
-with IN CA
-low JJ CA
-populations NNS CA
-of IN CA
-immigrants NNS CA
-located VBN CA
+the DT 0
+states NNS 0
+with IN 0
+low JJ 0
+populations NNS 0
+of IN 0
+immigrants NNS 0
+lo0ted VBN 0
   
 What WP 0
 's VBZ 0
-the DT CP
-difference NN CP
+the DT 0
+difference NN 0
 between IN 0
 a DT CI
 merchant NN CI
@@ -697,8 +697,8 @@ Stripe NNP CI
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 places NNS CI
 to TO CC
 visit VB CC
@@ -711,14 +711,14 @@ India NNP CC
   
 which WDT 0
 state NN CI
-produce VBP CA
-most JJS CP
-wheat NN CA
+produce VBP 0
+most JJS 0
+wheat NN 0
   
 what WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT 0
+difference NN 0
 between IN 0
 a DT CI
 democracy NN CI
@@ -729,9 +729,9 @@ non JJ CI
 democracy JJ CI
 ? . 0
   
-the DT CP
-fastest JJS CP
-car NN CI
+the DT 0
+fastest JJS 0
+0r NN CI
 in IN CC
 the DT CC
 world NN CC
@@ -741,7 +741,7 @@ legal JJ CC
 What WP 0
 are VBP 0
 some DT 0
-best JJS CP
+best JJS 0
 Non JJ CI
 - JJ CI
 Indian JJ CI
@@ -751,11 +751,11 @@ food NN CI
   
 What WP 0
 are VBP 0
-some DT CP
-of IN CP
-the DT CP
-most RBS CP
-interesting JJ CA
+some DT 0
+of IN 0
+the DT 0
+most RBS 0
+interesting JJ 0
 facts NNS CI
 of IN CC
 """" `` CC
@@ -768,8 +768,8 @@ India NNP CC
   
 what WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT 0
+difference NN 0
 between IN 0
 cultures NNS CI
 and CC 0
@@ -787,16 +787,16 @@ software NN CI
 ) -RRB- CI
 could MD 0
 provode VB 0
-the DT CP
-most RBS CP
-useful JJ CA
-insights NNS CA
+the DT 0
+most RBS 0
+useful JJ 0
+insights NNS 0
 ? . 0
   
 who WP 0
 was VBD 0
-the DT CP
-youngest JJS CP
+the DT 0
+youngest JJS 0
 person NN 0
 to TO 0
 be VB 0
@@ -810,8 +810,8 @@ congress NN CC
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 social JJ CI
 bookmarking NN CI
 sites NNS CI
@@ -819,9 +819,9 @@ sites NNS CI
   
 What WP 0
 are VBP 0
-the DT CP
-main JJ CP
-differences NNS CP
+the DT 0
+main JJ 0
+differences NNS 0
 between IN 0
 a DT CI
 bachelor NN CI
@@ -835,22 +835,22 @@ dentistry NN CI
 in IN CC
 terms NNS CC
 of IN CC
-career NN CC
+0reer NN CC
 prospects NNS CC
 ? . 0
   
 lake NN CI
 chad's NNP CI
-water NN CA
-level NN CA
+water NN 0
+level NN 0
 was VBD 0
-lowest JJS CP
+lowest JJS 0
 in IN 0
   
 What WP 0
 are VBP 0
-some DT CP
-good JJ CP
+some DT 0
+good JJ 0
 mutual JJ CI
 funds NNS CI
 to TO 0
@@ -864,21 +864,21 @@ moment NN CC
 Which WDT 0
 country NN CI
 is VBZ 0
-highest JJS CP
-in IN CA
-debt NN CA
+highest JJS 0
+in IN 0
+debt NN 0
 ? . 0
   
 Does VBZ 0
 the DT CI
 iPad NNP CI
 adapter NN CI
-charge VB CA
+charge VB 0
 the DT 0
 iPhone NNP 0
 6 CD 0
 Plus CC 0
-faster RBR CP
+faster RBR 0
 ? . 0
 Is VBZ 0
 it PRP 0
@@ -889,8 +889,8 @@ use VB 0
   
 who WP 0
 is VBZ 0
-the DT CP
-highest JJS CP
+the DT 0
+highest JJS 0
 goal NN CI
 scorer NN CI
 in IN CC
@@ -898,9 +898,9 @@ the DT CC
 epl NN CC
   
 who WP CI
-built VBD CA
-first JJ CP
-airplanes NNS CA
+built VBD 0
+first JJ 0
+airplanes NNS 0
 for IN CC
 the DT CC
 united JJ CC
@@ -915,8 +915,8 @@ on IN CC
 the DT CC
 moon NN CC
 for IN 0
-the DT CP
-first JJ CP
+the DT 0
+first JJ 0
 time NN 0
   
 I PRP CC
@@ -935,8 +935,8 @@ analyst NN CC
 . . 0
 What WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT 0
+difference NN 0
 between IN 0
 an DT CI
 FBI NNP CI
@@ -951,9 +951,9 @@ analyst NN CI
   
 what WP 0
 are VBP 0
-the DT CP
-two CD CP
-tallest JJS CP
+the DT 0
+two CD 0
+tallest JJS 0
 buildings NNS CI
 in IN CC
 the DT CC
@@ -969,9 +969,9 @@ they PRP CC
   
 Who WP 0
 is VBZ 0
-the DT CP
-most RBS CP
-famous JJ CA
+the DT 0
+most RBS 0
+famous JJ 0
 Hacker NNP CI
 on IN CC
 Quora NNP CC
@@ -979,8 +979,8 @@ Quora NNP CC
   
 What WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT 0
+difference NN 0
 between IN 0
 leafhopper NN CI
 and CC 0
@@ -989,7 +989,7 @@ grasshopper NN CI
   
 What WP 0
 is VBZ 0
-best JJS CP
+best JJS 0
 way NN CI
 to TO CC
 crack VB CC
@@ -1002,15 +1002,15 @@ Exam NNP CC
 what WP 0
 age NN CI
 do VBP 0
-most JJS CP
-women NNS CA
-get VB CA
-cancer NN CA
+most JJS 0
+women NNS 0
+get VB 0
+0ncer NN 0
   
 Which WDT 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 online JJ CI
 tool NN CI
 to TO CC
@@ -1026,15 +1026,15 @@ life NN CC
   
 What WP 0
 's VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 coffee NN CI
 ? . 0
   
 what WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT 0
+difference NN 0
 between IN 0
 a DT CI
 state NN CI
@@ -1047,8 +1047,8 @@ senator NN CI
   
 Which WDT 0
 is VBZ 0
-the DT CP
-better JJR CP
+the DT 0
+better JJR 0
 guitar NN 0
 to TO 0
 buy VB 0
@@ -1062,34 +1062,34 @@ Ad810 NN CI
   
 What WP 0
 is VBZ 0
-the DT CP
-common JJ CP
+the DT 0
+common JJ 0
 scientific JJ CC
 opinion NN CI
-about IN CP
-Elon NNP CP
-Musk NNP CP
-'s POS CP
-plan NN CP
-to TO CP
-nuke VB CP
-Mars NNP CP
-' POS CP
-poles NNS CP
-to TO CP
-accelerate VB CP
-the DT CP
-creation NN CP
-of IN CP
-an DT CP
-atmosphere NN CP
-? . CP
+about IN 0
+Elon NNP 0
+Musk NNP 0
+'s POS 0
+plan NN 0
+to TO 0
+nuke VB 0
+Mars NNP 0
+' POS 0
+poles NNS 0
+to TO 0
+accelerate VB 0
+the DT 0
+creation NN 0
+of IN 0
+an DT 0
+atmosphere NN 0
+? . 0
   
 What WP 0
 are VBP 0
-the DT CP
-most RBS CP
-interesting JJ CA
+the DT 0
+most RBS 0
+interesting JJ 0
 questions NNS CI
 asked VBD CC
 in IN CC
@@ -1100,7 +1100,7 @@ interview NN CC
 Which WDT 0
 college NN 0
 is VBZ 0
-better JJR CP
+better JJR 0
 DAVIET NNP CI
 JALANDHAR NNP CI
 or CC 0
@@ -1108,7 +1108,7 @@ UIET NNP CI
 KURUKSHETRA NNP CI
 ? . 0
   
-most JJS CP
+most JJS 0
 assists NNS CC
 in IN CC
 an DT CC
@@ -1119,10 +1119,10 @@ a DT CI
 team NN CI
   
 Which WDT 0
-should MD CP
-I PRP CP
-learn VB CP
-first JJ CP
+should MD 0
+I PRP 0
+learn VB 0
+first JJ 0
 : : 0
 JavaScript NNP CI
 or CC 0
@@ -1133,8 +1133,8 @@ CSS NN CI
   
 What WP 0
 was VBD 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 advice NN CI
 you PRP CC
 've VB CC
@@ -1144,7 +1144,7 @@ received VBN CC
   
 Which WDT 0
 is VBZ 0
-best JJS CP
+best JJS 0
 Linux NNP CI
 distro NN CI
 in IN CC
@@ -1155,8 +1155,8 @@ why WRB 0
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 books NNS CI
 on IN CC
 government NN CC
@@ -1166,8 +1166,8 @@ politics NNS CC
   
 who WP 0
 was VBD 0
-the DT CP
-first JJ CP
+the DT 0
+first JJ 0
 official JJ CI
 president NN CI
 of IN CI
@@ -1179,9 +1179,9 @@ which WDT 0
 mlb NN CI
 team NN CI
 scored VBD 0
-the DT CP
-most JJS CP
-runs NNS CA
+the DT 0
+most JJS 0
+runs NNS 0
 in IN CC
 a DT CC
 game NN CC
@@ -1191,19 +1191,19 @@ do VBP 0
 you PRP 0
 think VB 0
 are VBP 0
-the DT CP
-top JJ CP
-3 CD CP
+the DT 0
+top JJ 0
+3 CD 0
 countries NNS CI
-to TO CA
-live VB CA
-in IN CA
+to TO 0
+live VB 0
+in IN 0
 ? . 0
   
 what WP 0
 are VBP 0
-the DT CP
-primary JJ CP
+the DT 0
+primary JJ 0
 types NNS CI
 of IN CC
 agriculture NN CC
@@ -1214,7 +1214,7 @@ china NN CC
 Which WDT 0
 one NN 0
 is VBZ 0
-best JJS CP
+best JJS 0
 lens NN CI
 in IN CI
 70–300 CD CI
@@ -1224,8 +1224,8 @@ Nikon NNP CC
   
 Which WDT 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 Christmas NNP CC
 movies NNS CI
 of IN CC
@@ -1235,8 +1235,8 @@ time NN CC
   
 what WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT 0
+difference NN 0
 between IN 0
 regular JJ CI
 oil NN CI
@@ -1245,8 +1245,8 @@ spray VB CI
   
 who WP 0
 was VBD 0
-the DT CP
-last JJ CP
+the DT 0
+last JJ 0
 person NN CI
 to TO CC
 be VB CC
@@ -1271,8 +1271,8 @@ Sports NNPS CI
 . . 0
 Which WDT 0
 is VBZ 0
-the DT CP
-better JJR CP
+the DT 0
+better JJR 0
 of IN 0
 the DT 0
 two CD 0
@@ -1280,8 +1280,8 @@ two CD 0
   
 Which WDT 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 keywords NNS CI
 for IN CC
 website NN CC
@@ -1291,22 +1291,22 @@ company NN CC
   
 Is VBZ 0
 ADSL VB CI
-the DT CP
-same JJ CP
-as IN CP
+the DT 0
+same JJ 0
+as IN 0
 DSL NNP CI
 ? . 0
   
 What WP 0
 are VBP 0
-good JJ CP
+good JJ 0
 books NNS CI
 on IN CI
 analytics NNS CI
 ? . 0
   
-the DT CP
-difference NN CP
+the DT 0
+difference NN 0
 between IN 0
 a DT CI
 nova NN CI
@@ -1321,7 +1321,7 @@ that DT 0
   
 Which WDT 0
 is VBZ 0
-better JJR CP
+better JJR 0
 , , 0
 Snapdragon NNP CI
 625 CD CI
@@ -1331,10 +1331,10 @@ Snapdragon NNP CI
 ? . 0
   
 Where WRB 0
-can MD 0
+0n MD 0
 I PRP 0
 find VB 0
-best JJS CP
+best JJS 0
 five CD CI
 star NN CI
 hotel NN CI
@@ -1344,8 +1344,8 @@ Bhopal NNP CC
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 way NN CI
 to TO CC
 say VB CC
@@ -1357,11 +1357,11 @@ you PRP CC
   
 Which WDT 0
 is VBZ 0
-the DT CP
-best JJS CP
-time NN CA
-to IN CA
-workout NN CA
+the DT 0
+best JJS 0
+time NN 0
+to IN 0
+workout NN 0
 , , 0
 morning NN CI
 or CC 0
@@ -1369,9 +1369,9 @@ evening NN CI
 ? . 0
   
 who WP 0
-became VBD 0
+be0me VBD 0
 athens NNS CI
-leading VBG CP
+leading VBG 0
 philosopher NN CI
 during IN CC
 its PRP$ CC
@@ -1383,34 +1383,34 @@ are VBP 0
 the DT 0
 best JJS 0
 apps NNS CI
-that WDT CP
-you PRP CP
-have VBP CP
-come VBN CP
-across RB CP
-or CC CP
-used VBN CP
-in IN CA
-terms NNS CA
-of IN CA
-UI NNP CA
-and CC CA
-ease NN CA
-of IN CA
-use NN CA
-on IN CA
-the DT CA
-three CD CA
-mobile JJ CA
-platforms NNS CA
+that WDT 0
+you PRP 0
+have VBP 0
+come VBN 0
+across RB 0
+or CC 0
+used VBN 0
+in IN 0
+terms NNS 0
+of IN 0
+UI NNP 0
+and CC 0
+ease NN 0
+of IN 0
+use NN 0
+on IN 0
+the DT 0
+three CD 0
+mobile JJ 0
+platforms NNS 0
 ? . 0
   
 How WRB 0
 do VBP 0
 I PRP 0
 find VB 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 hotels NNS CI
 in IN CC
 Bhopal NNP CC
@@ -1420,16 +1420,16 @@ how WRB 0
 does VBZ 0
 gestalt NN CI
 theory NN CI
-differ VBP CP
+differ VBP 0
 from IN 0
 functionalism NN CI
 ? . 0
   
 Who WP 0
 are VBP 0
-the DT CP
-most RBS CP
-funny JJ CA
+the DT 0
+most RBS 0
+funny JJ 0
 European JJ CI
 comedians NNS CI
 of IN CC
@@ -1439,9 +1439,9 @@ time NN CC
   
 what WP 0
 is VBZ 0
-the DT CP
-most RBS CP
-important JJ CA
+the DT 0
+most RBS 0
+important JJ 0
 gas NN CI
 in IN CC
 the DT CC
@@ -1453,7 +1453,7 @@ is VBZ 0
 Shahrukh NNP CC
 Khan NNP CC
 's POS CC
-best JJS CP
+best JJS 0
 piece NN CI
 of IN CI
 work NN CI
@@ -1461,27 +1461,27 @@ work NN CI
   
 who WP CI
 has VBZ 0
-the DT CP
-most RBS CP
-slam JJ CA
-dunk NN CA
-contest NN CA
-wins VBZ CA
+the DT 0
+most RBS 0
+slam JJ 0
+dunk NN 0
+contest NN 0
+wins VBZ 0
   
 What WP 0
 was VBD 0
 your PRP$ CC
-most RBS CP
-successful JJ CA
+most RBS 0
+successful JJ 0
 social JJ CI
 media NN CI
-campaign NN CI
+0mpaign NN CI
 ? . 0
   
 Which WDT 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 MBA NNP CI
 colleges NNS CI
 in IN CC
@@ -1490,8 +1490,8 @@ Gwalior NNP CC
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 scenes NNS CI
 in IN CI
 movie NN CI
@@ -1500,17 +1500,17 @@ history NN CI
   
 who WP CI
 has VBZ 0
-most JJS CP
-number NN CA
-of IN CA
-goals NNS CA
-in IN CA
-football NN CA
+most JJS 0
+number NN 0
+of IN 0
+goals NNS 0
+in IN 0
+football NN 0
   
 who WP CI
-lasted VBD CA
-the DT CP
-longest JJS CP
+lasted VBD 0
+the DT 0
+longest JJS 0
 on IN CC
 alone JJ CC
 season NN CC
@@ -1518,10 +1518,10 @@ season NN CC
   
 What WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT 0
+difference NN 0
 between IN 0
-advocate NN CI
+advo0te NN CI
 and CC 0
 lawyer NN CI
 ? . 0
@@ -1534,7 +1534,7 @@ a DT CI
 liberal JJ CI
 society NN CI
 is VBZ 0
-better JJR CP
+better JJR 0
 as IN 0
 it PRP 0
 allows VBZ 0
@@ -1554,13 +1554,13 @@ Students NNS 0
 : : 0
 what WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 experience NN CI
 you PRP CC
 've VB CC
 had VBN CC
-because IN CC
+be0use IN CC
 of IN CC
 a DT CC
 teacher NN CC
@@ -1570,23 +1570,23 @@ who WP 0
 is VBZ 0
 one CD 0
 of IN 0
-the DT CP
-most RBS CP
-widely RB CA
-performed VBN CA
+the DT 0
+most RBS 0
+widely RB 0
+performed VBN 0
 living VBG CI
-american JJ CI
+ameri0n JJ CI
 composers NNS CI
   
 What WP 0
 are VBP 0
-the DT CP
-Top NNP CP
-10 CD CP
+the DT 0
+Top NNP 0
+10 CD 0
 NPTEL NNP CI
 courses NNS CI
 for IN CI
-Electrical NNP CI
+Electri0l NNP CI
 Engineering NNP CI
 ? . 0
   
@@ -1595,26 +1595,26 @@ vincent NN CC
 van NN CC
 gogh NNS CC
 's POS CC
-most RBS CP
-famous JJ CA
+most RBS 0
+famous JJ 0
 painting NN CI
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 real JJ CI
 estate NN CI
 school NN CI
 in IN CC
-california NN CC
+0lifornia NN CC
 ? . 0
   
 What WP 0
 is VBZ 0
-the DT CP
-most RBS CP
-embarrassing JJ CA
+the DT 0
+most RBS 0
+embarrassing JJ 0
 moment NN CI
 of IN CC
 your PRP$ CC
@@ -1623,9 +1623,9 @@ childhood NN CC
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
-inspiring JJ CA
+the DT 0
+best JJS 0
+inspiring JJ 0
 story NN CI
 of IN CI
 a DT CI
@@ -1634,32 +1634,32 @@ cricketer NN CI
 And CC 0
 who WP 0
 is VBZ 0
-the DT CP
-most RBS CP
+the DT 0
+most RBS 0
 inspiring JJ 0
 cricketer NN 0
 ? . 0
   
 What WP 0
 is VBZ 0
-a DT CP
-good JJ CP
+a DT 0
+good JJ 0
 solar JJ CI
 panel NN CI
 installation NN CI
 provider NN CI
 in IN CC
 San NNP CC
-Carlos NNP CC
+0rlos NNP CC
 , , CC
-California NNP CC
-CA NNP CC
+0lifornia NNP CC
+0 NNP CC
 ? . 0
   
 Which WDT 0
 one NN 0
 is VBZ 0
-better JJR CP
+better JJR 0
 : : 0
 Samsung NNP CI
 Galaxy NNP CI
@@ -1671,11 +1671,11 @@ iPhone NNP CI
 ? . 0
   
 How WRB 0
-smart JJ CA
+smart JJ 0
 was VBD 0
 Steve NNP CI
 Jobs NNP CI
-compared VBN CP
+compared VBN 0
 to IN 0
 Mark NNP CI
 Zuckerberg NNP CI
@@ -1683,8 +1683,8 @@ Zuckerberg NNP CI
   
 Which WDT 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 book NN CI
 for IN CC
 entrepreneurship NN CC
@@ -1709,9 +1709,9 @@ major(s RB CI
 ) -RRB- CI
 would MD 0
 you PRP 0
-recommend VB CP
-for IN CA
-college NN CA
+recommend VB 0
+for IN 0
+college NN 0
 and CC 0
 what WDT 0
 colleges NNS 0
@@ -1722,9 +1722,9 @@ majors NNS 0
   
 what WDT 0
 foods NNS CI
-burn VBP CA
-calories NNS CA
-faster RBR CP
+burn VBP 0
+0lories NNS 0
+faster RBR 0
 to TO CC
 blast VB CC
 that DT CC
@@ -1732,8 +1732,8 @@ fat NN CC
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 one CD CI
 - HYPH CI
 liners NNS CI
@@ -1741,8 +1741,8 @@ liners NNS CI
   
 who WP CI
 scored VBD 0
-most JJS CP
-goals NNS CA
+most JJS 0
+goals NNS 0
 in IN CC
 a DT CC
 premier JJ CC
@@ -1751,27 +1751,27 @@ season NN CC
   
 what WP 0
 's VBZ 0
-the DT CP
-most JJS CP
+the DT 0
+most JJS 0
 money NN CI
-made VBN CA
+made VBN 0
 on IN CC
 bargain NN CC
 hunt NN CC
   
 who WP 0
 was VBD 0
-the DT CP
-first JJ CP
+the DT 0
+first JJ 0
 englishman NN CI
-to TO CA
-grow VB CA
-tobacco NN CA
+to TO 0
+grow VB 0
+tobacco NN 0
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 comedy NN CI
 TV NN CI
 shows VBZ CI
@@ -1780,8 +1780,8 @@ ever RB CC
   
 Is VBZ 0
 there EX 0
-a DT CP
-difference NN CP
+a DT 0
+difference NN 0
 in IN 0
 the DT CI
 extent NN CI
@@ -1791,27 +1791,27 @@ discrimination NN CI
 against IN CI
 coloured JJ CI
 immigrants NNS CI
-in IN CP
-comparison NN CP
-to IN CP
+in IN 0
+comparison NN 0
+to IN 0
 white JJ CI
 immigrants NNS CI
 ? . 0
   
 What WP 0
 are VBP 0
-the DT CP
-greatest JJS CP
+the DT 0
+greatest JJS 0
 cultural JJ CI
 contributions NNS CI
 of IN CI
-America NNP CI
+Ameri0 NNP CI
 ? . 0
   
 who WP CI
 has VBZ 0
-the DT CP
-fastest JJS CP
+the DT 0
+fastest JJS 0
 40 CD CC
 yard NN CC
 dash NN CC
@@ -1823,8 +1823,8 @@ combine NN CC
   
 What WP 0
 is VBZ 0
-the DT CP
-easiest JJS CP
+the DT 0
+easiest JJS 0
 way NN CI
 to TO CC
 hack VB CC
@@ -1835,8 +1835,8 @@ WhatsApp NNP CC
   
 Which WDT 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 earphone NN CI
 with IN CC
 deep JJ CC
@@ -1847,17 +1847,17 @@ under IN CC
   
 which WDT 0
 medium NN CI
-stores NNS CA
-the DT CP
-least JJS CP
-amount NN CA
-of IN CA
-information NN CA
+stores NNS 0
+the DT 0
+least JJS 0
+amount NN 0
+of IN 0
+information NN 0
   
 What WP 0
 's VBZ 0
-the DT CP
-difference NN CP
+the DT 0
+difference NN 0
 between IN 0
 a DT CI
 males NNS CI
@@ -1870,8 +1870,8 @@ anus NN CI
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 ways NNS CI
 to TO CC
 attract VB CC
@@ -1885,9 +1885,9 @@ idea NN CC
   
 What WP 0
 is VBZ 0
-the DT CP
-main JJ CP
-difference NN CP
+the DT 0
+main JJ 0
+difference NN 0
 between IN 0
 veins NNS CI
 and CC 0
@@ -1896,8 +1896,8 @@ arteries NNS CI
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 site NN CI
 to TO CC
 hack VB CC
@@ -1907,8 +1907,8 @@ Royale NNP CC
   
 What WP 0
 are VBP 0
-the DT CP
-biggest JJS CP
+the DT 0
+biggest JJS 0
 challenges NNS CI
 of IN CC
 being VBG CC
@@ -1918,10 +1918,10 @@ entrepreneur NN CC
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 true JJ CI
-scary JJ CI
+s0ry JJ CI
 stories NNS CI
 ? . 0
   
@@ -1931,8 +1931,8 @@ your PRP$ 0
 , , 0
 personally RB 0
 , , 0
-most RBS CP
-reliable JJ CA
+most RBS 0
+reliable JJ 0
 source NN CI
 of IN 0
 information NN CI
@@ -1940,8 +1940,8 @@ information NN CI
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 programming NN CI
 language NN CI
 one PRP CC
@@ -1955,17 +1955,17 @@ today NN CC
   
 what WP 0
 is VBZ 0
-the DT CP
-number NN CP
-one CD CP
+the DT 0
+number NN 0
+one CD 0
 watched VBD CC
 disney NN CI
 movie NN CI
   
 who WP 0
 was VBD 0
-the DT CP
-first JJ CP
+the DT 0
+first JJ 0
 person NN CI
 to TO CC
 be VB CC
@@ -1983,24 +1983,24 @@ What WP 0
 are VBP 0
 some DT 0
 of IN 0
-the DT CP
-funniest NN CP
+the DT 0
+funniest NN 0
 movies NNS CI
 ? . 0
   
 who WP CI
 has VBZ CC
 sold VBN CC
-the DT CP
-highest JJS CP
-number NN CA
+the DT 0
+highest JJS 0
+number NN 0
 of IN 0
-albums NNS CA
+albums NNS 0
   
 What WP 0
 are VBP 0
-the DT CP
-strongest JJS CP
+the DT 0
+strongest JJS 0
 majors NNS CI
 in IN CC
 terms NNS CC
@@ -2010,17 +2010,17 @@ prospects NNS CC
 and CC 0
 what WP 0
 are VBP 0
-the DT CP
-weakest JJS CP
+the DT 0
+weakest JJS 0
 majors NNS 0
 at IN CC
-Cal NNP CC
+0l NNP CC
 State NNP CC
 Northridge NNP CC
 ? . 0
   
-the DT CP
-largest JJS CP
+the DT 0
+largest JJS 0
 single JJ CI
 component NN CI
 of IN CC
@@ -2033,8 +2033,8 @@ is VBZ 0
   
 what WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT 0
+difference NN 0
 between IN 0
 a DT CI
 goal NN CI
@@ -2044,8 +2044,8 @@ objective NN CI
   
 Which WDT 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 coaching VBG CI
 centre NN CI
 in IN CC
@@ -2058,12 +2058,12 @@ makes VBZ 0
 your PRP$ CC
 torso NN CC
 look VB CC
-bigger JJR CP
+bigger JJR 0
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 YouTube NNP CI
 channels NNS CI
 for IN CC
@@ -2072,8 +2072,8 @@ news NN CC
   
 Which WDT 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 Drug NNP CI
 or CC CI
 Alcohol NNP CI
@@ -2088,18 +2088,18 @@ in IN CC
 the DT CC
 Monterey NNP CC
 County NNP CC
-California NNP CC
+0lifornia NNP CC
 area NN CC
 ? . 0
   
 What WP 0
 is VBZ 0
-best JJS CP
-source NN CA
-of IN CA
-Canadian JJ CA
-politics NNS CA
-news NN CA
+best JJS 0
+source NN 0
+of IN 0
+0nadian JJ 0
+politics NNS 0
+news NN 0
 , , 0
 web NN CI
 news NN CI
@@ -2122,20 +2122,20 @@ where WRB 0
 is VBZ 0
 eureka NN 0
 college NN 0
-located VBN 0
+lo0ted VBN 0
 and CC 0
 who WP 0
 is VBZ 0
 easily RB 0
 its PRP$ 0
-most RBS CP
-notable JJ CA
+most RBS 0
+notable JJ 0
 alumni NNS CI
   
 what WP 0
 is VBZ 0
-the DT CP
-difference NN CP
+the DT 0
+difference NN 0
 between IN 0
 alcohol NN CI
 and CC 0
@@ -2144,14 +2144,14 @@ peroxide NN CI
   
 What WP 0
 are VBP 0
-the DT CP
-most RBS CP
-useful JJ CA
+the DT 0
+most RBS 0
+useful JJ 0
 skills NNS CI
 for IN CC
 entrepreneurs NNS CC
 that WDT CC
-can MD CC
+0n MD CC
 be VB CC
 learned VBN CC
 online RB CC
@@ -2159,20 +2159,20 @@ online RB CC
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 tools NNS CI
-for IN CA
-augmented JJ CA
-reality NN CA
-development NN CA
+for IN 0
+augmented JJ 0
+reality NN 0
+development NN 0
 ? . 0
   
 What WP 0
 are VBP 0
-the DT CP
-personality NN CP
-differences NNS CP
+the DT 0
+personality NN 0
+differences NNS 0
 between IN 0
 the DT CI
 book NN CI
@@ -2194,13 +2194,13 @@ Tyrion NNP CC
 Jon NNP CC
 , , CC
 or CC CC
-Catelyn NNP CC
+0telyn NNP CC
 ? . 0
   
 Which WDT 0
 is VBZ 0
-grammatically RB CP
-correct JJ CP
+grammati0lly RB 0
+correct JJ 0
 : : 0
 """" `` CI
 the DT CI
@@ -2224,12 +2224,12 @@ come VB CI
   
 who WP CI
 has VBZ 0
-the DT CP
-most JJS CP
-money NN CA
-on IN CA
-shark JJ CA
-tank NN CA
+the DT 0
+most JJS 0
+money NN 0
+on IN 0
+shark JJ 0
+tank NN 0
 australia NN CC
   
 Which WDT 0
@@ -2237,15 +2237,15 @@ country NN CI
 's POS CI
 soldier NN CI
 is VBZ 0
-the DT CP
-deadliest JJS CP
+the DT 0
+deadliest JJS 0
 ? . 0
   
 What WP 0
 would MD 0
 be VB 0
-the DT CP
-cruelest JJS CP
+the DT 0
+cruelest JJS 0
 item NN CI
 to TO 0
 drop VB CC
@@ -2260,8 +2260,8 @@ island NN CC
   
 What WP 0
 are VBP 0
-the DT CP
-biggest JJS CP
+the DT 0
+biggest JJS 0
 culture NN CI
 shocks NNS CI
 people NNS 0
@@ -2274,8 +2274,8 @@ Lithuania NNP CC
   
 What WP 0
 are VBP 0
-the DT CP
-good JJ CP
+the DT 0
+good JJ 0
 programing VBG CI
 sites NNS CI
 for IN CC
@@ -2284,16 +2284,16 @@ beginers NNS CC
   
 Who WP 0
 is VBZ 0
-the DT CP
-richest JJS CP
+the DT 0
+richest JJS 0
 Telugu NNP CI
 man NN CI
 ? . 0
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 ways NNS CI
 to TO CC
 lose VB CC
@@ -2315,24 +2315,24 @@ of IN CC
 an DT CC
 infinite NN CC
 well RB CC
-most RBS CP
-likely RB CA
-be VB CA
-found VBN CA
+most RBS 0
+likely RB 0
+be VB 0
+found VBN 0
   
 who WP 0
 has VBZ 0
 won VBN 0
-the DT CP
-most JJS CP
-champions NNS CA
-leagues NNS CA
+the DT 0
+most JJS 0
+champions NNS 0
+leagues NNS 0
 player NN CI
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 strategies NNS CI
 for IN CC
 preparing VBG CC
@@ -2343,19 +2343,19 @@ GMAT NNP CC
   
 what WP 0
 are VBP 0
-the DT CP
-10 CD CP
-richest JJS CP
+the DT 0
+10 CD 0
+richest JJS 0
 states NNS CI
 in IN CC
-america NN CC
+ameri0 NN CC
   
 who WP 0
 has VBZ 0
-the DT CP
-highest JJS CP
-sales NNS CA
-tax NN CA
+the DT 0
+highest JJS 0
+sales NNS 0
+tax NN 0
 in IN 0
 the DT CI
 united JJ CI
@@ -2363,8 +2363,8 @@ states NNS CI
   
 what WP 0
 's VBZ 0
-the DT CP
-worst JJS CP
+the DT 0
+worst JJS 0
 record NN CI
 in IN CC
 mlb NN CC
@@ -2372,8 +2372,8 @@ history NN CC
   
 Which WDT 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 colleges NNS CI
 in IN CC
 India NNP CC
@@ -2385,7 +2385,7 @@ astronomy NN CC
 which WDT 0
 book NN 0
 is VBZ 0
-first RB CP
+first RB 0
 the DT CI
 davinci NN CI
 code NN CI
@@ -2396,10 +2396,10 @@ demons NNS CI
   
 What WP 0
 are VBP 0
-some DT CP
-of IN CP
-the DT CP
-best JJS CP
+some DT 0
+of IN 0
+the DT 0
+best JJS 0
 poems NNS CI
 ( -LRB- CI
 lines NNS CI
@@ -2407,22 +2407,22 @@ lines NNS CI
 written VBN CI
 by IN CI
 Bharathiyar NNP CI
-that WDT CA
-brings VBZ CA
-goose JJ CA
-bumps NNS CA
-to IN CA
-you PRP CA
-whenever WRB CA
-you PRP CA
-hear VBP CA
-them PRP CA
-? . CA
+that WDT 0
+brings VBZ 0
+goose JJ 0
+bumps NNS 0
+to IN 0
+you PRP 0
+whenever WRB 0
+you PRP 0
+hear VBP 0
+them PRP 0
+? . 0
   
 Who WP CI
 has VBZ 0
-most JJS CP
-followers NNS CA
+most JJS 0
+followers NNS 0
 on IN CC
 Quora NNP CC
 Right RB CC
@@ -2431,8 +2431,8 @@ now RB CC
   
 Which WDT 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 training NN CI
 institute NN CI
 in IN CC
@@ -2447,7 +2447,7 @@ why WRB 0
 What WP 0
 is VBZ 0
 your PRP$ CC
-favorite JJ CP
+favorite JJ 0
 Bollywood NNP CI
 song NN CI
 ? . 0
@@ -2456,8 +2456,8 @@ Why WRB 0
   
 what WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 time NN CI
 of IN CI
 day NN CI
@@ -2466,19 +2466,19 @@ take VB CC
 portrait NN CC
 shots NNS CC
 with IN CC
-camera NN CC
+0mera NN CC
   
 what WP 0
 is VBZ 0
-the DT CP
-benefit NN CP
+the DT 0
+benefit NN 0
 of IN 0
 cucumber NN CI
 juice NN CI
   
 What WP 0
 are VBP 0
-some DT CP
+some DT 0
 startup JJ CI
 ideas NNS CI
 that WDT CC
@@ -2488,13 +2488,13 @@ fail VBP CC
   
 what WP 0
 is VBZ 0
-difference NN CP
+difference NN 0
 between IN 0
 physician NN CI
 's POS CI
 assistant JJ CI
 and CC 0
-medical JJ CI
+medi0l JJ CI
 doctor NN CI
   
 I PRP 0
@@ -2509,18 +2509,18 @@ during IN 0
 DSF NNP 0
 . . 0
 Where WRB CI
-can MD 0
+0n MD 0
 I PRP 0
 buy VB 0
-a DT CP
-good JJ CP
+a DT 0
+good JJ 0
 , , 0
-genuine JJ CA
-laptop NN CA
-and CC CA
-car NN CA
-audio NN CA
-accessories NNS CA
+genuine JJ 0
+laptop NN 0
+and CC 0
+0r NN 0
+audio NN 0
+accessories NNS 0
 for IN CC
 the DT CC
 main JJ CC
@@ -2532,9 +2532,9 @@ warranty NN CC
 Will MD 0
 there EX 0
 be VB 0
-a DT CP
-price NN CP
-difference NN CP
+a DT 0
+price NN 0
+difference NN 0
 compared VBN 0
 to IN 0
 India NNP 0
@@ -2542,20 +2542,20 @@ India NNP 0
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 programming NN CI
 language NN CI
-for IN CA
-beginners NNS CA
-to TO CA
-learn VB CA
+for IN 0
+beginners NNS 0
+to TO 0
+learn VB 0
 ? . 0
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 printers NNS CI
 compatible JJ CC
 with IN CC
@@ -2568,15 +2568,15 @@ demand NN CI
 curve NN CI
 is VBZ 0
 relatively RB CC
-most RBS CP
-elastic JJ CA
+most RBS 0
+elastic JJ 0
   
 What WP 0
 is VBZ 0
-the DT CP
-shortest JJS CP
-and CC CP
-longest JJS CP
+the DT 0
+shortest JJS 0
+and CC 0
+longest JJS 0
 bones NNS CI
 in IN 0
 a DT CC
@@ -2586,20 +2586,20 @@ skeleton NN CC
   
 What WP 0
 are VBP 0
-some DT CP
-good JJ CP
+some DT 0
+good JJ 0
 exercises NNS 0
 for IN CI
 a DT CI
 bigger JJR CI
 butt NN CI
-that WDT CA
-are VBP CA
-n't RB CA
-squats NNS CA
+that WDT 0
+are VBP 0
+n't RB 0
+squats NNS 0
 ? . 0
   
-major JJ CP
+major JJ 0
 industries NNS CI
 in IN CC
 the DT CC
@@ -2611,8 +2611,8 @@ texas NN CC
   
 what WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 temperature NN CI
 setting VBG CI
 for IN CC
@@ -2624,9 +2624,9 @@ heater NN CC
   
 who WP CI
 plays VBZ 0
-the DT CP
-major JJ CP
-role NN CA
+the DT 0
+major JJ 0
+role NN 0
 in IN CC
 enforcing VBG CC
 the DT CC
@@ -2637,11 +2637,11 @@ act NN CC
   
 What WP 0
 are VBP 0
-some DT CP
-of IN CP
-the DT CP
-most RBS CP
-interesting JJ CA
+some DT 0
+of IN 0
+the DT 0
+most RBS 0
+interesting JJ 0
 portmanteaus NN CI
 you PRP CC
 have VBP CC
@@ -2650,22 +2650,22 @@ heard VBN CC
   
 what WP 0
 are VBP 0
-the DT CP
-biggest JJS CP
+the DT 0
+biggest JJS 0
 issues NNS CI
-facing VBG CA
-our PRP$ CA
-industry NN CA
-and CC CA
-company NN CA
+facing VBG 0
+our PRP$ 0
+industry NN 0
+and CC 0
+company NN 0
 today NN CC
 ? . 0
   
 how WRB 0
 old JJ 0
 is VBZ 0
-the DT CP
-oldest JJS CP
+the DT 0
+oldest JJS 0
 living VBG CC
 person NN CI
 in IN CC
@@ -2674,16 +2674,16 @@ world NN CC
   
 who WP CI
 fired VBD CC
-the DT CP
-first JJ CP
+the DT 0
+first JJ 0
 shot NN CC
 at IN CC
 fort NN CC
 sumter NN CC
   
-first JJ CP
-african JJ CI
-american JJ CI
+first JJ 0
+afri0n JJ CI
+ameri0n JJ CI
 gymnast NN CI
 to TO 0
 go VB 0
@@ -2693,10 +2693,10 @@ olympics NNS 0
   
 What WP 0
 are VBP 0
-the DT CP
-pros NNS CP
-and CC CP
-cons NNS CP
+the DT 0
+pros NNS 0
+and CC 0
+cons NNS 0
 in IN CI
 the DT CI
 various JJ CI
@@ -2729,8 +2729,8 @@ Modi NNP 0
   
 what WP 0
 was VBD 0
-the DT CP
-main JJ CP
+the DT 0
+main JJ 0
 purpose NN CI
 of IN CI
 the DT CI
@@ -2739,7 +2739,7 @@ committee NN CI
 on IN CI
 un JJ CI
 - JJ CI
-american JJ CI
+ameri0n JJ CI
 activities NNS CI
 ( -LRB- CI
 huac NN CI
@@ -2747,8 +2747,8 @@ huac NN CI
   
 What WP 0
 is VBZ 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 way NN CI
 the DT CC
 government NN CC
@@ -2766,16 +2766,16 @@ money NN CC
 are VBP 0
 gaming VBG CI
 keyboards NNS CI
-better RBR CP
+better RBR 0
 than IN 0
 regular JJ CI
 keyboards NNS CI
   
 what WP 0
 is VBZ 0
-the DT CP
-highest JJS CP
-security NN CA
+the DT 0
+highest JJS 0
+security NN 0
 prison NN CI
 in IN CC
 the DT CC
@@ -2783,18 +2783,18 @@ uk JJ CC
   
 where WRB CI
 are VBP 0
-most JJS CP
+most JJS 0
 of IN CC
 the DT CC
 world NN CC
 's POS CC
-earthquakes NNS CA
-located VBN CA
+earthquakes NNS 0
+lo0ted VBN 0
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 things NNS CI
 to TO CC
 do VB CC
@@ -2805,8 +2805,8 @@ computer NN CC
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 Doctor NN CI
 Who WP CI
 episodes VBZ CI
@@ -2818,8 +2818,8 @@ Doctor NN CC
   
 who WP CI
 was VBD 0
-the DT CP
-first JJ CP
+the DT 0
+first JJ 0
 to TO CC
 be VB CC
 known VBN CC
@@ -2837,11 +2837,11 @@ who WP CI
 has VBZ 0
 been VBN 0
 to IN 0
-the DT CP
-most JJS CP
-world NN CA
-cup NN CA
-finals NNS CA
+the DT 0
+most JJS 0
+world NN 0
+cup NN 0
+finals NNS 0
   
 Why WRB 0
 do VBP 0
@@ -2850,7 +2850,7 @@ materials NNS 0
 like IN 0
 rubber NN CI
 bounce NN CI
-more JJR CP
+more JJR 0
 than IN 0
 other JJ 0
 materials NNS CI
@@ -2866,12 +2866,12 @@ make VB 0
 a DT CC
 toilet NN CC
 bowl NN CC
-cleaner RBR CP
+cleaner RBR 0
   
 What WP 0
 is VBZ 0
 your PRP$ CC
-favorite JJ CP
+favorite JJ 0
 thing NN CI
 to TO CI
 do VB CI
@@ -2879,7 +2879,7 @@ do VB CI
   
 What WP 0
 is VBZ 0
-best JJS CP
+best JJS 0
 playstations NNS CI
 for IN 0
 gaming NN 0
@@ -2887,17 +2887,17 @@ gaming NN 0
   
 which WDT 0
 brand NN CI
-makes VBZ CA
-the DT CP
-best JJS CP
-refrigerators NNS CA
+makes VBZ 0
+the DT 0
+best JJS 0
+refrigerators NNS 0
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
-and CC CP
-easiest JJS CP
+the DT 0
+best JJS 0
+and CC 0
+easiest JJS 0
 ways NNS CI
 to TO CC
 learn VB CC
@@ -2910,10 +2910,10 @@ quickly RB CC
   
 What WP 0
 are VBP 0
-the DT CP
-pros NNS CP
-and CC CP
-cons NNS CP
+the DT 0
+pros NNS 0
+and CC 0
+cons NNS 0
 of IN 0
 having VBG CI
 a DT CI
@@ -2928,10 +2928,10 @@ sex NN CI
 who WP CI
 has VBZ 0
 won VBN 0
-the DT CP
-most JJS CP
-tennis NN CA
-matches NNS CA
+the DT 0
+most JJS 0
+tennis NN 0
+matches NNS 0
 in IN CC
 history NN CC
   
@@ -2942,9 +2942,9 @@ of IN 0
 odorless NN 0
 ) -RRB- 0
 alcohol NN CI
-should MD CP
-you PRP CP
-drink VB CP
+should MD 0
+you PRP 0
+drink VB 0
 before IN CC
 a DT CC
 job NN CC
@@ -2953,10 +2953,10 @@ interview NN CC
   
 What WP 0
 are VBP 0
-some DT CP
-of IN CP
-the DT CP
-best JJS CP
+some DT 0
+of IN 0
+the DT 0
+best JJS 0
 Indian JJ CI
 movies NNS CI
 ever RB CC
@@ -2964,8 +2964,8 @@ made VBN CC
 ? . 0
   
 which WDT 0
-religion NN CA
-predominates VBZ CP
+religion NN 0
+predominates VBZ 0
 in IN 0
 the DT 0
 countries NNS 0
@@ -2976,8 +2976,8 @@ bangladesh NN CI
   
 What WP 0
 is VBZ 0
-the DT CP
-easiest JJS CP
+the DT 0
+easiest JJS 0
 way NN CI
 to TO CC
 get VB CC
@@ -2989,8 +2989,8 @@ elbows NNS CC
   
 What WP 0
 are VBP 0
-the DT CP
-best JJS CP
+the DT 0
+best JJS 0
 coworking NN CI
 spaces NNS CI
 in IN 0
@@ -3000,14 +3000,14 @@ Angeles NNP CC
   
 what WDT 0
 animal NN CI
-lives VBZ CA
-longest RBS CP
+lives VBZ 0
+longest RBS 0
 as IN CC
 pets NNS CC
   
 Is VBZ 0
 it PRP 0
-better JJR CP
+better JJR 0
 to TO CI
 take VB CI
 creatine NN CI
@@ -3022,8 +3022,8 @@ why WRB 0
   
 What WP 0
 are VBP 0
-the DT CP
-top JJ CP
+the DT 0
+top JJ 0
 startup NN CI
 incubators NNS CI
 , , CI
