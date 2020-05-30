@@ -5,6 +5,7 @@ import time
 import numpy as np
 import torch.nn as nn
 import logging
+import json
 
 from src.classes.report import Report
 from src.classes.utils import *
@@ -105,6 +106,7 @@ if __name__ == "__main__":
                         help='Current cross-fold, 1<=cross-fold-id<=cross-folds-num (optional, for some datasets).')
     parser.add_argument('--verbose', type=str2bool, default=True, help='Show additional information.', nargs='?',
                         choices=['yes (default)', True, 'no', False])
+    parser.add_argument('--save-pred', type=str, default=None, help="If not none, we dump test results in the file as json")
     args = parser.parse_args()
     np.random.seed(args.seed_num)
     torch.manual_seed(args.seed_num)
@@ -239,6 +241,11 @@ if __name__ == "__main__":
             report.write_epoch_scores(epoch, (loss_sum*100 / iterations_num, train_score, dev_score, test_score))
         except ZeroDivisionError:
             report.write_epoch_scores(epoch, (0, train_score, dev_score, test_score))
+
+        if args.save_pred != None:
+            output_tag_sequences_test = tagger.predict_tags_from_words(word_sequences_test,batch_size=100)
+            with open(args.save_pred, 'w', encoding='utf8', errors="ignore") as f:
+                json.dump(output_tag_sequences_test, f)
 
         # Save curr tagger if required
         # tagger.save('tagger_NER_epoch_%03d.hdf5' % epoch)
