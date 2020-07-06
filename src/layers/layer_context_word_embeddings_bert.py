@@ -19,6 +19,7 @@ class LayerContextWordEmbeddingsBert(LayerBase):
         self.output_dim = self.embeddings_dim
         self.gpu = gpu
         self.tpnm = tpnm
+        print("done")
 
     def is_cuda(self):
         return self.embeddings.weight.is_cuda

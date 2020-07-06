@@ -242,10 +242,9 @@ if __name__ == "__main__":
         except ZeroDivisionError:
             report.write_epoch_scores(epoch, (0, train_score, dev_score, test_score))
 
-        if args.save_pred != None:
-            output_tag_sequences_test = tagger.predict_tags_from_words(word_sequences_test,batch_size=100)
-            with open(args.save_pred, 'w', encoding='utf8', errors="ignore") as f:
-                json.dump(output_tag_sequences_test, f)
+        output_tag_sequences_test = tagger.predict_tags_from_words(word_sequences_test,batch_size=100)
+        with open(args.save_pred, 'w', encoding='utf8', errors="ignore") as f:
+            json.dump(output_tag_sequences_test, f)
 
         # Save curr tagger if required
         # tagger.save('tagger_NER_epoch_%03d.hdf5' % epoch)
@@ -260,13 +259,13 @@ if __name__ == "__main__":
                 tagger.save_tagger(args.save)
             logging.info('## [BEST epoch], %d seconds.\n' % (time.time() - time_start))
         else:
-            #patience_counter += 1
+            patience_counter += 1
             logging.info('## [no improvement micro-f1 on DEV during the last %d epochs (best_f1_dev=%1.2f), %d seconds].\n' %
                                                                                             (patience_counter,
                                                                                              best_dev_score,
-                                                                                             (time.time()-time_start)))
-        #if patience_counter > args.patience and epoch > args.min_epoch_num:
-            #break
+                                                                                                 (time.time()-time_start)))
+        if patience_counter > args.patience and epoch > args.min_epoch_num:
+            break
     # Save final trained tagger to disk, if it is not already saved according to "save best"
     if args.save is not None and not args.save_best:
         tagger.save_tagger(args.save)

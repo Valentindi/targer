@@ -58,6 +58,7 @@ class TaggerBase(nn.Module):
                 max_no = curr_output.argmax(dim=0)
                 idx_seq.append(max_no.item() + 1)
             output_idx_sequences.append(idx_seq)
+
         return output_idx_sequences
 
     def predict_tags_from_words(self, word_sequences, batch_size=-1):

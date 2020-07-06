@@ -22,4 +22,5 @@ do
 	FILENAME="targer-bert-base-capri-patence="$PATENCE"-rnn-hidden-dim="$RNN_HIDDEN_DIM"-epochs="$EPOCHS"-it="$i
 	LOGGING="--logname $FILENAME.log --report-fn $FILENAME.txt --save $FILENAME.hdf5"
 	python main.py  $DATA  --model BiRNN --opt adam --save-best yes --patience $PATENCE --rnn-hidden-dim $RNN_HIDDEN_DIM --gpu $GPU_1 --elmo False --epoch-num $EPOCHS --evaluator f1-macro --bert True $MODEL_BERT_BASE --special_bert True $LOGGING --cross-folds-num 10 --cross-fold-id $i
+	python run_tagger.py "$FILENAME..hdf5" $DATA_DEV --output "$FILENAME.out.json" -v f1-macro --gpu $GPU_1 
 done

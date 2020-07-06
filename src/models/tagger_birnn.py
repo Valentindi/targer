@@ -25,6 +25,7 @@ class TaggerBiRNN(TaggerBase):
         if ((not word_seq_indexer.bert) and (not word_seq_indexer.elmo)):
             self.word_embeddings_layer = LayerWordEmbeddings(word_seq_indexer, gpu, freeze_word_embeddings)
         elif (word_seq_indexer.bert):
+
             self.word_embeddings_layer = LayerContextWordEmbeddingsBert(word_seq_indexer, gpu, freeze_word_embeddings, embedding_dim=embedding_dim)
         else:
             self.word_embeddings_layer = LayerContextWordEmbeddings(word_seq_indexer, gpu, freeze_word_embeddings)
